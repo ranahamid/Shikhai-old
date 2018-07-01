@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 12, 16" name="Shikhai">
+  <DataContextMoniker Name="/ShikhaiDataContext" />
+  <nestedChildShapes>
+    <classShape Id="8d22f296-9a21-4fd9-9a29-31c031b3a61e" absoluteBounds="0.75, 0.75, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/ShikhaiDataContext/BannerImageTbl" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a2eb43b1-adbd-4ed4-9cb2-6ff6c2c65315" absoluteBounds="0.765, 1.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="07305949-52a8-4dee-a9cd-756b1da6eab5" absoluteBounds="3.75, 0.75, 2, 3.1170068359375005">
+      <DataClassMoniker Name="/ShikhaiDataContext/UserTbl" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3d6490d0-ab92-48ca-8701-d4892d3a4ed6" absoluteBounds="3.765, 1.21, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="742e0107-16b1-4b5e-a858-49f1bfba3b59" absoluteBounds="0.75, 4.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/ShikhaiDataContext/BannerTbl" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2c1b1e72-6968-4574-a9da-0bd0252cf72c" absoluteBounds="0.765, 5.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4ce1c080-d88b-4f8b-bd06-7910b3266140" absoluteBounds="3.75, 4.75, 2, 3.1170068359375005">
+      <DataClassMoniker Name="/ShikhaiDataContext/CategoryTbl" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b5ee6a4b-5981-41f7-a011-43da4864a0f1" absoluteBounds="3.765, 5.21, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b3376af2-242b-4c61-a444-adb0b99648ca" absoluteBounds="6.75, 0.75, 2, 1.7708968098958329">
+      <DataClassMoniker Name="/ShikhaiDataContext/CustomerSearchTbl" />
+      <nestedChildShapes>
+        <elementListCompartment Id="476d63e8-9cb2-42b0-b738-aaea216bbc12" absoluteBounds="6.765, 1.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0a3d341c-5c6e-415e-8a0f-6380e8ed2c2c" absoluteBounds="6.75, 3.75, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/ShikhaiDataContext/GeoZoneTbl" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a7a23366-c670-46e1-87b9-d309722703ff" absoluteBounds="6.765, 4.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c984bb50-c0fc-45d9-9b4c-e0cd3d933405" absoluteBounds="6.75, 6.75, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/ShikhaiDataContext/LogTbl" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cff8ba2e-dfe8-4f5c-bfeb-d23545fa412d" absoluteBounds="6.765, 7.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ba8182f0-9161-4906-bd7d-9de1244e8b8f" absoluteBounds="0.75, 8.75, 2, 4.8477197265624987">
+      <DataClassMoniker Name="/ShikhaiDataContext/NewspaperTbl" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dab82753-df1b-4bd4-90a4-9281b9995f04" absoluteBounds="0.765, 9.21, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="11cc6e96-a078-492c-9fe8-25763e08d9e2" absoluteBounds="9.75, 0.75, 2, 1.7708968098958329">
+      <DataClassMoniker Name="/ShikhaiDataContext/OrderPaymentMethodTbl" />
+      <nestedChildShapes>
+        <elementListCompartment Id="574d6b2e-1ceb-4c7a-a157-5d821dcee6e6" absoluteBounds="9.765, 1.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3df48d37-4abe-43a6-bbad-5f24493a5e8e" absoluteBounds="9.75, 3.75, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/ShikhaiDataContext/OrderPaymentStatusTbl" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b47c2365-ff26-4360-b840-ba274bdcd0ce" absoluteBounds="9.765, 4.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="00722cad-3369-43e3-9354-a5cc79bcb2f1" absoluteBounds="9.75, 6.75, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/ShikhaiDataContext/PaymentTbl" />
+      <nestedChildShapes>
+        <elementListCompartment Id="566abf93-4366-4225-b590-b734c23d2445" absoluteBounds="9.765, 7.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="152aa7fd-e4d5-49c1-8494-aca979aac00c" absoluteBounds="6.125, 10.875, 2, 4.8477197265625">
+      <DataClassMoniker Name="/ShikhaiDataContext/DoctorTbl" />
+      <nestedChildShapes>
+        <elementListCompartment Id="746577da-28d3-4a1e-909b-d67f4ac87d0e" absoluteBounds="6.14, 11.335, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
