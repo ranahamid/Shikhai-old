@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 12, 16" name="Shikhai">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 12, 16.375" name="Shikhai">
   <DataContextMoniker Name="/ShikhaiDataContext" />
   <nestedChildShapes>
     <classShape Id="8d22f296-9a21-4fd9-9a29-31c031b3a61e" absoluteBounds="0.75, 0.75, 2, 2.3478011067708335">
@@ -68,10 +68,10 @@
         <elementListCompartment Id="566abf93-4366-4225-b590-b734c23d2445" absoluteBounds="9.765, 7.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="152aa7fd-e4d5-49c1-8494-aca979aac00c" absoluteBounds="6.125, 10.875, 2, 4.8477197265625">
-      <DataClassMoniker Name="/ShikhaiDataContext/DoctorTbl" />
+    <classShape Id="ed1f58bb-7481-4dd9-985e-333552edb6cf" absoluteBounds="4.375, 11.25, 2, 4.8477197265625">
+      <DataClassMoniker Name="/ShikhaiDataContext/TeacherTbl" />
       <nestedChildShapes>
-        <elementListCompartment Id="746577da-28d3-4a1e-909b-d67f4ac87d0e" absoluteBounds="6.14, 11.335, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="60022912-cdb5-41a0-b9b3-4be94c9bc2dd" absoluteBounds="4.39, 11.71, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

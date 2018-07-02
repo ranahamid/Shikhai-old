@@ -50,7 +50,7 @@ namespace Shikhai.Models
 
         public string DoctorId { get; set; }
 
-        public Doctor DoctorDetails { get; set; }
+        public Teacher DoctorDetails { get; set; }
 
     }
 

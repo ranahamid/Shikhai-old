@@ -55,12 +55,12 @@ namespace Shikhai
 
             //BazarList
          //   container.RegisterType<IBazarListAccessRepository<BazarList, int>, BazarListDataAccessRepository>();
-            //Doctors
-            container.RegisterType<IDoctorAccessRepository<Doctor, int>, DoctorDataAccessRepository>();
+            //Teachers
+            container.RegisterType<ITeacherAccessRepository<Teacher, int>, TeacherDataAccessRepository>();
             //Appointment
           //  container.RegisterType<IAppointmentAccessRepository<Appointment, int>, AppointmentDataAccessRepository>();
-            //DoctorWorkingArea
-           // container.RegisterType<IDoctorWorkingAreaAccessRepository<DoctorWorkingArea, int>, DoctorWorkingAreaDataAccessRepository>();
+            //TeacherWorkingArea
+           // container.RegisterType<ITeacherWorkingAreaAccessRepository<TeacherWorkingArea, int>, TeacherWorkingAreaDataAccessRepository>();
 
 
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);

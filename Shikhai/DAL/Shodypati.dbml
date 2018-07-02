@@ -142,8 +142,8 @@
       <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.DoctorTbl" Member="DoctorTbls">
-    <Type Name="DoctorTbl">
+  <Table Name="dbo.TeacherTbl" Member="TeacherTbls">
+    <Type Name="TeacherTbl">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="FullName" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
       <Column Name="RegistrationNo" Type="System.Int32" DbType="Int" CanBeNull="true" />

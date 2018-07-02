@@ -60,9 +60,9 @@ namespace Shikhai.DAL
     partial void InsertPaymentTbl(PaymentTbl instance);
     partial void UpdatePaymentTbl(PaymentTbl instance);
     partial void DeletePaymentTbl(PaymentTbl instance);
-    partial void InsertDoctorTbl(DoctorTbl instance);
-    partial void UpdateDoctorTbl(DoctorTbl instance);
-    partial void DeleteDoctorTbl(DoctorTbl instance);
+    partial void InsertTeacherTbl(TeacherTbl instance);
+    partial void UpdateTeacherTbl(TeacherTbl instance);
+    partial void DeleteTeacherTbl(TeacherTbl instance);
     #endregion
 		
 		public ShikhaiDataContext() : 
@@ -183,11 +183,11 @@ namespace Shikhai.DAL
 			}
 		}
 		
-		public System.Data.Linq.Table<DoctorTbl> DoctorTbls
+		public System.Data.Linq.Table<TeacherTbl> TeacherTbls
 		{
 			get
 			{
-				return this.GetTable<DoctorTbl>();
+				return this.GetTable<TeacherTbl>();
 			}
 		}
 	}
@@ -2903,8 +2903,8 @@ namespace Shikhai.DAL
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DoctorTbl")]
-	public partial class DoctorTbl : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TeacherTbl")]
+	public partial class TeacherTbl : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -2999,7 +2999,7 @@ namespace Shikhai.DAL
     partial void OnActiveChanged();
     #endregion
 		
-		public DoctorTbl()
+		public TeacherTbl()
 		{
 			OnCreated();
 		}

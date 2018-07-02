@@ -21,13 +21,26 @@ namespace Shikhai.Controllers
     [ExceptionHandler]
     public class HomeController : BaseController
     {
-        
+
         public ActionResult Index()
         {
             Log.Info("App started...");
-            
-                return View();
-            }         
+
+            return View();
         }
+
+        public ActionResult About()
+        {
+            return View();
+        }
+
+        public ActionResult Contact()
+        {
+            return View();
+        }
+
+    }
+
+
 }
 
