@@ -9,7 +9,7 @@
 input,
 select,
 textarea {
-    max-width: 380px;
+    /*max-width: 45%;*/
 }
 
 /* styles for validation helpers */
@@ -43,6 +43,10 @@ input[type="checkbox"].input-validation-error {
     max-width: 300px;
 }
 
+.img-display-payment {
+    max-height: 350px;
+    max-width: 500px;
+}
 
 .multiselect-container > li {
     padding-left: 8px;
@@ -846,7 +850,7 @@ a {
 }
 
 address {
-    color: #fff;
+   /*color: #fff;*/
     display: inline-block;
 }
 
@@ -855,7 +859,7 @@ address {
     }
 
     address a {
-        color: #fff;
+        /*color: #fff;*/
     }
 
         address a:hover {
@@ -1178,7 +1182,7 @@ address {
     }
 
 .box-heading {
-    background-color: rgb(234, 35, 73);
+    background-color: #128e73;
 }
 
 .productName {
@@ -1337,3 +1341,1635 @@ form#headersearch {
     max-width: 900px;
     margin: 0 auto;
 }
+
+.box-heading-green {
+    background-color: #2196F3;
+    color: white;
+}
+
+
+
+input[readonly] {
+    background-color: #ccc;
+    font-style: italic;
+}
+
+/* Index */
+
+
+.card-img-top {
+    max-height: 100px;
+    min-height: 100px;
+}
+/* END Index */
+
+/*menu*/
+.menu-banner {
+
+}
+
+
+/*take a lesson*/
+#lp-pom-image-298-holder {
+    background-image: url(//d9hhrg4mnvzow.cloudfront.net/go.takelessons.com/sign-up/5426f07f-logotagline_04k01604f016005000.png);
+    position: absolute;
+    left: -1000000;
+    visibility: none;
+}
+
+#lp-pom-image-313-holder {
+    background-image: url(//d9hhrg4mnvzow.cloudfront.net/go.takelessons.com/sign-up/1lzdlal-o-icons-star-64x64_01b01b00w00u00800a.png);
+    position: absolute;
+    left: -1000000;
+    visibility: none;
+}
+
+#lp-pom-image-314-holder {
+    background-image: url(//d9hhrg4mnvzow.cloudfront.net/go.takelessons.com/sign-up/idyjb9-o-icons-heart-64x64_01301400r00p007007.png);
+    position: absolute;
+    left: -1000000;
+    visibility: none;
+}
+
+#lp-pom-image-321-holder {
+    background-image: url(//d9hhrg4mnvzow.cloudfront.net/go.takelessons.com/sign-up/fcd5l4-o-icons-users-64x64_01101200x00m00200a.png);
+    position: absolute;
+    left: -1000000;
+    visibility: none;
+}
+
+#lp-pom-image-369-holder {
+    background-image: url(//d9hhrg4mnvzow.cloudfront.net/go.takelessons.com/sign-up/n8147t-1353113068-padlock-closed.png);
+    position: absolute;
+    left: -1000000;
+    visibility: none;
+}
+
+#lp-pom-root {
+    display: block;
+    background: rgba(255,255,255,1);
+    -pie-background: rgba(255,255,255,1);
+    border-style: none;
+    margin: auto;
+    padding-top: 0px;
+    behavior: url(/PIE.htc);
+    border-radius: 0px;
+    min-width: 960px;
+    height: 819px;
+}
+
+#lp-pom-block-297 {
+    display: block;
+    background: rgba(255,255,255,1);
+    -pie-background: rgba(255,255,255,1);
+    border-style: none none solid none;
+    border-width: 1px;
+    border-color: #cccccc;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0px;
+    behavior: url(/PIE.htc);
+    border-radius: 0px;
+    width: 100%;
+    height: 57px;
+    position: relative;
+}
+
+#lp-pom-image-298 {
+    display: block;
+    background: rgba(255,255,255,0);
+    -pie-background: rgba(255,255,255,0);
+    left: 4px;
+    top: 6px;
+    z-index: 1;
+    position: absolute;
+}
+
+#lp-pom-block-299 {
+    display: block;
+    background: rgba(255,255,255,1);
+    -pie-background: rgba(255,255,255,1);
+    border-style: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0px;
+    behavior: url(/PIE.htc);
+    border-radius: 0px;
+    width: 100%;
+    height: 720px;
+    position: relative;
+}
+
+#lp-pom-text-307 {
+    display: block;
+    background: rgba(255,255,255,0);
+    -pie-background: rgba(255,255,255,0);
+    border-style: none;
+    behavior: url(/PIE.htc);
+    border-radius: 0px;
+    left: 89px;
+    top: 109px;
+    z-index: 9;
+    width: 350px;
+    height: 43px;
+    position: absolute;
+}
+
+#lp-pom-box-308 {
+    display: block;
+    background: rgba(245,245,245,1);
+    -pie-background: rgba(245,245,245,1);
+    border-style: solid;
+    border-width: 1px;
+    border-color: #ccc;
+    behavior: url(/PIE.htc);
+    border-radius: 0px;
+    left: 525px;
+    top: 109px;
+    z-index: 4;
+    width: 344px;
+    height: 467px;
+    position: absolute;
+}
+
+#lp-pom-text-368 {
+    display: block;
+    background: rgba(255,255,255,0);
+    -pie-background: rgba(255,255,255,0);
+    border-style: none;
+    behavior: url(/PIE.htc);
+    border-radius: 0px;
+    left: 34px;
+    top: 408px;
+    z-index: 7;
+    width: 276px;
+    height: 36px;
+    position: absolute;
+}
+
+#lp-pom-image-369 {
+    display: block;
+    background: rgba(255,255,255,0);
+    -pie-background: rgba(255,255,255,0);
+    left: 32px;
+    top: 408px;
+    z-index: 8;
+    position: absolute;
+}
+
+#lp-pom-text-311 {
+    display: block;
+    background: rgba(221,221,221,0);
+    -pie-background: rgba(221,221,221,0);
+    border-style: none;
+    behavior: url(/PIE.htc);
+    border-radius: 0px;
+    left: 89px;
+    top: 149px;
+    z-index: 10;
+    width: 365px;
+    height: 66px;
+    position: absolute;
+}
+
+#lp-pom-text-318 {
+    display: block;
+    background: rgba(255,255,255,0);
+    -pie-background: rgba(255,255,255,0);
+    border-style: none;
+    behavior: url(/PIE.htc);
+    border-radius: 0px;
+    left: 578px;
+    top: 588px;
+    z-index: 11;
+    width: 240px;
+    height: 22px;
+    position: absolute;
+}
+
+#lp-pom-text-322 {
+    display: block;
+    background: rgba(255,255,255,0);
+    -pie-background: rgba(255,255,255,0);
+    border-style: none;
+    behavior: url(/PIE.htc);
+    border-radius: 0px;
+    left: 143px;
+    top: 232px;
+    z-index: 14;
+    width: 315px;
+    height: 22px;
+    position: absolute;
+}
+
+#lp-pom-text-325 {
+    display: block;
+    background: rgba(255,255,255,0);
+    -pie-background: rgba(255,255,255,0);
+    border-style: none;
+    behavior: url(/PIE.htc);
+    border-radius: 0px;
+    left: 143px;
+    top: 298px;
+    z-index: 15;
+    width: 330px;
+    height: 22px;
+    position: absolute;
+}
+
+#lp-pom-text-326 {
+    display: block;
+    background: rgba(255,255,255,0);
+    -pie-background: rgba(255,255,255,0);
+    border-style: none;
+    behavior: url(/PIE.htc);
+    border-radius: 0px;
+    left: 143px;
+    top: 363px;
+    z-index: 16;
+    width: 315px;
+    height: 22px;
+    position: absolute;
+}
+
+#lp-pom-box-340 {
+    display: block;
+    background: rgba(47,72,96,1);
+    -pie-background: rgba(47,72,96,1);
+    border-style: solid;
+    border-width: 1px;
+    border-color: #ccc;
+    behavior: url(/PIE.htc);
+    border-radius: 25px;
+    left: 81px;
+    top: 238px;
+    z-index: 21;
+    width: 48px;
+    height: 48px;
+    position: absolute;
+}
+
+#lp-pom-image-313 {
+    display: block;
+    background: rgba(255,255,255,0);
+    -pie-background: rgba(255,255,255,0);
+    left: 9px;
+    top: 9px;
+    z-index: 22;
+    position: absolute;
+}
+
+#lp-pom-box-341 {
+    display: block;
+    background: rgba(47,72,96,1);
+    -pie-background: rgba(47,72,96,1);
+    border-style: solid;
+    border-width: 1px;
+    border-color: #ccc;
+    behavior: url(/PIE.htc);
+    border-radius: 25px;
+    left: 81px;
+    top: 304px;
+    z-index: 12;
+    width: 48px;
+    height: 48px;
+    position: absolute;
+}
+
+#lp-pom-image-321 {
+    display: block;
+    background: rgba(255,255,255,0);
+    -pie-background: rgba(255,255,255,0);
+    left: 8px;
+    top: 14px;
+    z-index: 13;
+    position: absolute;
+}
+
+#lp-pom-box-342 {
+    display: block;
+    background: rgba(47,72,96,1);
+    -pie-background: rgba(47,72,96,1);
+    border-style: solid;
+    border-width: 1px;
+    border-color: #ccc;
+    behavior: url(/PIE.htc);
+    border-radius: 25px;
+    left: 81px;
+    top: 369px;
+    z-index: 17;
+    width: 48px;
+    height: 48px;
+    position: absolute;
+}
+
+#lp-pom-image-314 {
+    display: block;
+    background: rgba(255,255,255,0);
+    -pie-background: rgba(255,255,255,0);
+    left: 11px;
+    top: 12px;
+    z-index: 18;
+    position: absolute;
+}
+
+#lp-pom-text-344 {
+    display: none;
+    background: rgba(255,255,255,0);
+    -pie-background: rgba(255,255,255,0);
+    border-style: none;
+    behavior: url(/PIE.htc);
+    border-radius: 0px;
+    left: 99px;
+    top: 119px;
+    z-index: 19;
+    width: 350px;
+    height: 43px;
+    position: absolute;
+}
+
+#lp-pom-text-345 {
+    display: none;
+    background: rgba(221,221,221,0);
+    -pie-background: rgba(221,221,221,0);
+    border-style: none;
+    behavior: url(/PIE.htc);
+    border-radius: 0px;
+    left: 99px;
+    top: 162px;
+    z-index: 20;
+    width: 350px;
+    height: 66px;
+    position: absolute;
+}
+
+#lp-pom-text-346 {
+    display: none;
+    background: rgba(255,255,255,0);
+    -pie-background: rgba(255,255,255,0);
+    border-style: none;
+    behavior: url(/PIE.htc);
+    border-radius: 0px;
+    left: 153px;
+    top: 262px;
+    z-index: 23;
+    width: 315px;
+    height: 22px;
+    position: absolute;
+}
+
+#lp-pom-text-347 {
+    display: none;
+    background: rgba(255,255,255,0);
+    -pie-background: rgba(255,255,255,0);
+    border-style: none;
+    behavior: url(/PIE.htc);
+    border-radius: 0px;
+    left: 153px;
+    top: 328px;
+    z-index: 24;
+    width: 315px;
+    height: 22px;
+    position: absolute;
+}
+
+#lp-pom-text-348 {
+    display: none;
+    background: rgba(255,255,255,0);
+    -pie-background: rgba(255,255,255,0);
+    border-style: none;
+    behavior: url(/PIE.htc);
+    border-radius: 0px;
+    left: 153px;
+    top: 393px;
+    z-index: 25;
+    width: 315px;
+    height: 22px;
+    position: absolute;
+}
+
+#lp-pom-text-365 {
+    display: none;
+    background: rgba(255,255,255,0);
+    -pie-background: rgba(255,255,255,0);
+    border-style: none;
+    behavior: url(/PIE.htc);
+    border-radius: 0px;
+    left: 10px;
+    top: 68px;
+    z-index: 26;
+    width: 315px;
+    height: 22px;
+    position: absolute;
+}
+
+#lp-pom-block-300 {
+    display: block;
+    background: rgba(85,85,85,1);
+    -pie-background: rgba(85,85,85,1);
+    border-style: solid none none none;
+    border-width: 1px;
+    border-color: #252525;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0px;
+    behavior: url(/PIE.htc);
+    border-radius: 0px;
+    width: 100%;
+    height: 40px;
+    position: relative;
+}
+
+#lp-pom-text-301 {
+    display: block;
+    background: rgba(255,255,255,0);
+    -pie-background: rgba(255,255,255,0);
+    border-style: none;
+    behavior: url(/PIE.htc);
+    border-radius: 0px;
+    left: 5px;
+    top: 788px;
+    z-index: 2;
+    width: 300px;
+    height: 22px;
+    position: absolute;
+}
+
+#lp-pom-text-302 {
+    display: block;
+    background: rgba(255,255,255,0);
+    -pie-background: rgba(255,255,255,0);
+    border-style: none;
+    behavior: url(/PIE.htc);
+    border-radius: 0px;
+    left: 655px;
+    top: 788px;
+    z-index: 3;
+    width: 300px;
+    height: 22px;
+    position: absolute;
+}
+
+#lp-pom-button-304 {
+    display: block;
+    border-style: solid;
+    behavior: url(/PIE.htc);
+    border-radius: 2px;
+    left: 0px;
+    top: 308px;
+    z-index: 6;
+    width: 273px;
+    height: 54px;
+    position: absolute;
+    background: rgba(110,186,73,1);
+    -pie-background: rgba(110,186,73,1);
+    box-shadow: none;
+    text-shadow: none;
+    color: #fff;
+    border-width: 1px;
+    border-color: #428842;
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: bold;
+    font-family: Open Sans;
+    text-align: center;
+    background-repeat: no-repeat;
+}
+
+#lp-pom-root .lp-positioned-content {
+    top: 0px;
+    width: 960px;
+    margin-left: -480px;
+}
+
+#lp-pom-block-297 .lp-pom-block-content {
+    margin-left: auto;
+    margin-right: auto;
+    width: 960px;
+    height: 57px;
+}
+
+#lp-pom-image-298 .lp-pom-image-container {
+    border-style: none;
+    behavior: url(/PIE.htc);
+    border-radius: 0px;
+    width: 159px;
+    height: 42px;
+}
+
+    #lp-pom-image-298 .lp-pom-image-container img {
+        width: 159px;
+        height: 42px;
+    }
+
+#lp-pom-block-299 .lp-pom-block-content {
+    margin-left: auto;
+    margin-right: auto;
+    width: 960px;
+    height: 720px;
+}
+
+#lp-pom-block-300 .lp-pom-block-content {
+    margin-left: auto;
+    margin-right: auto;
+    width: 960px;
+    height: 40px;
+}
+
+#lp-pom-button-304:hover {
+    background: rgba(136,191,63,1);
+    -pie-background: rgba(136,191,63,1);
+    box-shadow: none;
+    color: #fff;
+}
+
+#lp-pom-button-304:active {
+    background: rgba(66,136,66,1);
+    -pie-background: rgba(66,136,66,1);
+    box-shadow: none;
+    color: #fff;
+}
+
+#lp-pom-button-304 .label {
+    margin-top: -10px;
+}
+
+#lp-pom-image-313 .lp-pom-image-container {
+    border-style: none;
+    behavior: url(/PIE.htc);
+    border-radius: 0px;
+    width: 32px;
+    height: 30px;
+}
+
+    #lp-pom-image-313 .lp-pom-image-container img {
+        width: 32px;
+        height: 30px;
+    }
+
+#lp-pom-image-314 .lp-pom-image-container {
+    border-style: none;
+    behavior: url(/PIE.htc);
+    border-radius: 0px;
+    width: 27px;
+    height: 25px;
+}
+
+    #lp-pom-image-314 .lp-pom-image-container img {
+        width: 27px;
+        height: 25px;
+    }
+
+#lp-pom-image-321 .lp-pom-image-container {
+    border-style: none;
+    behavior: url(/PIE.htc);
+    border-radius: 0px;
+    width: 33px;
+    height: 22px;
+}
+
+    #lp-pom-image-321 .lp-pom-image-container img {
+        width: 33px;
+        height: 22px;
+    }
+
+#lp-pom-image-369 .lp-pom-image-container {
+    border-style: none;
+    behavior: url(/PIE.htc);
+    border-radius: 0px;
+    width: 16px;
+    height: 16px;
+}
+
+    #lp-pom-image-369 .lp-pom-image-container img {
+        width: 16px;
+        height: 16px;
+    }
+
+#lp-pom-root-color-overlay {
+    position: absolute;
+    background: none;
+    top: 0;
+    width: 100%;
+    height: 819px;
+    min-height: 100%;
+}
+
+#lp-pom-block-297-color-overlay {
+    position: absolute;
+    background: none;
+    height: 57px;
+    width: 100%;
+}
+
+#lp-pom-block-299-color-overlay {
+    position: absolute;
+    background: none;
+    height: 720px;
+    width: 100%;
+}
+
+#lp-pom-block-300-color-overlay {
+    position: absolute;
+    background: none;
+    height: 40px;
+    width: 100%;
+}
+
+#lp-pom-box-308-color-overlay {
+    position: absolute;
+    background: none;
+    height: 467px;
+    width: 344px;
+}
+
+#lp-pom-box-340-color-overlay {
+    position: absolute;
+    background: none;
+    border-radius: 24px;
+    behavior: url(/PIE.htc);
+    height: 48px;
+    width: 48px;
+}
+
+#lp-pom-box-341-color-overlay {
+    position: absolute;
+    background: none;
+    border-radius: 24px;
+    behavior: url(/PIE.htc);
+    height: 48px;
+    width: 48px;
+}
+
+#lp-pom-box-342-color-overlay {
+    position: absolute;
+    background: none;
+    border-radius: 24px;
+    behavior: url(/PIE.htc);
+    height: 48px;
+    width: 48px;
+}
+
+#lp-pom-form-303 {
+    display: block;
+    left: 34px;
+    top: 30px;
+    z-index: 5;
+    width: 275px;
+    height: -18px;
+    position: absolute;
+}
+
+    #lp-pom-form-303 .lp-pom-form-field label {
+        margin-top: 0px;
+        font-family: Open Sans;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 15px;
+        color: #555555;
+    }
+
+    #lp-pom-form-303 .lp-pom-form-field .option label {
+        font-family: arial;
+        font-weight: normal;
+        font-size: 13px;
+        line-height: 15px;
+        left: 18px;
+        color: #000;
+    }
+
+    #lp-pom-form-303 .lp-pom-form-field .option input {
+        top: 2px;
+    }
+
+    #lp-pom-form-303 .lp-pom-form-field input.text {
+        background-color: #fff;
+        color: #000;
+        border-radius: 0px;
+    }
+
+    #lp-pom-form-303 .lp-pom-form-field textarea {
+        background-color: #fff;
+        color: #000;
+        border-style: solid;
+        border-width: 1px;
+        border-color: #cccccc;
+        border-radius: 0px;
+    }
+
+    #lp-pom-form-303 .lp-pom-form-field input[type=text] {
+        border-style: solid;
+        border-width: 1px;
+        border-color: #cccccc;
+    }
+
+    #lp-pom-form-303 .lp-pom-form-field select {
+        border-style: solid;
+        border-width: 1px;
+        border-color: #cccccc;
+    }
+
+    #lp-pom-form-303 .form_elem_first_name {
+        top: 19px;
+        left: 0px;
+        width: 251px;
+        font-size: 15px;
+        line-height: 15px;
+        height: 38px;
+        padding-left: 11px;
+        padding-right: 11px;
+    }
+
+    #lp-pom-form-303 .form_elem_email {
+        top: 19px;
+        left: 0px;
+        width: 251px;
+        font-size: 15px;
+        line-height: 15px;
+        height: 38px;
+        padding-left: 11px;
+        padding-right: 11px;
+    }
+
+    #lp-pom-form-303 .form_elem_zip_code {
+        top: 19px;
+        left: 0px;
+        width: 251px;
+        font-size: 15px;
+        line-height: 15px;
+        height: 38px;
+        padding-left: 11px;
+        padding-right: 11px;
+    }
+
+    #lp-pom-form-303 .form_elem_lessons_of_interest {
+        top: 19px;
+        left: 0px;
+        width: 275px;
+        font-size: 15px;
+        line-height: 15px;
+        height: 40px;
+    }
+
+    #lp-pom-form-303 #label_first_name {
+        height: 19px;
+        top: 0px;
+        width: auto;
+    }
+
+    #lp-pom-form-303 #label_email {
+        height: 19px;
+        top: 0px;
+        width: auto;
+    }
+
+    #lp-pom-form-303 #label_zip_code {
+        height: 19px;
+        top: 0px;
+        width: auto;
+    }
+
+    #lp-pom-form-303 #label_lessons_of_interest {
+        height: 19px;
+        top: 0px;
+        width: auto;
+    }
+
+    #lp-pom-form-303 #container_first_name {
+        width: 275px;
+        height: 57px;
+        top: 0px;
+    }
+
+    #lp-pom-form-303 #container_email {
+        width: 275px;
+        height: 57px;
+        top: 77px;
+    }
+
+    #lp-pom-form-303 #container_zip_code {
+        width: 275px;
+        height: 57px;
+        top: 154px;
+    }
+
+    #lp-pom-form-303 #container_lessons_of_interest {
+        width: 275px;
+        height: 57px;
+        top: 231px;
+    }
+
+</style >
+<style title="page-styles" type="text/css" data-page-type="main_mobile" >
+@media only screen and (max-width:600px) {
+    #lp-pom-image-298-holder
+
+{
+    background-image: url(//d9hhrg4mnvzow.cloudfront.net/go.takelessons.com/sign-up/5426f07f-logotagline_04k01604f016005000.png);
+    position: absolute;
+    left: -1000000;
+    visibility: none;
+}
+
+#lp-pom-image-313-holder {
+    background-image: url(//d9hhrg4mnvzow.cloudfront.net/go.takelessons.com/sign-up/1lzdlal-o-icons-star-64x64_01b01b00w00u00800a.png);
+    position: absolute;
+    left: -1000000;
+    visibility: none;
+}
+
+#lp-pom-image-314-holder {
+    background-image: url(//d9hhrg4mnvzow.cloudfront.net/go.takelessons.com/sign-up/idyjb9-o-icons-heart-64x64_01301400r00p007007.png);
+    position: absolute;
+    left: -1000000;
+    visibility: none;
+}
+
+#lp-pom-image-321-holder {
+    background-image: url(//d9hhrg4mnvzow.cloudfront.net/go.takelessons.com/sign-up/fcd5l4-o-icons-users-64x64_01101200x00m00200a.png);
+    position: absolute;
+    left: -1000000;
+    visibility: none;
+}
+
+#lp-pom-image-369-holder {
+    background-image: url(//d9hhrg4mnvzow.cloudfront.net/go.takelessons.com/sign-up/n8147t-1353113068-padlock-closed.png);
+    position: absolute;
+    left: -1000000;
+    visibility: none;
+}
+
+#lp-pom-image-298 {
+    left: 78px;
+    top: 8px;
+    display: block;
+    background: rgba(255,255,255,0);
+    -pie-background: rgba(255,255,255,0);
+    z-index: 1;
+    position: absolute;
+}
+
+#lp-pom-root {
+    display: block;
+    background: rgba(255,255,255,1);
+    -pie-background: rgba(255,255,255,1);
+    border-style: none;
+    margin: auto;
+    padding-top: 0px;
+    behavior: url(/PIE.htc);
+    border-radius: 0px;
+    min-width: 320px;
+    height: 1220px;
+}
+
+#lp-pom-block-297 {
+    display: block;
+    background: rgba(255,255,255,1);
+    -pie-background: rgba(255,255,255,1);
+    border-style: none none solid none;
+    border-width: 1px;
+    border-color: #cccccc;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0px;
+    behavior: url(/PIE.htc);
+    border-radius: 0px;
+    width: 100%;
+    height: 57px;
+    position: relative;
+}
+
+#lp-pom-block-299 {
+    display: block;
+    background: rgba(255,255,255,1);
+    -pie-background: rgba(255,255,255,1);
+    border-style: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0px;
+    behavior: url(/PIE.htc);
+    border-radius: 0px;
+    width: 100%;
+    height: 1121px;
+    position: relative;
+}
+
+#lp-pom-text-307 {
+    display: none;
+    background: rgba(255,255,255,0);
+    -pie-background: rgba(255,255,255,0);
+    border-style: none;
+    behavior: url(/PIE.htc);
+    border-radius: 0px;
+    left: 21px;
+    top: 95px;
+    z-index: 9;
+    width: 350px;
+    height: 43px;
+    position: absolute;
+}
+
+#lp-pom-box-308 {
+    display: block;
+    background: rgba(245,245,245,1);
+    -pie-background: rgba(245,245,245,1);
+    border-style: solid;
+    border-width: 1px;
+    border-color: #ccc;
+    behavior: url(/PIE.htc);
+    border-radius: 0px;
+    left: 21px;
+    top: 204px;
+    z-index: 4;
+    width: 275px;
+    height: 478px;
+    position: absolute;
+}
+
+#lp-pom-text-368 {
+    display: block;
+    background: rgba(255,255,255,0);
+    -pie-background: rgba(255,255,255,0);
+    border-style: none;
+    behavior: url(/PIE.htc);
+    border-radius: 0px;
+    left: 21px;
+    top: 412px;
+    z-index: 7;
+    width: 236px;
+    height: 36px;
+    position: absolute;
+}
+
+#lp-pom-image-369 {
+    display: block;
+    background: rgba(255,255,255,0);
+    -pie-background: rgba(255,255,255,0);
+    left: 20px;
+    top: 412px;
+    z-index: 8;
+    position: absolute;
+}
+
+#lp-pom-text-311 {
+    display: none;
+    background: rgba(221,221,221,0);
+    -pie-background: rgba(221,221,221,0);
+    border-style: none;
+    behavior: url(/PIE.htc);
+    border-radius: 0px;
+    left: 21px;
+    top: 138px;
+    z-index: 10;
+    width: 365px;
+    height: 66px;
+    position: absolute;
+}
+
+#lp-pom-text-318 {
+    display: block;
+    background: rgba(255,255,255,0);
+    -pie-background: rgba(255,255,255,0);
+    border-style: none;
+    behavior: url(/PIE.htc);
+    border-radius: 0px;
+    left: 40px;
+    top: 694px;
+    z-index: 11;
+    width: 240px;
+    height: 22px;
+    position: absolute;
+}
+
+#lp-pom-text-322 {
+    display: none;
+    background: rgba(255,255,255,0);
+    -pie-background: rgba(255,255,255,0);
+    border-style: none;
+    behavior: url(/PIE.htc);
+    border-radius: 0px;
+    left: 0px;
+    top: 367px;
+    z-index: 14;
+    width: 315px;
+    height: 22px;
+    position: absolute;
+}
+
+#lp-pom-text-325 {
+    display: none;
+    background: rgba(255,255,255,0);
+    -pie-background: rgba(255,255,255,0);
+    border-style: none;
+    behavior: url(/PIE.htc);
+    border-radius: 0px;
+    left: 68px;
+    top: 451px;
+    z-index: 15;
+    width: 330px;
+    height: 22px;
+    transform: scale(0.75);
+    transform-origin: 0 0;
+    -webkit-transform: scale(0.75);
+    -webkit-transform-origin: 0 0;
+    position: absolute;
+}
+
+#lp-pom-text-326 {
+    display: none;
+    background: rgba(255,255,255,0);
+    -pie-background: rgba(255,255,255,0);
+    border-style: none;
+    behavior: url(/PIE.htc);
+    border-radius: 0px;
+    left: 68px;
+    top: 494px;
+    z-index: 16;
+    width: 315px;
+    height: 22px;
+    transform: scale(0.75);
+    transform-origin: 0 0;
+    -webkit-transform: scale(0.75);
+    -webkit-transform-origin: 0 0;
+    position: absolute;
+}
+
+#lp-pom-box-340 {
+    display: block;
+    background: rgba(47,72,96,1);
+    -pie-background: rgba(47,72,96,1);
+    border-style: solid;
+    border-width: 1px;
+    border-color: #ccc;
+    behavior: url(/PIE.htc);
+    border-radius: 25px;
+    left: 129px;
+    top: 823px;
+    z-index: 21;
+    width: 48px;
+    height: 48px;
+    position: absolute;
+}
+
+#lp-pom-image-313 {
+    display: block;
+    background: rgba(255,255,255,0);
+    -pie-background: rgba(255,255,255,0);
+    left: 9px;
+    top: 9px;
+    z-index: 22;
+    position: absolute;
+}
+
+#lp-pom-box-341 {
+    display: block;
+    background: rgba(47,72,96,1);
+    -pie-background: rgba(47,72,96,1);
+    border-style: solid;
+    border-width: 1px;
+    border-color: #ccc;
+    behavior: url(/PIE.htc);
+    border-radius: 25px;
+    left: 129px;
+    top: 936px;
+    z-index: 12;
+    width: 48px;
+    height: 48px;
+    position: absolute;
+}
+
+#lp-pom-image-321 {
+    display: block;
+    background: rgba(255,255,255,0);
+    -pie-background: rgba(255,255,255,0);
+    left: 8px;
+    top: 14px;
+    z-index: 13;
+    position: absolute;
+}
+
+#lp-pom-box-342 {
+    display: block;
+    background: rgba(47,72,96,1);
+    -pie-background: rgba(47,72,96,1);
+    border-style: solid;
+    border-width: 1px;
+    border-color: #ccc;
+    behavior: url(/PIE.htc);
+    border-radius: 25px;
+    left: 129px;
+    top: 1048px;
+    z-index: 17;
+    width: 48px;
+    height: 48px;
+    position: absolute;
+}
+
+#lp-pom-image-314 {
+    display: block;
+    background: rgba(255,255,255,0);
+    -pie-background: rgba(255,255,255,0);
+    left: 11px;
+    top: 12px;
+    z-index: 18;
+    position: absolute;
+}
+
+#lp-pom-text-344 {
+    display: block;
+    background: rgba(255,255,255,0);
+    -pie-background: rgba(255,255,255,0);
+    border-style: none;
+    behavior: url(/PIE.htc);
+    border-radius: 0px;
+    left: 16px;
+    top: 83px;
+    z-index: 19;
+    width: 350px;
+    height: 43px;
+    transform: scale(0.82);
+    transform-origin: 0 0;
+    -webkit-transform: scale(0.82);
+    -webkit-transform-origin: 0 0;
+    position: absolute;
+}
+
+#lp-pom-text-345 {
+    display: block;
+    background: rgba(221,221,221,0);
+    -pie-background: rgba(221,221,221,0);
+    border-style: none;
+    behavior: url(/PIE.htc);
+    border-radius: 0px;
+    left: 2px;
+    top: 115px;
+    z-index: 20;
+    width: 315px;
+    height: 66px;
+    position: absolute;
+}
+
+#lp-pom-text-346 {
+    display: block;
+    background: rgba(255,255,255,0);
+    -pie-background: rgba(255,255,255,0);
+    border-style: none;
+    behavior: url(/PIE.htc);
+    border-radius: 0px;
+    left: 17px;
+    top: 884px;
+    z-index: 23;
+    width: 275px;
+    height: 22px;
+    position: absolute;
+}
+
+#lp-pom-text-347 {
+    display: block;
+    background: rgba(255,255,255,0);
+    -pie-background: rgba(255,255,255,0);
+    border-style: none;
+    behavior: url(/PIE.htc);
+    border-radius: 0px;
+    left: 17px;
+    top: 996px;
+    z-index: 24;
+    width: 275px;
+    height: 22px;
+    position: absolute;
+}
+
+#lp-pom-text-348 {
+    display: block;
+    background: rgba(255,255,255,0);
+    -pie-background: rgba(255,255,255,0);
+    border-style: none;
+    behavior: url(/PIE.htc);
+    border-radius: 0px;
+    left: 18px;
+    top: 1108px;
+    z-index: 25;
+    width: 275px;
+    height: 22px;
+    position: absolute;
+}
+
+#lp-pom-text-365 {
+    display: block;
+    background: rgba(255,255,255,0);
+    -pie-background: rgba(255,255,255,0);
+    border-style: none;
+    behavior: url(/PIE.htc);
+    border-radius: 0px;
+    left: 16px;
+    top: 773px;
+    z-index: 26;
+    width: 275px;
+    height: 22px;
+    position: absolute;
+}
+
+#lp-pom-block-300 {
+    display: block;
+    background: rgba(85,85,85,1);
+    -pie-background: rgba(85,85,85,1);
+    border-style: solid none none none;
+    border-width: 1px;
+    border-color: #252525;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0px;
+    behavior: url(/PIE.htc);
+    border-radius: 0px;
+    width: 100%;
+    height: 40px;
+    position: relative;
+}
+
+#lp-pom-text-301 {
+    display: block;
+    background: rgba(255,255,255,0);
+    -pie-background: rgba(255,255,255,0);
+    border-style: none;
+    behavior: url(/PIE.htc);
+    border-radius: 0px;
+    left: 5px;
+    top: 1189px;
+    z-index: 2;
+    width: 300px;
+    height: 22px;
+    position: absolute;
+}
+
+#lp-pom-text-302 {
+    display: block;
+    background: rgba(255,255,255,0);
+    -pie-background: rgba(255,255,255,0);
+    border-style: none;
+    behavior: url(/PIE.htc);
+    border-radius: 0px;
+    left: 10px;
+    top: 1190px;
+    z-index: 3;
+    width: 300px;
+    height: 22px;
+    position: absolute;
+}
+
+#lp-pom-button-304 {
+    display: block;
+    border-style: solid;
+    behavior: url(/PIE.htc);
+    border-radius: 2px;
+    left: 0px;
+    top: 308px;
+    z-index: 6;
+    width: 234px;
+    height: 54px;
+    position: absolute;
+    background: rgba(110,186,73,1);
+    -pie-background: rgba(110,186,73,1);
+    box-shadow: none;
+    text-shadow: none;
+    color: #fff;
+    border-width: 1px;
+    border-color: #428842;
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: bold;
+    font-family: Open Sans;
+    text-align: center;
+    background-repeat: no-repeat;
+}
+
+body {
+    color: #333333;
+}
+
+a {
+    color: #619bed;
+    text-decoration: none;
+}
+
+#lp-pom-root .lp-positioned-content {
+    top: 0px;
+    width: 320px;
+    margin-left: -160px;
+}
+
+#lp-pom-block-297 .lp-pom-block-content {
+    margin-left: auto;
+    margin-right: auto;
+    width: 320px;
+    height: 57px;
+}
+
+#lp-pom-image-298 .lp-pom-image-container {
+    border-style: none;
+    behavior: url(/PIE.htc);
+    border-radius: 0px;
+    width: 159px;
+    height: 42px;
+}
+
+    #lp-pom-image-298 .lp-pom-image-container img {
+        width: 159px;
+        height: 42px;
+    }
+
+#lp-pom-block-299 .lp-pom-block-content {
+    margin-left: auto;
+    margin-right: auto;
+    width: 320px;
+    height: 1121px;
+}
+
+#lp-pom-block-300 .lp-pom-block-content {
+    margin-left: auto;
+    margin-right: auto;
+    width: 320px;
+    height: 40px;
+}
+
+#lp-pom-button-304:hover {
+    background: rgba(136,191,63,1);
+    -pie-background: rgba(136,191,63,1);
+    box-shadow: none;
+    color: #fff;
+}
+
+#lp-pom-button-304:active {
+    background: rgba(66,136,66,1);
+    -pie-background: rgba(66,136,66,1);
+    box-shadow: none;
+    color: #fff;
+}
+
+#lp-pom-button-304 .label {
+    margin-top: -10px;
+}
+
+#lp-pom-image-313 .lp-pom-image-container {
+    border-style: none;
+    behavior: url(/PIE.htc);
+    border-radius: 0px;
+    width: 32px;
+    height: 30px;
+}
+
+    #lp-pom-image-313 .lp-pom-image-container img {
+        width: 32px;
+        height: 30px;
+    }
+
+#lp-pom-image-314 .lp-pom-image-container {
+    border-style: none;
+    behavior: url(/PIE.htc);
+    border-radius: 0px;
+    width: 27px;
+    height: 25px;
+}
+
+    #lp-pom-image-314 .lp-pom-image-container img {
+        width: 27px;
+        height: 25px;
+    }
+
+#lp-pom-image-321 .lp-pom-image-container {
+    border-style: none;
+    behavior: url(/PIE.htc);
+    border-radius: 0px;
+    width: 33px;
+    height: 22px;
+}
+
+    #lp-pom-image-321 .lp-pom-image-container img {
+        width: 33px;
+        height: 22px;
+    }
+
+#lp-pom-image-369 .lp-pom-image-container {
+    border-style: none;
+    behavior: url(/PIE.htc);
+    border-radius: 0px;
+    width: 16px;
+    height: 16px;
+}
+
+    #lp-pom-image-369 .lp-pom-image-container img {
+        width: 16px;
+        height: 16px;
+    }
+
+#lp-pom-root-color-overlay {
+    position: absolute;
+    background: none;
+    top: 0;
+    width: 100%;
+    height: 1220px;
+    min-height: 100%;
+}
+
+#lp-pom-block-297-color-overlay {
+    position: absolute;
+    background: none;
+    height: 57px;
+    width: 100%;
+}
+
+#lp-pom-block-299-color-overlay {
+    position: absolute;
+    background: none;
+    height: 1121px;
+    width: 100%;
+}
+
+#lp-pom-block-300-color-overlay {
+    position: absolute;
+    background: none;
+    height: 40px;
+    width: 100%;
+}
+
+#lp-pom-box-308-color-overlay {
+    position: absolute;
+    background: none;
+    height: 478px;
+    width: 275px;
+}
+
+#lp-pom-box-340-color-overlay {
+    position: absolute;
+    background: none;
+    border-radius: 24px;
+    behavior: url(/PIE.htc);
+    height: 48px;
+    width: 48px;
+}
+
+#lp-pom-box-341-color-overlay {
+    position: absolute;
+    background: none;
+    border-radius: 24px;
+    behavior: url(/PIE.htc);
+    height: 48px;
+    width: 48px;
+}
+
+#lp-pom-box-342-color-overlay {
+    position: absolute;
+    background: none;
+    border-radius: 24px;
+    behavior: url(/PIE.htc);
+    height: 48px;
+    width: 48px;
+}
+
+#lp-pom-form-303 {
+    display: block;
+    left: 20px;
+    top: 32px;
+    z-index: 5;
+    width: 236px;
+    height: -18px;
+    position: absolute;
+}
+
+    #lp-pom-form-303 .lp-pom-form-field label {
+        margin-top: 0px;
+        font-family: Open Sans;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 15px;
+        color: #555555;
+    }
+
+    #lp-pom-form-303 .lp-pom-form-field .option label {
+        font-family: arial;
+        font-weight: normal;
+        font-size: 13px;
+        line-height: 15px;
+        left: 18px;
+        color: #000;
+    }
+
+    #lp-pom-form-303 .lp-pom-form-field .option input {
+        top: 2px;
+    }
+
+    #lp-pom-form-303 .lp-pom-form-field input.text {
+        background-color: #fff;
+        color: #000;
+        border-radius: 0px;
+    }
+
+    #lp-pom-form-303 .lp-pom-form-field textarea {
+        background-color: #fff;
+        color: #000;
+        border-style: solid;
+        border-width: 1px;
+        border-color: #cccccc;
+        border-radius: 0px;
+    }
+
+    #lp-pom-form-303 .lp-pom-form-field input[type=text] {
+        border-style: solid;
+        border-width: 1px;
+        border-color: #cccccc;
+    }
+
+    #lp-pom-form-303 .lp-pom-form-field select {
+        border-style: solid;
+        border-width: 1px;
+        border-color: #cccccc;
+    }
+
+    #lp-pom-form-303 .form_elem_first_name {
+        top: 19px;
+        left: 0px;
+        width: 212px;
+        font-size: 15px;
+        line-height: 15px;
+        height: 38px;
+        padding-left: 11px;
+        padding-right: 11px;
+    }
+
+    #lp-pom-form-303 .form_elem_email {
+        top: 19px;
+        left: 0px;
+        width: 212px;
+        font-size: 15px;
+        line-height: 15px;
+        height: 38px;
+        padding-left: 11px;
+        padding-right: 11px;
+    }
+
+    #lp-pom-form-303 .form_elem_zip_code {
+        top: 19px;
+        left: 0px;
+        width: 212px;
+        font-size: 15px;
+        line-height: 15px;
+        height: 38px;
+        padding-left: 11px;
+        padding-right: 11px;
+    }
+
+    #lp-pom-form-303 .form_elem_lessons_of_interest {
+        top: 19px;
+        left: 0px;
+        width: 236px;
+        font-size: 15px;
+        line-height: 15px;
+        height: 40px;
+    }
+
+    #lp-pom-form-303 #label_first_name {
+        height: 19px;
+        top: 0px;
+        width: auto;
+    }
+
+    #lp-pom-form-303 #label_email {
+        height: 19px;
+        top: 0px;
+        width: auto;
+    }
+
+    #lp-pom-form-303 #label_zip_code {
+        height: 19px;
+        top: 0px;
+        width: auto;
+    }
+
+    #lp-pom-form-303 #label_lessons_of_interest {
+        height: 19px;
+        top: 0px;
+        width: auto;
+    }
+
+    #lp-pom-form-303 #container_first_name {
+        width: 236px;
+        height: 57px;
+        top: 0px;
+    }
+
+    #lp-pom-form-303 #container_email {
+        width: 236px;
+        height: 57px;
+        top: 77px;
+    }
+
+    #lp-pom-form-303 #container_zip_code {
+        width: 236px;
+        height: 57px;
+        top: 154px;
+    }
+
+    #lp-pom-form-303 #container_lessons_of_interest {
+        width: 236px;
+        height: 57px;
+        top: 231px;
+    }

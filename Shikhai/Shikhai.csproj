@@ -409,7 +409,6 @@
     <Content Include="bin\roslyn\System.Xml.XPath.XDocument.dll" />
     <Content Include="bin\roslyn\vbc.exe" />
     <Content Include="bin\roslyn\VBCSCompiler.exe" />
-    <Content Include="bin\Shodypati.pdb" />
     <Content Include="bin\System.Diagnostics.DiagnosticSource.dll" />
     <Content Include="bin\System.Net.Http.Formatting.dll" />
     <Content Include="bin\System.Web.Helpers.dll" />
@@ -1547,6 +1546,7 @@
     <Content Include="Content\jquery-clockpicker\jquery-clockpicker.min.js" />
     <Content Include="Content\jquery-slimscroll\jquery.slimscroll.js" />
     <Content Include="Content\jquery-sparkline\dist\jquery.sparkline.js" />
+    <Content Include="Content\jquery-ui.css" />
     <Content Include="Content\jQuery.FileUpload\css\jquery.fileupload-noscript.css" />
     <Content Include="Content\jQuery.FileUpload\css\jquery.fileupload-ui-noscript.css" />
     <Content Include="Content\jQuery.FileUpload\css\jquery.fileupload-ui.css" />
@@ -3871,7 +3871,6 @@
     <Content Include="bin\roslyn\vbc.exe.config" />
     <Content Include="bin\roslyn\vbc.rsp" />
     <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
-    <Content Include="bin\Shodypati.dll.config" />
     <Content Include="Content\bootstrap\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\bootstrap\fonts\glyphicons-halflings-regular.woff" />
