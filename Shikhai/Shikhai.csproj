@@ -423,6 +423,7 @@
     <Content Include="bin\System.Web.WebPages.Razor.dll" />
     <Content Include="bin\Unity.WebApi.dll" />
     <Content Include="bin\WebGrease.dll" />
+    <Content Include="Content\about.css" />
     <Content Include="Content\assets\layouts\layout\img\ajax-loading.gif" />
     <Content Include="Content\assets\layouts\layout\img\ajax-modal-loading.gif" />
     <Content Include="Content\assets\layouts\layout\img\arrow-down.png" />
@@ -1573,6 +1574,39 @@
     <Content Include="Content\lightbox\images\next.png" />
     <Content Include="Content\lightbox\images\prev.png" />
     <Content Include="Content\lightbox\js\lightbox.js" />
+    <Content Include="Content\media\bg\1.jpg" />
+    <Content Include="Content\media\bg\2.jpg" />
+    <Content Include="Content\media\bg\3.jpg" />
+    <Content Include="Content\media\bg\4.jpg" />
+    <Content Include="Content\media\bg\5.jpg" />
+    <Content Include="Content\media\bg\6.jpg" />
+    <Content Include="Content\users\avatar1.jpg" />
+    <Content Include="Content\users\avatar10.jpg" />
+    <Content Include="Content\users\avatar11.jpg" />
+    <Content Include="Content\users\avatar2.jpg" />
+    <Content Include="Content\users\avatar3.jpg" />
+    <Content Include="Content\users\avatar4.jpg" />
+    <Content Include="Content\users\avatar5.jpg" />
+    <Content Include="Content\users\avatar6.jpg" />
+    <Content Include="Content\users\avatar7.jpg" />
+    <Content Include="Content\users\avatar8.jpg" />
+    <Content Include="Content\users\avatar80_1.jpg" />
+    <Content Include="Content\users\avatar80_2.jpg" />
+    <Content Include="Content\users\avatar80_3.jpg" />
+    <Content Include="Content\users\avatar80_4.jpg" />
+    <Content Include="Content\users\avatar80_5.jpg" />
+    <Content Include="Content\users\avatar80_6.jpg" />
+    <Content Include="Content\users\avatar80_7.jpg" />
+    <Content Include="Content\users\avatar80_8.jpg" />
+    <Content Include="Content\users\avatar9.jpg" />
+    <Content Include="Content\users\teambg1.jpg" />
+    <Content Include="Content\users\teambg2.jpg" />
+    <Content Include="Content\users\teambg3.jpg" />
+    <Content Include="Content\users\teambg4.jpg" />
+    <Content Include="Content\users\teambg5.jpg" />
+    <Content Include="Content\users\teambg6.jpg" />
+    <Content Include="Content\users\teambg7.jpg" />
+    <Content Include="Content\users\teambg8.jpg" />
     <Content Include="Content\metronic\amcharts\amcharts\amcharts.js" />
     <Content Include="Content\metronic\amcharts\amcharts\funnel.js" />
     <Content Include="Content\metronic\amcharts\amcharts\gantt.js" />
@@ -3710,6 +3744,7 @@
     <Content Include="Content\portfolio\600x600\99.jpg" />
     <Content Include="Content\shopping-cart-2-responsive\index.html" />
     <Content Include="Content\shopping-cart-2-responsive\js\index.js" />
+    <Content Include="Content\teacher.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Content\bootstrap\js\bootstrap-datetimepicker.js" />
     <Content Include="Scripts\blueimp-gallery2\js\blueimp-gallery-fullscreen.js" />
@@ -4703,6 +4738,7 @@
     <Content Include="Views\Payments\Invoice.cshtml" />
     <Content Include="Views\Payments\List.cshtml" />
     <Content Include="Views\Payments\Success.cshtml" />
+    <Content Include="Views\Teachers\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

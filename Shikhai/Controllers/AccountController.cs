@@ -31,7 +31,7 @@ namespace Shikhai.Controllers
             return View();
         }
 
-
+        [AllowAnonymous]
         #region ErrorException
         public ActionResult ErrorException(string backUrl)
         {
