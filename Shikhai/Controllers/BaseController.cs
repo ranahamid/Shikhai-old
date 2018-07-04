@@ -354,7 +354,7 @@ namespace Shikhai.Controllers
         public async Task<bool> CreateRoleIfMissingAsync(string role)
         {
             //check if role is available
-            var roles = RoleManager.Roles.Where(x => x.Name == role);
+            var roles = RoleManager.Roles.Where(x => x.Name == role).FirstOrDefault();
             if (roles == null)
             {
                 var roleName = new IdentityRole(role);
