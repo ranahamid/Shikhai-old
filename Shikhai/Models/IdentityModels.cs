@@ -14,7 +14,7 @@ namespace Shikhai.Models
         public bool IsFakeEmail { get; set; }
 
         //patient
-        public string DoctorName { get; set; }
+        public string TeacherName { get; set; }
         public string HospitalName { get; set; }
         public string Description { get; set; }
 

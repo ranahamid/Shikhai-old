@@ -15,41 +15,38 @@
 @Styles.Render("~/Content/jQuery-File-Upload")
 @Styles.Render("~/Content/datetimepicker")
 
-@*<link href="~/Content/bootstrap/css/bootstrap.css" rel="stylesheet" />*@
+
 <link href="~/Content/Site.css" rel="stylesheet" />
+@*metronic*@
 
-<div class="metronic">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
 
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
-
-    <link href="~/Content/metronic/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/metronic/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/metronic/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/metronic/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
-    <!-- END GLOBAL MANDATORY STYLES -->
-    <!-- BEGIN PAGE LEVEL PLUGINS -->
-
-
-    <link href="~/Content/metronic/morris/morris.css" rel="stylesheet" type="text/css" />
-    @*<link href="~/Content/metronic/fullcalendar/fullcalendar.css" rel="stylesheet" type="text/css" />*@
-    <link href="~/Content/fullcalendar-3.8.2/fullcalendar.css" rel="stylesheet" />
-    <link href="~/Content/metronic/jqvmap/jqvmap/jqvmap.css" rel="stylesheet" type="text/css" />
-    <!-- END PAGE LEVEL PLUGINS -->
-    <!-- DATE TIME PICKER -->
-    <link href="~/Content/metronic/bootstrap-daterangepicker/daterangepicker.min.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/metronic/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/metronic/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/metronic/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/metronic/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
+<!-- END GLOBAL MANDATORY STYLES -->
+<!-- BEGIN PAGE LEVEL PLUGINS -->
 
 
+<link href="~/Content/metronic/morris/morris.css" rel="stylesheet" type="text/css" />
 
-    <!-- BEGIN THEME GLOBAL STYLES -->
-    <link href="~/Content/metronic/css/components.min.css" rel="stylesheet" id="style_components" type="text/css" />
-    <link href="~/Content/metronic/css/plugins.min.css" rel="stylesheet" type="text/css" />
-    <!-- END THEME GLOBAL STYLES -->
-    <!-- BEGIN THEME LAYOUT STYLES -->
-    <link href="~/Content/metronic/css/layout.min.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/metronic/css/themes/darkblue.min.css" rel="stylesheet" type="text/css" id="style_color" />
-    <link href="~/Content/metronic/css/custom.min.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/fullcalendar-3.8.2/fullcalendar.css" rel="stylesheet" />
+<link href="~/Content/metronic/jqvmap/jqvmap/jqvmap.css" rel="stylesheet" type="text/css" />
+<!-- END PAGE LEVEL PLUGINS -->
+<!-- DATE TIME PICKER -->
+<link href="~/Content/metronic/bootstrap-daterangepicker/daterangepicker.min.css" rel="stylesheet" type="text/css" />
 
-</div>
+
+
+<!-- BEGIN THEME GLOBAL STYLES -->
+<link href="~/Content/metronic/css/components.min.css" rel="stylesheet" id="style_components" type="text/css" />
+<link href="~/Content/metronic/css/plugins.min.css" rel="stylesheet" type="text/css" />
+<!-- END THEME GLOBAL STYLES -->
+<!-- BEGIN THEME LAYOUT STYLES -->
+<link href="~/Content/metronic/css/layout.min.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/metronic/css/themes/darkblue.min.css" rel="stylesheet" type="text/css" id="style_color" />
+<link href="~/Content/metronic/css/custom.min.css" rel="stylesheet" type="text/css" />
 
 
 <script src="~/Content/metronic/jquery.min.js"></script>
@@ -122,49 +119,50 @@
 @Scripts.Render("~/bundles/jqueryui")
 @Scripts.Render("~/bundles/jQuery-File-Upload")
 
-<div class="time-clock">
-    <link href="~/Content/jquery-clockpicker/jquery-clockpicker.css" rel="stylesheet" />
-    <script src="~/Content/jquery-clockpicker/jquery-clockpicker.js"></script>
-</div>
-
-<div class="buttonstyle">
-    <link href="~/Content/button-style/style1.css" rel="stylesheet" />
-    <link href="~/Content/button-style/style2.css" rel="stylesheet" />
-
-</div>
+@*time-clock*@
+<link href="~/Content/jquery-clockpicker/jquery-clockpicker.css" rel="stylesheet" />
+<script src="~/Content/jquery-clockpicker/jquery-clockpicker.js"></script>
 
 
-<div class="style-admin">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="~/Scripts/IE9/html5shiv.min.js"></script>
-    <script src="~/Scripts/IE9/respond.min.js"></script>
-    <![endif]-->
-    <!-- Google Font -->
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+@*buttonstyle*@
+<link href="~/Content/button-style/style1.css" rel="stylesheet" />
+<link href="~/Content/button-style/style2.css" rel="stylesheet" />
 
-    <link href="https://cdn.rawgit.com/davidstutz/bootstrap-multiselect/master/dist/css/bootstrap-multiselect.css" rel="stylesheet" type="text/css" />
 
-    <style type="text/css">
-        .multiselect-container > li {
-            padding-left: 8px;
-        }
-    </style>
-</div>
-<div class="script-admin">
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $(function () {
-                $('#mySkills').multiselect({
-                    includeSelectAllOption: true
-                });
+
+@*style-admin*@
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="~/Scripts/IE9/html5shiv.min.js"></script>
+<script src="~/Scripts/IE9/respond.min.js"></script>
+<![endif]-->
+<!-- Google Font -->
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+<link href="https://cdn.rawgit.com/davidstutz/bootstrap-multiselect/master/dist/css/bootstrap-multiselect.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+    .multiselect-container > li {
+        padding-left: 8px;
+    }
+</style>
+
+
+@*script-admin*@
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(function () {
+            $('#mySkills').multiselect({
+                includeSelectAllOption: true
             });
         });
+    });
 
-    </script>
-</div>
+</script>
+
 
 <link href="~/Content/metronic/uxsolutions-bootstrap-datepicker-v1.7.1-12/css/bootstrap-datepicker3.standalone.css" rel="stylesheet" />
 <link href="~/Content/metronic/uxsolutions-bootstrap-datepicker-v1.7.1-12/css/bootstrap-datepicker3.css" rel="stylesheet" />
@@ -173,3 +171,9 @@
 @*portfolio*@
 <link href="~/Content/metronic/css/portfolio.css" rel="stylesheet" />
 <link href="~/Content/metronic/css/cubeportfolio.css" rel="stylesheet" />
+
+@*loader*@
+<link href="~/Content/normalize.css" rel="stylesheet" />
+<link href="~/Content/loader.css" rel="stylesheet" />
+<script src="~/Scripts/modernizr-2.6.2.min.js"></script>
+

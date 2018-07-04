@@ -24,10 +24,10 @@ namespace Shikhai.Controllers
     public class TeachersController : BaseController
     {
         private readonly FilesHelper _filesHelper;
-        readonly string _tempPath = "~/Teacher/";
-        private readonly string _serverMapPath = "~/Content/images/Teacher/";
-        private readonly string _urlBase = "/Content/images/Teacher/";
-        private readonly string DeleteURL = "/Teacher/DeleteFile/?file=";
+        readonly string _tempPath = "~/RegisterTeacher/";
+        private readonly string _serverMapPath = "~/Content/images/RegisterTeacher/";
+        private readonly string _urlBase = "/Content/images/RegisterTeacher/";
+        private readonly string DeleteURL = "/RegisterTeacher/DeleteFile/?file=";
 
         private string StorageRoot => Path.Combine(HostingEnvironment.MapPath(_serverMapPath));
         private const string DeleteType = "GET";
@@ -55,7 +55,7 @@ namespace Shikhai.Controllers
             if (responseMessage.IsSuccessStatusCode)
             {
                 var responseData = responseMessage.Content.ReadAsStringAsync().Result;
-                var entity = JsonConvert.DeserializeObject<List<Teacher>>(responseData);
+                var entity = JsonConvert.DeserializeObject<List<RegisterTeacher>>(responseData);
                 return View(entity);
             }
             throw new Exception("Exception");
@@ -68,25 +68,25 @@ namespace Shikhai.Controllers
             HttpResponseMessage responseMessage = await client.GetAsync(url + "/" + id);
             if (!responseMessage.IsSuccessStatusCode) throw new Exception("Exception");
             var responseData = responseMessage.Content.ReadAsStringAsync().Result;
-            var entity = JsonConvert.DeserializeObject<Teacher>(responseData);
+            var entity = JsonConvert.DeserializeObject<RegisterTeacher>(responseData);
             return View(entity);
         }
         [AllowAnonymous]
         // GET: Teachers/Create
         public async Task<ActionResult> Create()
         {
-            var entity = new Teacher();
-            return await CreateSub(entity);
+            var entity = new RegisterTeacher();
+            return CreateSub(entity);
         }
 
-        public async Task<ActionResult> CreateSub(Teacher entity)
+        public ActionResult CreateSub(RegisterTeacher entity)
         {
 
             entity.CanVisitDays = GetAllWeekDaysName();
             return View("Create", entity);
         }
 
-        public async Task<ActionResult> EditSub(Teacher entity)
+        public ActionResult EditSub(RegisterTeacher entity)
         {
             entity.CanVisitDays = GetAllWeekDaysName();
 
@@ -97,7 +97,7 @@ namespace Shikhai.Controllers
         // POST: Teachers/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create(Teacher entity)
+        public async Task<ActionResult> Create(RegisterTeacher entity)
         {
             if (ModelState.IsValid)
             {
@@ -108,7 +108,7 @@ namespace Shikhai.Controllers
                     return RedirectToAction("Index");
                 }
             }
-            return await CreateSub(entity);
+            return CreateSub(entity);
         }
         
 
@@ -138,9 +138,9 @@ namespace Shikhai.Controllers
             var responseMessage = await client.GetAsync(url + "/" + id);
             if (!responseMessage.IsSuccessStatusCode) throw new Exception("Exception");
             var responseData = responseMessage.Content.ReadAsStringAsync().Result;
-            var entity = JsonConvert.DeserializeObject<Teacher>(responseData);
+            var entity = JsonConvert.DeserializeObject<RegisterTeacher>(responseData);
 
-            return await EditSub(entity);
+            return EditSub(entity);
         }
 
 
@@ -149,7 +149,7 @@ namespace Shikhai.Controllers
         // POST: Teachers/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit(int id, Teacher entity)
+        public async Task<ActionResult> Edit(int id, RegisterTeacher entity)
         {
             if (ModelState.IsValid)
             {
@@ -159,7 +159,7 @@ namespace Shikhai.Controllers
                     return RedirectToAction("Index");
                 }
             }
-            return await EditSub(entity);          
+            return EditSub(entity);          
         }
 
         [Authorize(Roles = "Admin")]
@@ -169,7 +169,7 @@ namespace Shikhai.Controllers
             var responseMessage = await client.GetAsync(url + "/" + id);
             if (!responseMessage.IsSuccessStatusCode) throw new Exception("Exception");
             var responseData = responseMessage.Content.ReadAsStringAsync().Result;
-            var entity = JsonConvert.DeserializeObject<Teacher>(responseData);
+            var entity = JsonConvert.DeserializeObject<RegisterTeacher>(responseData);
             return View(entity);
         }
 

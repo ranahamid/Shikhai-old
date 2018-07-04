@@ -63,14 +63,9 @@ namespace Shikhai.Models
         public bool RememberMe { get; set; }
     }
 
-    public class RegisterTeacher : RegisterViewModel
+    public class RegisterTeacher : Teacher
     {
-        [Display(Name = "Patient Name")]
-        public new string Name { get; set; }
-
-
-        [Display(Name = "Doctor Name")]
-        public string DoctorName { get; set; }
+        public string GuidId { get; set; }
 
         [Display(Name = "Hospital Name")]
         public string HospitalName { get; set; }

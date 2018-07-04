@@ -3,14 +3,28 @@
 <head>
     <title>@ViewBag.Title - Shikhai</title>
     @Html.Partial("_LayoutHead")
+
 </head>
-<body>
-    <div class="container body-content" style="background-color:#fff">
-        @Html.Partial("_TopMenu")
-        @RenderBody()
-        @Html.Partial("_Footer")
+
+
+<body class="demo">
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+
     </div>
-    @Html.Partial("_LayoutFooter")
+    <div id="content">
+        <div class="container body-content" style="background-color:#fff">
+            @Html.Partial("_TopMenu")
+            @RenderBody()
+            @Html.Partial("_Footer")
+        </div>
+        @Html.Partial("_LayoutFooter")
+    </div>
     @RenderSection("scripts", required: false)
+
+
 </body>
 </html>

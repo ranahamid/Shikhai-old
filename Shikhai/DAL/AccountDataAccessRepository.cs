@@ -83,9 +83,9 @@ namespace Shikhai.DAL
                 };
             }
 
-            var user = GetApplicationUserPatient(model);
+            var user = GetApplicationUserTeacher(model);
 
-            IdentityResult result = CreatePatientUser(user, model.Password, UserManager);
+            IdentityResult result = CreateTeacherUser(user, model.Password, UserManager);
 
             if (!result.Succeeded)
             {

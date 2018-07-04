@@ -16,23 +16,23 @@ namespace Shikhai.Controllers.Api
 {
     public class TeachersApiController : ApiController
     {
-        private readonly ITeacherAccessRepository<Teacher, int> _repository;
+        private readonly ITeacherAccessRepository<RegisterTeacher, int> _repository;
 
-        public TeachersApiController(ITeacherAccessRepository<Teacher, int> r)
+        public TeachersApiController(ITeacherAccessRepository<RegisterTeacher, int> r)
         {
             _repository = r;
         }
 
         [Route("api/TeachersApi/")]
         // GET: api/TeachersApi
-        public IEnumerable<Teacher> GetTeachers()
+        public IEnumerable<RegisterTeacher> GetTeachers()
         {
             return _repository.Get();
         }
 
         [Route("api/TeachersApi/{id}")]
         // GET: api/TeachersApi/5
-        [ResponseType(typeof(Teacher))]
+        [ResponseType(typeof(RegisterTeacher))]
         public IHttpActionResult GetTeacher(int id)
         {
             var item = _repository.Get(id);
@@ -46,7 +46,7 @@ namespace Shikhai.Controllers.Api
         [Route("api/TeachersApi/{id}")]
         // PUT: api/TeachersApi/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutTeacher(int id, Teacher entity)
+        public IHttpActionResult PutTeacher(int id, RegisterTeacher entity)
         {
             _repository.Put(id, entity);
             return StatusCode(HttpStatusCode.NoContent);
@@ -54,8 +54,8 @@ namespace Shikhai.Controllers.Api
 
         [Route("api/TeachersApi/")]
         // POST: api/TeachersApi
-        [ResponseType(typeof(Teacher))]
-        public IHttpActionResult PostTeacher(Teacher entity)
+        [ResponseType(typeof(RegisterTeacher))]
+        public IHttpActionResult PostTeacher(RegisterTeacher entity)
         {
             _repository.Post(entity);
             return Ok(entity);
@@ -63,7 +63,7 @@ namespace Shikhai.Controllers.Api
 
         [Route("api/TeachersApi/{id}")]
         // DELETE: api/TeachersApi/5
-        [ResponseType(typeof(Teacher))]
+        [ResponseType(typeof(RegisterTeacher))]
         public IHttpActionResult DeleteTeacher(int id)
         {
             _repository.Delete(id);

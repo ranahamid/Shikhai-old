@@ -16,17 +16,18 @@ using System.Web.Mvc;
 namespace Shikhai.DAL
 {
     [ExceptionHandlerAttribute]
-    public class TeacherDataAccessRepository : BaseController, ITeacherAccessRepository<Teacher, int>
+    public class TeacherDataAccessRepository : BaseController, ITeacherAccessRepository<RegisterTeacher, int>
     {
         public TeacherDataAccessRepository()
         {
             Db = new ShikhaiDataContext();
         }
-        public IEnumerable<Teacher> Get()
+        public IEnumerable<RegisterTeacher> Get()
         {
-            var entities = Db.TeacherTbls.Select(x => new Teacher()
+            var entities = Db.TeacherTbls.Select(x => new RegisterTeacher()
             {
                 Id = x.Id,
+                GuidId = x.GuidId,
                 FullName = x.FullName,
                 RegistrationNo = x.RegistrationNo,
                 RegistrationType = x.RegistrationType,
@@ -64,11 +65,12 @@ namespace Shikhai.DAL
 
       
 
-        public Teacher Get(int id)
+        public RegisterTeacher Get(int id)
         {
-            var entity = Db.TeacherTbls.Where(x => x.Id == id).Select(x => new Teacher()
+            var entity = Db.TeacherTbls.Where(x => x.Id == id).Select(x => new RegisterTeacher()
             {
                 Id = x.Id,
+                GuidId = x.GuidId,
                 FullName = x.FullName,
                 RegistrationNo = x.RegistrationNo,
                 RegistrationType = x.RegistrationType,
@@ -101,7 +103,7 @@ namespace Shikhai.DAL
             return entity;
         }
 
-        public void Post(Teacher entity)
+        public void Post(RegisterTeacher entity)
         {
             var imgAddress = string.Empty;
             if (entity.VisitingCard != null)
@@ -136,7 +138,7 @@ namespace Shikhai.DAL
             Db.TeacherTbls.InsertOnSubmit(new TeacherTbl
             {
                 //   Id              = entity.Id,           
-
+                GuidId =entity.GuidId,
                 FullName = entity.FullName,
                 RegistrationNo = entity.RegistrationNo,
                 RegistrationType = entity.RegistrationType,
@@ -170,7 +172,7 @@ namespace Shikhai.DAL
             }
         }
 
-        public void Put(int id, Teacher entity)
+        public void Put(int id, RegisterTeacher entity)
         {
             var isEntity = from x in Db.TeacherTbls
                            where x.Id == entity.Id

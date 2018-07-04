@@ -11,6 +11,7 @@ using System.Web;
 using System.Web.Mvc;
 using Shikhai.Filters;
 using System.Text.RegularExpressions;
+using System.Net.Http;
 
 namespace Shikhai.Controllers
 {
@@ -21,7 +22,7 @@ namespace Shikhai.Controllers
         public AccountController()
         {
         }
-      
+
         //
         // GET: /Account/Login
         [AllowAnonymous]
@@ -40,7 +41,7 @@ namespace Shikhai.Controllers
         }
         #endregion
 
-      
+
 
         #region GetUserInfoById
         public ActionResult GetUserInfoById(Guid? Id)
@@ -71,15 +72,15 @@ namespace Shikhai.Controllers
             //if user in patient role, then redirect to medicine page by default
             var user = await UserManager.FindByNameAsync(userName);
             var RoleNames = await UserManager.GetRolesAsync(user.Id);
-            foreach(var item in RoleNames)
+            foreach (var item in RoleNames)
             {
-                if(item=="Patient")
+                if (item == "Teacher")
                 {
-                    returnUrl = "/Medicines/Create";
+                    returnUrl = "/Teacher/Dashboard";
                     break;
                 }
             }
-          
+
             //end
 
 
@@ -88,8 +89,8 @@ namespace Shikhai.Controllers
             var result = await SignInManager.PasswordSignInAsync(userName, model.Password, model.RememberMe, shouldLockout: true);
             switch (result)
             {
-                case SignInStatus.Success:                                       
-                      return RedirectToLocal(returnUrl);                                           
+                case SignInStatus.Success:
+                    return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
@@ -151,7 +152,8 @@ namespace Shikhai.Controllers
         public ActionResult RegisterTeacher()
         {
             RegisterTeacher entity = new RegisterTeacher();
-            return View();
+            entity.CanVisitDays = GetAllWeekDaysName();
+            return View(entity);
         }
 
         [HttpPost]
@@ -161,10 +163,80 @@ namespace Shikhai.Controllers
         {
             if (ModelState.IsValid)
             {
+                var user = GetApplicationUserTeacher(model);
+                var result = CreateTeacherUser(user, model.Password, UserManager);
 
-                var user = GetApplicationUserPatient(model);
+                if (result.Succeeded)
+                {
+                    var code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                    var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code }, protocol: Request.Url.Scheme);
 
-                var result = CreatePatientUser(user, model.Password, UserManager);
+                    //send email
+                    string body = "Dear " + model.Email + "," +
+                       "\n\nWelcome to Shikhai!" +
+                        "\n\nA request has been received to open your Shikhai account." +
+                        "\n\nPlease confirm your account by clicking this link: <a href=\"" + callbackUrl + "\">Click here</a>." +
+
+                        "\n\nIf you did not initiate this request, please contact us immediately at support@Shikhai.com." +
+                        "\n\nThank you," +
+                        "\nThe Shikhai Team.";
+
+                    await UserManager.SendEmailAsync(user.Id, "Confirm your account", body);
+
+
+                    //sms
+                    // Generate the token and send it
+                    var codeSMS = await UserManager.GenerateChangePhoneNumberTokenAsync(user.Id, model.PhoneNumber);
+                    if (UserManager.SmsService != null)
+                    {
+                        var message = new IdentityMessage
+                        {
+                            Destination = model.PhoneNumber,
+                            Body = "Your security code is: " + codeSMS
+                        };
+                        await UserManager.SmsService.SendAsync(message);
+                    }
+                    // insert into teacher db
+                    url = baseUrl + "api/TeachersApi";
+                    model.GuidId = user.Id;
+                    var responseMessage = await client.PostAsJsonAsync(url, model);
+                    if (responseMessage.IsSuccessStatusCode)
+                    {
+                    }
+
+                    //ViewBag.Link = callbackUrl;
+                    //return View("DisplayEmail");
+                    return RedirectToAction("VerifyPhoneNumber", "Manage", new { model.PhoneNumber });
+                }
+                AddErrors(result);
+            }
+
+            model.CanVisitDays = GetAllWeekDaysName();
+            // If we got this far, something failed, redisplay form
+            return View(model);
+        }
+
+        //
+        // GET: /Account/Register
+        [AllowAnonymous]
+        public ActionResult Register()
+        {
+            return View();
+        }
+
+        //
+        // POST: /Account/Register
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Register(RegisterViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+
+                var user = GetApplicationUser(model);
+
+                var result = CreateCustomerUser(user, model.Password, UserManager);
 
                 if (result.Succeeded)
                 {
@@ -199,69 +271,6 @@ namespace Shikhai.Controllers
                     //ViewBag.Link = callbackUrl;
                     //return View("DisplayEmail");
                     return RedirectToAction("VerifyPhoneNumber", "Manage", new { model.PhoneNumber });
-                }
-                AddErrors(result);
-            }
-
-            // If we got this far, something failed, redisplay form
-            return View(model);
-        }
-
-        //
-        // GET: /Account/Register
-        [AllowAnonymous]
-        public ActionResult Register()
-        {
-            return View();
-        }
-
-        //
-        // POST: /Account/Register
-        [HttpPost]
-        [AllowAnonymous]
-        [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Register(RegisterViewModel model)
-        {
-            if (ModelState.IsValid)
-            {
-               
-                var user = GetApplicationUser(model);
-
-                var result = CreateCustomerUser(user, model.Password, UserManager);
-
-                if (result.Succeeded)
-                {
-                    var code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                    var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id,  code }, protocol: Request.Url.Scheme);
-
-                    //send email
-                    string body = "Dear " + model.Email + "," +
-                       "\n\nWelcome to Shikhai!" +
-                        "\n\nA request has been received to open your Shikhai account." +
-                        "\n\nPlease confirm your account by clicking this link: <a href=\"" + callbackUrl + "\">Click here</a>." +
-
-                        "\n\nIf you did not initiate this request, please contact us immediately at support@Shikhai.com." +
-                        "\n\nThank you," +
-                        "\nThe Shikhai Team.";
-
-                    await UserManager.SendEmailAsync(user.Id, "Confirm your account", body);
-
-
-                    //sms
-                    // Generate the token and send it
-                    var codeSMS = await UserManager.GenerateChangePhoneNumberTokenAsync(user.Id, model.PhoneNumber);
-                    if (UserManager.SmsService != null)
-                    {
-                        var message = new IdentityMessage
-                        {
-                            Destination = model.PhoneNumber,
-                            Body = "Your security code is: " + codeSMS
-                        };
-                        await UserManager.SmsService.SendAsync(message);
-                    }
-                    //ViewBag.Link = callbackUrl;
-                    //return View("DisplayEmail");
-                    return RedirectToAction("VerifyPhoneNumber", "Manage", new {  model.PhoneNumber });
                 }
                 AddErrors(result);
             }

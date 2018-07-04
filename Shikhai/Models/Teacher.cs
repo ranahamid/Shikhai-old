@@ -8,7 +8,7 @@ using Shikhai.DAL;
 
 namespace Shikhai.Models
 {
-    public class Teacher
+    public class Teacher: RegisterViewModel
     {
         public  int Id { get; set; }
 
@@ -22,7 +22,7 @@ namespace Shikhai.Models
         [Display(Name = "Registration Type")]
         public string RegistrationType { get; set; }
 
-        [Display(Name = "Clinic Hospital Name")]
+        [Display(Name = "Institution Name")]
         public string ClinicHospitalName { get; set; }
 
        
@@ -34,7 +34,7 @@ namespace Shikhai.Models
         public List<SelectListItem> AllWorkingSelectListItems { get; set; }
 
         [Display(Name = "Working Area")]
-        public string SelectedDoctorWorkingTypeId { get; set; }
+        public string SelectedTeacherWorkingTypeId { get; set; }
 
 
         [Display(Name = "Working Area")]
@@ -46,18 +46,12 @@ namespace Shikhai.Models
         [Display(Name = "Date Of Birth")]
         public DateTime? DateOfBirth { get; set; }
 
-        [Phone]
-        [Display(Name = "Phone Number")]
-  
-        public string PhoneNumber { get; set; }
 
-        public string Email { get; set; }
-
-        [Display(Name = "Can Visit Days")]
+        [Display(Name = "Can Teach Days")]
         public List<SelectListItem> CanVisitDays { get; set; }
 
         [Required]
-        [Display(Name = "Visit Days")]
+        [Display(Name = "Teach Days")]
         public List<string> SelectedVisitDays { get; set; }
 
         public string SelectedVisitDaysStr { get; set; }
@@ -65,11 +59,11 @@ namespace Shikhai.Models
         public string HiddenDays { get; set; }
 
         [Required]
-        [Display(Name = "Visit Time Start")]
+        [Display(Name = "Teach Time Start")]
         public TimeSpan VisitTimeStart { get; set; }
 
         [Required]
-        [Display(Name = "Visit Time End")]
+        [Display(Name = "Teach Time End")]
         public TimeSpan VisitTimeEnd { get; set; }
 
         //only for API
@@ -78,10 +72,10 @@ namespace Shikhai.Models
         [Display(Name = "Slot Duration (in minutes)")]
         public int SlotDuration { get; set; }
 
-        [Display(Name = "Visit Fee")]
+        [Display(Name = "Teach Fee")]
         public int? VisitFee { get; set; }
 
-        [Display(Name = "Visiting Card")]
+        [Display(Name = "Profile Image")]
         public string VisitingCard { get; set; }
 
         public string RawDBImagePath { get; set; }

@@ -21,6 +21,7 @@ using System.Text.RegularExpressions;
 using Microsoft.AspNet.Identity;
 using System.Net.Mail;
 using System.Text;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Shikhai.Controllers
 {
@@ -53,9 +54,9 @@ namespace Shikhai.Controllers
         }
 
         #region  dcoctorappointment        
-        public async Task<List<SelectListItem>> GetAllDoctorWorkingTypes()
+        public async Task<List<SelectListItem>> GetAllTeacherWorkingTypes()
         {
-            url = baseUrl + "api/DoctorWorkingAreaApi/GetAllDoctorWorkingAreasSelectList";
+            url = baseUrl + "api/TeacherWorkingAreaApi/GetAllTeacherWorkingAreasSelectList";
             var responseMessage = await client.GetAsync(url);
 
             if (responseMessage.IsSuccessStatusCode)
@@ -335,18 +336,35 @@ namespace Shikhai.Controllers
         #endregion
 
         #region Account
-        public IdentityResult CreatePatientUser(ApplicationUser user, string password, ApplicationUserManager UserManager)
+        public IdentityResult CreateTeacherUser(ApplicationUser user, string password, ApplicationUserManager UserManager)
         {
             IdentityResult result = UserManager.Create(user, password);
             if (!result.Succeeded)
             {
                 return result;
             }
-            
+
             //customer role
-            var role = "Patient";
+            var role = "Teacher";
+            var isSuccess = CreateRoleIfMissingAsync(role);
             var resultRole = UserManager.AddToRole(user.Id, role);
             return result;
+        }
+
+        public async Task<bool> CreateRoleIfMissingAsync(string role)
+        {
+            //check if role is available
+            var roles = RoleManager.Roles.Where(x => x.Name == role);
+            if (roles == null)
+            {
+                var roleName = new IdentityRole(role);
+                var roleresult = await RoleManager.CreateAsync(roleName);
+                if (!roleresult.Succeeded)
+                {
+                     return false;
+                }                
+            }
+            return true;
         }
 
         public IdentityResult CreateCustomerUser(ApplicationUser user, string password, ApplicationUserManager UserManager)
@@ -409,7 +427,7 @@ namespace Shikhai.Controllers
         }
 
 
-        public ApplicationUser GetApplicationUserPatient(RegisterTeacher model)
+        public ApplicationUser GetApplicationUserTeacher(RegisterTeacher model)
         {
             bool isFakeMail = false;
             if (string.IsNullOrEmpty(model.Email))
@@ -425,7 +443,7 @@ namespace Shikhai.Controllers
                 PhoneNumber     = model.PhoneNumber,
                 Address         = model.Address,
                 Name            = model.Name,
-                DoctorName      = model.DoctorName,
+                TeacherName      = model.FullName,
                 HospitalName    = model.HospitalName,
                 Description     = model.Description,
                 IsFakeEmail = isFakeMail,

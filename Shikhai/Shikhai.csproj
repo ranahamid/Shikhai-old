@@ -279,6 +279,9 @@
     <Compile Include="DAL\AccountDataAccessRepository.cs" />
     <Compile Include="DAL\BannerDataAccessRepository.cs" />
     <Compile Include="DAL\CategoryDataAccessRepository.cs" />
+    <Compile Include="DAL\Shodypati.cs">
+      <DependentUpon>Shodypati.dbml</DependentUpon>
+    </Compile>
     <Compile Include="DAL\TeacherDataAccessRepository.cs" />
     <Compile Include="DAL\IAccountAccessRepository.cs" />
     <Compile Include="DAL\IBannerAccessRepository.cs" />
@@ -308,7 +311,6 @@
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AdminViewModel.cs" />
-    <Compile Include="Models\Appointment.cs" />
     <Compile Include="Models\Banner.cs" />
     <Compile Include="Models\BazarList.cs" />
     <Compile Include="Models\Brand.cs" />
@@ -1574,12 +1576,15 @@
     <Content Include="Content\lightbox\images\next.png" />
     <Content Include="Content\lightbox\images\prev.png" />
     <Content Include="Content\lightbox\js\lightbox.js" />
+    <Content Include="Content\loader.css" />
     <Content Include="Content\media\bg\1.jpg" />
     <Content Include="Content\media\bg\2.jpg" />
     <Content Include="Content\media\bg\3.jpg" />
     <Content Include="Content\media\bg\4.jpg" />
     <Content Include="Content\media\bg\5.jpg" />
     <Content Include="Content\media\bg\6.jpg" />
+    <Content Include="Scripts\modernizr-2.6.2.min.js" />
+    <Content Include="Content\normalize.css" />
     <Content Include="Content\users\avatar1.jpg" />
     <Content Include="Content\users\avatar10.jpg" />
     <Content Include="Content\users\avatar11.jpg" />
@@ -3742,8 +3747,6 @@
     <Content Include="Content\portfolio\600x600\97.jpg" />
     <Content Include="Content\portfolio\600x600\98.jpg" />
     <Content Include="Content\portfolio\600x600\99.jpg" />
-    <Content Include="Content\shopping-cart-2-responsive\index.html" />
-    <Content Include="Content\shopping-cart-2-responsive\js\index.js" />
     <Content Include="Content\teacher.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Content\bootstrap\js\bootstrap-datetimepicker.js" />
@@ -3922,7 +3925,6 @@
     <Content Include="Content\Free-file-icons\icons.pdf" />
     <Content Include="Content\Free-file-icons\LICENSE" />
     <Content Include="log4net.config" />
-    <Content Include="Content\shopping-cart-2-responsive\less\style.less" />
     <Content Include="Content\button-style\fonts\BebasNeue-webfont.eot" />
     <Content Include="Content\button-style\fonts\BebasNeue-webfont.ttf" />
     <Content Include="Content\button-style\fonts\BebasNeue-webfont.woff" />
@@ -4714,12 +4716,6 @@
     <Content Include="Content\assets\global\img\social\Thumbs.db" />
     <Content Include="Views\Banners\SetBanner.cshtml" />
     <Content Include="Views\Banners\HomepageBanner.cshtml" />
-    <Content Include="Views\Appointments\Create.cshtml" />
-    <Content Include="Views\Appointments\Delete.cshtml" />
-    <Content Include="Views\Appointments\Details.cshtml" />
-    <Content Include="Views\Appointments\Edit.cshtml" />
-    <Content Include="Views\Appointments\Index.cshtml" />
-    <Content Include="Views\Appointments\_DoctorsDrop.cshtml" />
     <Content Include="Views\Account\RegisterTeacher.cshtml" />
     <Content Include="Views\OrderPaymentMethods\Create.cshtml" />
     <Content Include="Views\OrderPaymentMethods\Delete.cshtml" />
@@ -4762,7 +4758,6 @@
     <Folder Include="Content\images\products\78978421\thumbs\" />
     <Folder Include="Content\images\products\8443198\thumbs\" />
     <Folder Include="Content\images\products\84742441\thumbs\" />
-    <Folder Include="Content\shopping-cart-2-responsive\css\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

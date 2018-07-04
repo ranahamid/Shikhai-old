@@ -1,8 +1,8 @@
-﻿@model Shikhai.Models.Doctor
+﻿@model Shikhai.Models.Teacher
 
 @{
     ViewBag.Title = "Create";
-    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Create</h2>
@@ -12,7 +12,7 @@
     @Html.AntiForgeryToken()
     
 <div class="form-horizontal">
-    <h4>Doctor</h4>
+    <h4>Teacher</h4>
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
@@ -68,8 +68,6 @@
                     @Html.ValidationMessageFor(model => model.YearOfExperience, "", new { @class = "text-danger" })
                 </div>
             </div>
-
-
 
         </div>
 
@@ -150,7 +148,7 @@
                                 event.preventDefault();
                                 var files = $("#fileinput")[0].files;
 
-                                var url = '/doctors/Upload';
+                                var url = '/Teachers/Upload';
                                 var imagepath = $("#VisitingCard");
                                 upload(files, url, imagepath);
                             }

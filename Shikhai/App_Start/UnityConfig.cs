@@ -56,7 +56,7 @@ namespace Shikhai
             //BazarList
          //   container.RegisterType<IBazarListAccessRepository<BazarList, int>, BazarListDataAccessRepository>();
             //Teachers
-            container.RegisterType<ITeacherAccessRepository<Teacher, int>, TeacherDataAccessRepository>();
+            container.RegisterType<ITeacherAccessRepository<RegisterTeacher, int>, TeacherDataAccessRepository>();
             //Appointment
           //  container.RegisterType<IAppointmentAccessRepository<Appointment, int>, AppointmentDataAccessRepository>();
             //TeacherWorkingArea

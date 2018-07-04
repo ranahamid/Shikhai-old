@@ -21,18 +21,6 @@
 
 
 
-    @*<header class="main-header">
-            @if (Request.IsAuthenticated && User.IsInRole("Admin"))
-            {
-                @Html.ActionLink("Shikhai", "Index", "Dashboard", null, new { @class = "navbar-brand logo-lg" })
-            }
-            else
-            {
-                @Html.ActionLink("Shikhai", "Index", "Home", null, new { @class = "navbar-brand logo-lg" })
-            }
-
-        </header>*@
-
     <div class="page-header navbar navbar-fixed-top">
         <!-- BEGIN HEADER INNER -->
         <div class="page-header-inner ">

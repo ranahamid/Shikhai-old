@@ -2911,6 +2911,8 @@ namespace Shikhai.DAL
 		
 		private int _Id;
 		
+		private string _GuidId;
+		
 		private string _FullName;
 		
 		private System.Nullable<int> _RegistrationNo;
@@ -2957,6 +2959,8 @@ namespace Shikhai.DAL
     partial void OnCreated();
     partial void OnIdChanging(int value);
     partial void OnIdChanged();
+    partial void OnGuidIdChanging(string value);
+    partial void OnGuidIdChanged();
     partial void OnFullNameChanging(string value);
     partial void OnFullNameChanged();
     partial void OnRegistrationNoChanging(System.Nullable<int> value);
@@ -3020,6 +3024,26 @@ namespace Shikhai.DAL
 					this._Id = value;
 					this.SendPropertyChanged("Id");
 					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GuidId", DbType="NVarChar(100)")]
+		public string GuidId
+		{
+			get
+			{
+				return this._GuidId;
+			}
+			set
+			{
+				if ((this._GuidId != value))
+				{
+					this.OnGuidIdChanging(value);
+					this.SendPropertyChanging();
+					this._GuidId = value;
+					this.SendPropertyChanged("GuidId");
+					this.OnGuidIdChanged();
 				}
 			}
 		}
