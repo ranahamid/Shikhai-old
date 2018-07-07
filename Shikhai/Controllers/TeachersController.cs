@@ -53,6 +53,7 @@ namespace Shikhai.Controllers
             return View();
         }
 
+        [Authorize(Roles ="Admin")]
         // GET: Teachers
         public async Task<ActionResult> List()
         {
@@ -65,8 +66,8 @@ namespace Shikhai.Controllers
             }
             throw new Exception("Exception");
         }
-     
 
+        [Authorize(Roles = "Admin")]
         // GET: Teachers/Details/5
         public async Task<ActionResult> Details(int? id)
         {
@@ -136,7 +137,7 @@ namespace Shikhai.Controllers
             return Json("OK", JsonRequestBehavior.AllowGet);
         }
 
-     
+        [Authorize(Roles = "Admin")]
         // GET: Teachers/Edit/5
         public async Task<ActionResult> Edit(int? id)
         {
@@ -149,8 +150,8 @@ namespace Shikhai.Controllers
         }
 
 
-    
 
+        [Authorize(Roles = "Admin")]
         // POST: Teachers/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
