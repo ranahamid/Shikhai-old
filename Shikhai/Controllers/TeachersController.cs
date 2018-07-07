@@ -48,6 +48,11 @@ namespace Shikhai.Controllers
             return View();
         }
         
+        public ActionResult Dashboard()
+        {
+            return View();
+        }
+
         // GET: Teachers
         public async Task<ActionResult> List()
         {
@@ -71,45 +76,45 @@ namespace Shikhai.Controllers
             var entity = JsonConvert.DeserializeObject<RegisterTeacher>(responseData);
             return View(entity);
         }
-        [AllowAnonymous]
-        // GET: Teachers/Create
-        public async Task<ActionResult> Create()
-        {
-            var entity = new RegisterTeacher();
-            return CreateSub(entity);
-        }
+        //[AllowAnonymous]
+        //// GET: Teachers/Create
+        //public async Task<ActionResult> Create()
+        //{
+        //    var entity = new RegisterTeacher();
+        //    return CreateSub(entity);
+        //}
 
-        public ActionResult CreateSub(RegisterTeacher entity)
-        {
+        //public ActionResult CreateSub(RegisterTeacher entity)
+        //{
 
-            entity.CanVisitDays = GetAllWeekDaysName();
-            return View("Create", entity);
-        }
+        //    entity.CanVisitDays = GetAllWeekDaysName();
+        //    return View("Create", entity);
+        //}
 
-        public ActionResult EditSub(RegisterTeacher entity)
-        {
-            entity.CanVisitDays = GetAllWeekDaysName();
+        //public ActionResult EditSub(RegisterTeacher entity)
+        //{
+        //    entity.CanVisitDays = GetAllWeekDaysName();
 
-            return View("Edit", entity);
-        }
+        //    return View("Edit", entity);
+        //}
 
-        [AllowAnonymous]
-        // POST: Teachers/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create(RegisterTeacher entity)
-        {
-            if (ModelState.IsValid)
-            {
-                //end parent name
-                var responseMessage = await client.PostAsJsonAsync(url, entity);
-                if (responseMessage.IsSuccessStatusCode)
-                {
-                    return RedirectToAction("Index");
-                }
-            }
-            return CreateSub(entity);
-        }
+        //[AllowAnonymous]
+        //// POST: Teachers/Create
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<ActionResult> Create(RegisterTeacher entity)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        //end parent name
+        //        var responseMessage = await client.PostAsJsonAsync(url, entity);
+        //        if (responseMessage.IsSuccessStatusCode)
+        //        {
+        //            return RedirectToAction("Index");
+        //        }
+        //    }
+        //    return CreateSub(entity);
+        //}
         
 
         [HttpPost]
