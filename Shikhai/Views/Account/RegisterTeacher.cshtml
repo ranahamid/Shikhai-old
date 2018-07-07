@@ -32,8 +32,6 @@
     <div class="tab-content">
         <div id="home" class="tab-pane fade in active">
 
-
-
             <div class="form-group">
                 @Html.LabelFor(model => model.FullName, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
@@ -65,6 +63,10 @@
 
 
 
+        </div>
+
+        <div id="menu1" class="tab-pane fade">
+
             <div class="form-group">
                 @Html.LabelFor(model => model.ClinicHospitalName, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
@@ -88,9 +90,7 @@
                     @Html.ValidationMessageFor(model => model.YearOfExperience, "", new { @class = "text-danger" })
                 </div>
             </div>
-        </div>
 
-        <div id="menu1" class="tab-pane fade">
             <div class="form-group">
                 @Html.LabelFor(model => model.Addresss, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
@@ -99,6 +99,14 @@
                 </div>
             </div>
 
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.DateOfBirth, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.DateOfBirth, new { htmlAttributes = new { @class = "form-control datetime" } })
+                    @Html.ValidationMessageFor(model => model.DateOfBirth, "", new { @class = "text-danger" })
+                </div>
+            </div>
 
         </div>
         <div id="menu2" class="tab-pane fade">

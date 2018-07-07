@@ -91,12 +91,12 @@ namespace Shikhai.Controllers
         //    return View("Create", entity);
         //}
 
-        //public ActionResult EditSub(RegisterTeacher entity)
-        //{
-        //    entity.CanVisitDays = GetAllWeekDaysName();
+        public ActionResult EditSub(RegisterTeacher entity)
+        {
+            entity.CanVisitDays = GetAllWeekDaysName();
 
-        //    return View("Edit", entity);
-        //}
+            return View("Edit", entity);
+        }
 
         //[AllowAnonymous]
         //// POST: Teachers/Create
@@ -115,7 +115,7 @@ namespace Shikhai.Controllers
         //    }
         //    return CreateSub(entity);
         //}
-        
+
 
         [HttpPost]
         public JsonResult Upload()

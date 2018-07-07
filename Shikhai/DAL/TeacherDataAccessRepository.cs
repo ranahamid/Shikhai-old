@@ -15,7 +15,7 @@ using System.Web.Mvc;
 
 namespace Shikhai.DAL
 {
-    [ExceptionHandlerAttribute]
+    [ExceptionHandler]
     public class TeacherDataAccessRepository : BaseController, ITeacherAccessRepository<RegisterTeacher, int>
     {
         public TeacherDataAccessRepository()
@@ -136,12 +136,10 @@ namespace Shikhai.DAL
             }
 
             Db.TeacherTbls.InsertOnSubmit(new TeacherTbl
-            {
-                //   Id              = entity.Id,           
-                GuidId =entity.GuidId,
+            {      
+                GuidId = entity.GuidId,
                 FullName = entity.FullName,
-                RegistrationNo = entity.RegistrationNo,
-                RegistrationType = entity.RegistrationType,
+
                 ClinicHospitalName = entity.ClinicHospitalName,
                 Designation = entity.Designation,
                 YearOfExperience = entity.YearOfExperience,
@@ -162,11 +160,12 @@ namespace Shikhai.DAL
                 UpdatedOnUtc = DateTime.Now,
                 Active = entity.Active,
             });
+
             try
             {
                 Db.SubmitChanges();
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 throw new Exception("Exception");
             }
