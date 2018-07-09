@@ -4161,7 +4161,6 @@
     <Content Include="Views\Teachers\Details.cshtml" />
     <Content Include="Views\Teachers\Edit.cshtml" />
     <Content Include="Views\Teachers\List.cshtml" />
-    <Content Include="Views\Shared\_SideMenuRightSideBar.cshtml" />
     <Content Include="Content\assets\global\img\social\Thumbs.db" />
     <Content Include="Views\Banners\SetBanner.cshtml" />
     <Content Include="Views\Banners\HomepageBanner.cshtml" />
