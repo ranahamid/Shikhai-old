@@ -6,6 +6,7 @@
             All
             <div class="cbp-filter-counter"></div>
         </div>
+        <span>/</span>
 
         @{
             foreach (var item in Model.ParenCategories)
@@ -14,9 +15,9 @@
                     @item.Text
                     <div class="cbp-filter-counter"></div>
                 </div>
+                <span>/</span>
             }
         }
-
     </div>
 
     <div id="js-grid-full-width" class="cbp">    
