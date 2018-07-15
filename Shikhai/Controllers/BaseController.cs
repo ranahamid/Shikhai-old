@@ -508,6 +508,10 @@ namespace Shikhai.Controllers
             return string.Empty;
         }
 
+        // parent category
+       
+
+        // parent category
         public List<SelectListItem> Categories
         {
             get
@@ -521,6 +525,44 @@ namespace Shikhai.Controllers
                 return listItems;
             }
             set { }
+        }
+
+        public List<Category> portfolioChildCategories
+        {
+            get
+            {
+               List<PortfolioChildCategory> portfolioChildren = new List<PortfolioChildCategory>();
+                var  listCategories = GetAllChildCategories();
+                return listCategories;
+            }
+            set { }
+        }
+
+        public List<Category> GetAllChildCategories()
+        {
+            List<Category> categories = new List<Category>();
+
+            var listItems = Db.CategoryTbls.Where(x => x.Parent1Id != null ).Select(x => new Category
+            {
+                Id = x.Id,
+                Name_English = x.Name_English,
+                Name_Bangla = x.Name_Bangla,
+                Description = x.Description,
+                DisplayOrder = x.DisplayOrder,
+                ImagePath = HttpUtility.UrlPathEncode(baseUrl + x.ImagePath),
+                RawDBImagePath = x.ImagePath,
+                Parent1Id = x.Parent1Id,
+                ShowOnHomePage = x.ShowOnHomePage,
+                IncludeInTopMenu = x.IncludeInTopMenu,
+                CreatedOnUtc = x.CreatedOnUtc,
+                UpdatedOnUtc = x.UpdatedOnUtc,
+                Published = x.Published,
+                ParentCategoryName = "Academic Tutoring",
+
+            }).ToList();
+
+            return listItems;
+
         }
 
         public List<SelectListItem> ChildCategories
@@ -563,7 +605,6 @@ namespace Shikhai.Controllers
                             }
                         }
                     }
-
                     sli.Add(item);
                 }
                 return sli;
@@ -606,7 +647,6 @@ namespace Shikhai.Controllers
 
         #endregion
 
-   
 
         #region all
         public List<SelectListItem> SetSelectedItem(List<SelectListItem> items, int? id)

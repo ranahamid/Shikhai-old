@@ -4184,6 +4184,7 @@
     <Content Include="Views\Payments\Success.cshtml" />
     <Content Include="Views\Teachers\Index.cshtml" />
     <Content Include="Views\Teachers\Dashboard.cshtml" />
+    <Content Include="Views\Shared\_Portfolio.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

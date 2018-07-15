@@ -7,9 +7,26 @@
 
 <h2>@ViewBag.Title</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+
+<div class="row">
+    <div class="col-md-2">
+        <span>
+            <a href="@Url.Action("Create")" class="btn btn-default">
+                <span class="glyphicon glyphicon-plus-sign"></span>
+                Create New
+            </a>
+        </span>
+    </div>
+    <div class="col-md-2">
+        <span>
+            <a href="@Url.Action("SetBanner")" class="btn btn-default">
+                <span class="glyphicon glyphicon-sort"></span>
+                Set Homepage Banner
+            </a>
+        </span>
+    </div>
+
+</div>
 
 <table class="table">
     <thead>
@@ -59,9 +76,3 @@
     </tbody>
 </table>
 
-
-<div>
-    <p>
-        @Html.ActionLink("Set Homepage Banner", "SetBanner")
-    </p>
-</div>

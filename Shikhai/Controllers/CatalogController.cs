@@ -45,7 +45,15 @@ namespace Shikhai.Controllers
             return PartialView("_HomepageBanner", entity);
         }
 
-       
+        public ActionResult Portfolio()
+        {
+            Portfolio portfolio = new Portfolio();
+            portfolio.ParenCategories = Categories;
+            portfolio.portfolioChildren= portfolioChildCategories;
+            return PartialView("_Portfolio", portfolio);
+        }
+
+
 
     }
 }

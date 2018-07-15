@@ -30,8 +30,7 @@ namespace Shikhai.DAL
                 ImagePath =  HttpUtility.UrlPathEncode(baseUrl + x.ImagePath) ,
                 RawDBImagePath = x.ImagePath,
                 Parent1Id = x.Parent1Id,
-                //  Parent1Name_English    = GetParentNameFromAllCategories(x.Parent1Id),
-                //  Parent1Name_Bangla     = GetParentNameFromAllCategories(x.Parent1Id),   
+
                 ShowOnHomePage = x.ShowOnHomePage,
                 IncludeInTopMenu = x.IncludeInTopMenu,
                 CreatedOnUtc = x.CreatedOnUtc,

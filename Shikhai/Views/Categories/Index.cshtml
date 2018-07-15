@@ -7,9 +7,17 @@
 
 <h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<div class="row">
+    <div class="col-md-2">
+        <span>
+            <a href="@Url.Action("Create")" class="btn btn-default">
+                <span class="glyphicon glyphicon-plus-sign"></span>
+                Create New
+            </a>
+        </span>
+    </div>  
+</div>
+
 
 
 <table class="table">
@@ -56,7 +64,7 @@
                         if (!string.IsNullOrEmpty(item.ImagePath))
                         {
                             <a href="@item.ImagePath" data-lightbox="image-1" data-title="@item.Name_English">
-                                <img src="@item.ImagePath" class="img-display" alt=""/>
+                                <img src="@item.ImagePath" class="img-display" alt="" />
                             </a>
                         }
                     }
@@ -64,10 +72,8 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Parent1Name_English)
-                </td>             
+                </td>
             </tr>
         }
     </tbody>
 </table>
-
-<

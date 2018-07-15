@@ -62,6 +62,22 @@ namespace Shikhai.Models
         public List<SelectListItem> AllCategories   { get; set; }
         public List<SelectListItem> ChildCategories { get; set; }
 
+        public string ParentCategoryName { get; set; }
     }
+
+
+    public class PortfolioChildCategory
+    {
+        public string ParentCategoryName { get; set; }
+        public List<Category> categoryChild { get; set; }
+    }
+
+    public class Portfolio
+    {
+        public List<SelectListItem> ParenCategories { get; set; }
+        public List<Category> portfolioChildren { get; set; }
+
+    }
+
 
 }
