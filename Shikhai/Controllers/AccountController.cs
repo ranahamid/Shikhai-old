@@ -69,16 +69,28 @@ namespace Shikhai.Controllers
                 return View(model);
             }
 
-            //if user in patient role, then redirect to medicine page by default
+            //if user in Teacher role, then redirect to medicine page by default
             var user = await UserManager.FindByNameAsync(userName);
             var RoleNames = await UserManager.GetRolesAsync(user.Id);
             foreach (var item in RoleNames)
             {
-                if (item == "Teacher")
+                if (item.ToLower() == "teacher")
                 {
-                    returnUrl = "/Teacher/Dashboard";
+                    returnUrl = "/Teachers/Dashboard";
                     break;
                 }
+                else if (item.ToLower() == "student")
+                {
+                    returnUrl = "/Students/Dashboard";
+                    break;
+                }
+                else if (item.ToLower() == "admin")
+                {
+                    returnUrl = "/Dashboard /Index";
+                    break;
+                }
+
+                
             }
 
             //end

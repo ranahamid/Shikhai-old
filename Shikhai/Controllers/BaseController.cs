@@ -438,7 +438,7 @@ namespace Shikhai.Controllers
 
             var user = new ApplicationUser()
             {
-                UserName        = model.PhoneNumber,
+                UserName        = model.Username,
                 Email           = model.Email,
                 PhoneNumber     = model.PhoneNumber,
                 Address         = model.Address,
@@ -463,7 +463,7 @@ namespace Shikhai.Controllers
 
             var user = new ApplicationUser()
             {
-                UserName = model.PhoneNumber,
+                UserName = model.Username,
                 Email = model.Email,
                 PhoneNumber = model.PhoneNumber,
                 Address = model.Address,
@@ -531,7 +531,8 @@ namespace Shikhai.Controllers
         {
             get
             {
-               List<PortfolioChildCategory> portfolioChildren = new List<PortfolioChildCategory>();
+                //ShowOnHomePage -true
+                List<PortfolioChildCategory> portfolioChildren = new List<PortfolioChildCategory>();
                 var  listCategories = GetAllChildCategories();
                 return listCategories;
             }
@@ -540,9 +541,10 @@ namespace Shikhai.Controllers
 
         public List<Category> GetAllChildCategories()
         {
+            //ShowOnHomePage -true
             List<Category> categories = new List<Category>();
 
-            var listItems = Db.CategoryTbls.Where(x => x.Parent1Id != null ).Select(x => new Category
+            var listItems = Db.CategoryTbls.Where(x => x.Parent1Id != null && x.ShowOnHomePage== true).Select(x => new Category
             {
                 Id = x.Id,
                 Name_English = x.Name_English,

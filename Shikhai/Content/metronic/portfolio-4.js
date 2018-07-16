@@ -8,7 +8,7 @@
         loadMoreAction: 'auto',
         layoutMode: 'mosaic',
         sortToPreventGaps: true,
-        defaultFilter: '*',
+        defaultFilter: '.1',
         animationType: 'fadeOutTop',
         gapHorizontal: 0,
         gapVertical: 0,
