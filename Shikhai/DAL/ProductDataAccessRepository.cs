@@ -139,7 +139,7 @@ namespace Shikhai.DAL
             {
                 Id = x.Id,
                 Name = x.Name,
-
+                InstructionsImageUrl = HttpUtility.UrlPathEncode(baseUrl + x.InstructionsImageUrl),
                 IsBook = x.IsBook,
                 IsStationary = x.IsStationary,
             }).ToList();
@@ -153,12 +153,43 @@ namespace Shikhai.DAL
             {
                 Id = x.Id,
                 Name = x.Name,
-
+                InstructionsImageUrl = HttpUtility.UrlPathEncode(baseUrl + x.InstructionsImageUrl),
                 IsBook = x.IsBook,
                 IsStationary = x.IsStationary,
             }).ToList();
 
             return entities;
         }
+        //homepage
+        public IEnumerable<Product> GetHomePageBooks()
+        {
+            var entities = Db.ProductTbls.Where(x => x.IsBook == true && x.Published==true && x.ShowOnHomePage==true).Select(x => new Product()
+            {
+                Id = x.Id,
+                Name = x.Name,
+                InstructionsImageUrl = HttpUtility.UrlPathEncode(baseUrl + x.InstructionsImageUrl),
+                IsBook = x.IsBook,
+                IsStationary = x.IsStationary,
+            }).ToList();
+
+            return entities;
+        }
+
+        public IEnumerable<Product> GetHomePageStationaries()
+        {
+            var entities = Db.ProductTbls.Where(x => x.IsStationary == true && x.Published == true && x.ShowOnHomePage == true).Select(x => new Product()
+            {
+                Id = x.Id,
+                Name = x.Name,
+                InstructionsImageUrl = HttpUtility.UrlPathEncode(baseUrl + x.InstructionsImageUrl),
+                IsBook = x.IsBook,
+                IsStationary = x.IsStationary,
+            }).ToList();
+
+            return entities;
+        }
+
+
+
     }
 }

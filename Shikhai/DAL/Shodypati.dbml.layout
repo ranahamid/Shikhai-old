@@ -74,10 +74,10 @@
         <elementListCompartment Id="4e5a3f9a-f977-4716-9bb4-729f333d1cc2" absoluteBounds="4.64, 10.21, 1.9700000000000002, 4.4800211588541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="0871b6ee-6d2a-4338-bcca-2e0e22117f65" absoluteBounds="0.5, 5.125, 2, 2.3478011067708335">
+    <classShape Id="f70afe85-69cf-4620-8b28-d1a14d589224" absoluteBounds="5, 4.25, 2, 2.5401025390625">
       <DataClassMoniker Name="/ShikhaiDataContext/ProductTbl" />
       <nestedChildShapes>
-        <elementListCompartment Id="4acd8971-7a89-46e9-a4ec-f198fd52a9d7" absoluteBounds="0.515, 5.585, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="c65de627-c66c-46e2-abd1-8b405c5ed916" absoluteBounds="5.015, 4.71, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

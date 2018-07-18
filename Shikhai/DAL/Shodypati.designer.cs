@@ -3498,6 +3498,8 @@ namespace Shikhai.DAL
 		
 		private System.Nullable<bool> _Published;
 		
+		private System.Nullable<bool> _ShowOnHomePage;
+		
 		private System.Nullable<System.DateTime> _CreatedOnUtc;
 		
 		private System.Nullable<System.DateTime> _UpdatedOnUtc;
@@ -3518,6 +3520,8 @@ namespace Shikhai.DAL
     partial void OnInstructionsImageUrlChanged();
     partial void OnPublishedChanging(System.Nullable<bool> value);
     partial void OnPublishedChanged();
+    partial void OnShowOnHomePageChanging(System.Nullable<bool> value);
+    partial void OnShowOnHomePageChanged();
     partial void OnCreatedOnUtcChanging(System.Nullable<System.DateTime> value);
     partial void OnCreatedOnUtcChanged();
     partial void OnUpdatedOnUtcChanging(System.Nullable<System.DateTime> value);
@@ -3645,6 +3649,26 @@ namespace Shikhai.DAL
 					this._Published = value;
 					this.SendPropertyChanged("Published");
 					this.OnPublishedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShowOnHomePage", DbType="Bit")]
+		public System.Nullable<bool> ShowOnHomePage
+		{
+			get
+			{
+				return this._ShowOnHomePage;
+			}
+			set
+			{
+				if ((this._ShowOnHomePage != value))
+				{
+					this.OnShowOnHomePageChanging(value);
+					this.SendPropertyChanging();
+					this._ShowOnHomePage = value;
+					this.SendPropertyChanged("ShowOnHomePage");
+					this.OnShowOnHomePageChanged();
 				}
 			}
 		}

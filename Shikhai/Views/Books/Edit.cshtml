@@ -62,25 +62,34 @@
 
 
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.IsBook, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            <div class="checkbox">
-                @Html.EditorFor(model => model.IsBook)
-                @Html.ValidationMessageFor(model => model.IsBook, "", new { @class = "text-danger" })
+    @*<div class="form-group">
+            @Html.LabelFor(model => model.IsBook, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.IsBook)
+                    @Html.ValidationMessageFor(model => model.IsBook, "", new { @class = "text-danger" })
+                </div>
             </div>
         </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(model => model.IsStationary, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            <div class="checkbox">
-                @Html.EditorFor(model => model.IsStationary)
-                @Html.ValidationMessageFor(model => model.IsStationary, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.IsStationary, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.IsStationary)
+                    @Html.ValidationMessageFor(model => model.IsStationary, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
-    </div>
+        </div>*@
 
+    <div class="form-group">
+        @Html.LabelFor(model => model.ShowOnHomePage, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <div class="checkbox">
+                @Html.EditorFor(model => model.ShowOnHomePage)
+                @Html.ValidationMessageFor(model => model.ShowOnHomePage, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
     <div class="form-group">
         @Html.LabelFor(model => model.Published, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">

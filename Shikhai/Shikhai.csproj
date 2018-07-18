@@ -267,7 +267,8 @@
     <Compile Include="Controllers\Api\LogApiController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
-    <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\StationariesController.cs" />
+    <Compile Include="Controllers\BooksController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
     <Compile Include="Controllers\TeachersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -4005,11 +4006,16 @@
     <Content Include="Views\Teachers\Index.cshtml" />
     <Content Include="Views\Teachers\Dashboard.cshtml" />
     <Content Include="Views\Shared\_Portfolio.cshtml" />
-    <Content Include="Views\Products\Create.cshtml" />
-    <Content Include="Views\Products\Delete.cshtml" />
-    <Content Include="Views\Products\Details.cshtml" />
-    <Content Include="Views\Products\Edit.cshtml" />
-    <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\Stationaries\Create.cshtml" />
+    <Content Include="Views\Stationaries\Delete.cshtml" />
+    <Content Include="Views\Stationaries\Details.cshtml" />
+    <Content Include="Views\Stationaries\Edit.cshtml" />
+    <Content Include="Views\Stationaries\Index.cshtml" />
+    <Content Include="Views\Books\Create.cshtml" />
+    <Content Include="Views\Books\Delete.cshtml" />
+    <Content Include="Views\Books\Details.cshtml" />
+    <Content Include="Views\Books\Edit.cshtml" />
+    <Content Include="Views\Books\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

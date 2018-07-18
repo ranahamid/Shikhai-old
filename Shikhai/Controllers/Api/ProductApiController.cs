@@ -80,5 +80,21 @@ namespace Shikhai.Controllers.Api
         {
             return _repository.GetStationaries();
         }
+        //Homepage
+        [Route("api/ProductApi/GetHomePageBooks/")]
+        // GetAllBooks: api/ProductApi/GetAllBooks
+        public IEnumerable<Product> GetHomePageBooks()
+        {
+            return _repository.GetHomePageBooks();
+        }
+
+        [Route("api/ProductApi/GetHomePageStationaries/")]
+        // GetAllBooks: api/ProductApi/GetAllBooks
+        public IEnumerable<Product> GetHomePageStationaries()
+        {
+            return _repository.GetHomePageStationaries();
+        }
+
+
     }
 }

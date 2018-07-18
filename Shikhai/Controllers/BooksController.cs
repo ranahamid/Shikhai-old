@@ -23,7 +23,7 @@ namespace Shikhai.Controllers
 {
     [Authorize(Roles = "Admin")]
     [ExceptionHandler]
-    public class ProductsController : BaseController
+    public class BooksController : BaseController
     {
         private readonly FilesHelper _filesHelper;
         readonly string tempPath = "~/Products/";
@@ -34,9 +34,9 @@ namespace Shikhai.Controllers
         string DeleteType = "GET";
 
 
-      
-      
-        public ProductsController()
+
+
+        public BooksController()
         {
             int randN = GetRandomNumber();
             _filesHelper = new FilesHelper(DeleteURL, DeleteType, StorageRoot + randN + "/", UrlBase + randN + "/", tempPath + randN + "/", serverMapPath + randN + "/");
@@ -49,6 +49,7 @@ namespace Shikhai.Controllers
         // GET: Products
         public async Task<ActionResult> Index()
         {
+            url = url + "/" + "GetAllBooks";
             var responseMessage = await client.GetAsync(url);
             if (!responseMessage.IsSuccessStatusCode) throw new Exception("Exception");
             var responseData = responseMessage.Content.ReadAsStringAsync().Result;
@@ -56,7 +57,7 @@ namespace Shikhai.Controllers
             return View(entity);
         }
 
-        
+
         public async Task<Product> GetDetails(int? id)
         {
             var responseMessage = await client.GetAsync(url + "/" + id);
@@ -80,6 +81,7 @@ namespace Shikhai.Controllers
         public ActionResult Create()
         {
             Product entity = new Product();
+            entity.IsBook = true;
             return View(entity);
         }
 
@@ -90,6 +92,8 @@ namespace Shikhai.Controllers
         public async Task<ActionResult> Create(Product entity)
         {
             if (!ModelState.IsValid) return View(entity);
+
+            entity.IsBook = true;
             var responseMessage = await client.PostAsJsonAsync(url, entity);
             if (responseMessage.IsSuccessStatusCode)
             {
@@ -130,6 +134,7 @@ namespace Shikhai.Controllers
             if (!responseMessage.IsSuccessStatusCode) throw new Exception("Exception");
             var responseData = responseMessage.Content.ReadAsStringAsync().Result;
             var entity = JsonConvert.DeserializeObject<Product>(responseData);
+            entity.IsBook = true;
             return View(entity);
         }
 
@@ -140,6 +145,7 @@ namespace Shikhai.Controllers
         public async Task<ActionResult> Edit(int id, Product entity)
         {
             if (!ModelState.IsValid) return View(entity);
+            entity.IsBook = true;
             HttpResponseMessage responseMessage = await client.PutAsJsonAsync(url + "/" + id, entity);
             if (responseMessage.IsSuccessStatusCode)
             {

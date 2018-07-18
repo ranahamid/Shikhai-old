@@ -33,9 +33,9 @@
             </th>
 
 
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.DisplayOrder)
-            </th>
+            </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.ImagePath)
             </th>
@@ -58,7 +58,7 @@
                 <td> @Html.DisplayFor(modelItem => item.Name_English) </td>
                 <td> @Html.DisplayFor(modelItem => item.Name_Bangla)</td>
 
-                <td>@Html.DisplayFor(modelItem => item.DisplayOrder)</td>
+                @*<td>@Html.DisplayFor(modelItem => item.DisplayOrder)</td>*@
                 <td>
                     @{
                         if (!string.IsNullOrEmpty(item.ImagePath))

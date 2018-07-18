@@ -17,5 +17,8 @@ namespace Shikhai.DAL
         //custome
         IEnumerable<TEntity> GetBooks();
         IEnumerable<TEntity> GetStationaries();
+        //Homepage
+        IEnumerable<TEntity> GetHomePageBooks();
+        IEnumerable<TEntity> GetHomePageStationaries();
     }
 }
