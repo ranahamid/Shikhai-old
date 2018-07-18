@@ -58,10 +58,12 @@ namespace Shikhai
             //Teachers
             container.RegisterType<ITeacherAccessRepository<RegisterTeacher, int>, TeacherDataAccessRepository>();
             //Appointment
-          //  container.RegisterType<IAppointmentAccessRepository<Appointment, int>, AppointmentDataAccessRepository>();
+            //  container.RegisterType<IAppointmentAccessRepository<Appointment, int>, AppointmentDataAccessRepository>();
             //TeacherWorkingArea
-           // container.RegisterType<ITeacherWorkingAreaAccessRepository<TeacherWorkingArea, int>, TeacherWorkingAreaDataAccessRepository>();
+            // container.RegisterType<ITeacherWorkingAreaAccessRepository<TeacherWorkingArea, int>, TeacherWorkingAreaDataAccessRepository>();
 
+            //product
+            container.RegisterType<IProductAccessRepository<Product, int>, ProductDataAccessRepository>();
 
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
         }

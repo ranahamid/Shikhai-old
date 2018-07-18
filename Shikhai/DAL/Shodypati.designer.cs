@@ -63,6 +63,9 @@ namespace Shikhai.DAL
     partial void InsertTeacherTbl(TeacherTbl instance);
     partial void UpdateTeacherTbl(TeacherTbl instance);
     partial void DeleteTeacherTbl(TeacherTbl instance);
+    partial void InsertProductTbl(ProductTbl instance);
+    partial void UpdateProductTbl(ProductTbl instance);
+    partial void DeleteProductTbl(ProductTbl instance);
     #endregion
 		
 		public ShikhaiDataContext() : 
@@ -188,6 +191,14 @@ namespace Shikhai.DAL
 			get
 			{
 				return this.GetTable<TeacherTbl>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ProductTbl> ProductTbls
+		{
+			get
+			{
+				return this.GetTable<ProductTbl>();
 			}
 		}
 	}
@@ -3444,6 +3455,236 @@ namespace Shikhai.DAL
 					this._Active = value;
 					this.SendPropertyChanged("Active");
 					this.OnActiveChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ProductTbl")]
+	public partial class ProductTbl : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _Name;
+		
+		private System.Nullable<bool> _IsBook;
+		
+		private System.Nullable<bool> _IsStationary;
+		
+		private string _InstructionsImageUrl;
+		
+		private System.Nullable<bool> _Published;
+		
+		private System.Nullable<System.DateTime> _CreatedOnUtc;
+		
+		private System.Nullable<System.DateTime> _UpdatedOnUtc;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnIsBookChanging(System.Nullable<bool> value);
+    partial void OnIsBookChanged();
+    partial void OnIsStationaryChanging(System.Nullable<bool> value);
+    partial void OnIsStationaryChanged();
+    partial void OnInstructionsImageUrlChanging(string value);
+    partial void OnInstructionsImageUrlChanged();
+    partial void OnPublishedChanging(System.Nullable<bool> value);
+    partial void OnPublishedChanged();
+    partial void OnCreatedOnUtcChanging(System.Nullable<System.DateTime> value);
+    partial void OnCreatedOnUtcChanged();
+    partial void OnUpdatedOnUtcChanging(System.Nullable<System.DateTime> value);
+    partial void OnUpdatedOnUtcChanged();
+    #endregion
+		
+		public ProductTbl()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsBook", DbType="Bit")]
+		public System.Nullable<bool> IsBook
+		{
+			get
+			{
+				return this._IsBook;
+			}
+			set
+			{
+				if ((this._IsBook != value))
+				{
+					this.OnIsBookChanging(value);
+					this.SendPropertyChanging();
+					this._IsBook = value;
+					this.SendPropertyChanged("IsBook");
+					this.OnIsBookChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsStationary", DbType="Bit")]
+		public System.Nullable<bool> IsStationary
+		{
+			get
+			{
+				return this._IsStationary;
+			}
+			set
+			{
+				if ((this._IsStationary != value))
+				{
+					this.OnIsStationaryChanging(value);
+					this.SendPropertyChanging();
+					this._IsStationary = value;
+					this.SendPropertyChanged("IsStationary");
+					this.OnIsStationaryChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InstructionsImageUrl", DbType="NVarChar(1000)")]
+		public string InstructionsImageUrl
+		{
+			get
+			{
+				return this._InstructionsImageUrl;
+			}
+			set
+			{
+				if ((this._InstructionsImageUrl != value))
+				{
+					this.OnInstructionsImageUrlChanging(value);
+					this.SendPropertyChanging();
+					this._InstructionsImageUrl = value;
+					this.SendPropertyChanged("InstructionsImageUrl");
+					this.OnInstructionsImageUrlChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Published", DbType="Bit")]
+		public System.Nullable<bool> Published
+		{
+			get
+			{
+				return this._Published;
+			}
+			set
+			{
+				if ((this._Published != value))
+				{
+					this.OnPublishedChanging(value);
+					this.SendPropertyChanging();
+					this._Published = value;
+					this.SendPropertyChanged("Published");
+					this.OnPublishedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedOnUtc", DbType="DateTime2")]
+		public System.Nullable<System.DateTime> CreatedOnUtc
+		{
+			get
+			{
+				return this._CreatedOnUtc;
+			}
+			set
+			{
+				if ((this._CreatedOnUtc != value))
+				{
+					this.OnCreatedOnUtcChanging(value);
+					this.SendPropertyChanging();
+					this._CreatedOnUtc = value;
+					this.SendPropertyChanged("CreatedOnUtc");
+					this.OnCreatedOnUtcChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UpdatedOnUtc", DbType="DateTime2")]
+		public System.Nullable<System.DateTime> UpdatedOnUtc
+		{
+			get
+			{
+				return this._UpdatedOnUtc;
+			}
+			set
+			{
+				if ((this._UpdatedOnUtc != value))
+				{
+					this.OnUpdatedOnUtcChanging(value);
+					this.SendPropertyChanging();
+					this._UpdatedOnUtc = value;
+					this.SendPropertyChanged("UpdatedOnUtc");
+					this.OnUpdatedOnUtcChanged();
 				}
 			}
 		}

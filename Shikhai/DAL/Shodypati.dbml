@@ -168,4 +168,16 @@
       <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.ProductTbl" Member="ProductTbls">
+    <Type Name="ProductTbl">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="IsBook" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsStationary" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="InstructionsImageUrl" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Published" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CreatedOnUtc" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="UpdatedOnUtc" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>

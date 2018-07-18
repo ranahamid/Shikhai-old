@@ -47,7 +47,9 @@ namespace Shikhai.Controllers
         {
             return View();
         }
-        
+
+        [Authorize(Roles = "Teacher")]
+        [ExceptionHandler]
         public ActionResult Dashboard()
         {
             return View();

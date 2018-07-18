@@ -74,7 +74,12 @@ namespace Shikhai.Controllers
             var RoleNames = await UserManager.GetRolesAsync(user.Id);
             foreach (var item in RoleNames)
             {
-                if (item.ToLower() == "teacher")
+                if (item.ToLower() == "admin")
+                {
+                    returnUrl = "/Dashboard /Index";
+                    break;
+                }
+                else if(item.ToLower() == "teacher")
                 {
                     returnUrl = "/Teachers/Dashboard";
                     break;
@@ -84,11 +89,7 @@ namespace Shikhai.Controllers
                     returnUrl = "/Students/Dashboard";
                     break;
                 }
-                else if (item.ToLower() == "admin")
-                {
-                    returnUrl = "/Dashboard /Index";
-                    break;
-                }
+                 
 
                 
             }

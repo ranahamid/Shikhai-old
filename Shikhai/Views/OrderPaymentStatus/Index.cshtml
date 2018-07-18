@@ -6,10 +6,17 @@
 }
 
 <h2>Order Payment status</h2>
+<div class="row">
+    <div class="col-md-2">
+        <span>
+            <a href="@Url.Action("Create")" class="btn btn-default">
+                <span class="glyphicon glyphicon-plus-sign"></span>
+                Create New
+            </a>
+        </span>
+    </div>
+</div>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
     <thead>
         <tr>
@@ -22,18 +29,18 @@
     </thead>
     <tbody>
         @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
+        {
+            <tr>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
 
-        </tr>
-}
+            </tr>
+        }
     </tbody>
 </table>

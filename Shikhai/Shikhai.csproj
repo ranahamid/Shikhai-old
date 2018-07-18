@@ -254,6 +254,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Api\AccountApiController.cs" />
     <Compile Include="Controllers\Api\BannersApiController.cs" />
+    <Compile Include="Controllers\Api\ProductApiController.cs" />
     <Compile Include="Controllers\Api\TeachersApiController.cs" />
     <Compile Include="Controllers\Api\OrderPaymentMethodApiController.cs" />
     <Compile Include="Controllers\Api\OrderPaymentStatusApiController.cs" />
@@ -266,6 +267,7 @@
     <Compile Include="Controllers\Api\LogApiController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
     <Compile Include="Controllers\TeachersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -280,6 +282,8 @@
     <Compile Include="DAL\AccountDataAccessRepository.cs" />
     <Compile Include="DAL\BannerDataAccessRepository.cs" />
     <Compile Include="DAL\CategoryDataAccessRepository.cs" />
+    <Compile Include="DAL\IProductAccessRepository.cs" />
+    <Compile Include="DAL\ProductDataAccessRepository.cs" />
     <Compile Include="DAL\Shodypati.cs">
       <DependentUpon>Shodypati.dbml</DependentUpon>
     </Compile>
@@ -318,6 +322,7 @@
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\CacheManager.cs" />
     <Compile Include="Models\CustomerSearch.cs" />
+    <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Teacher.cs" />
     <Compile Include="Models\FilesViewModel.cs" />
     <Compile Include="Models\GeoZone.cs" />
@@ -1278,6 +1283,12 @@
     <Content Include="Content\images\pattern\dots.png" />
     <Content Include="Content\images\payment\bKash_payment_Process.png" />
     <Content Include="Content\images\payment\rocket-payment.png" />
+    <Content Include="Content\images\Products\38035602\Math-Ed-Banner.jpg" />
+    <Content Include="Content\images\Products\38035602\thumbs\Math-Ed-Banner80x80.jpg" />
+    <Content Include="Content\images\Products\62203730\c05523710.png" />
+    <Content Include="Content\images\Products\62203730\thumbs\c0552371080x80.jpg" />
+    <Content Include="Content\images\Products\69154903\learn-english-at-marbella-international-spanish-school-marbella.jpg" />
+    <Content Include="Content\images\Products\69154903\thumbs\learn-english-at-marbella-international-spanish-school-marbella80x80.jpg" />
     <Content Include="Content\images\right_arrow.png" />
     <Content Include="Content\Ionicons\css\ionicons.css" />
     <Content Include="Content\Ionicons\fonts\ionicons.svg" />
@@ -3994,6 +4005,11 @@
     <Content Include="Views\Teachers\Index.cshtml" />
     <Content Include="Views\Teachers\Dashboard.cshtml" />
     <Content Include="Views\Shared\_Portfolio.cshtml" />
+    <Content Include="Views\Products\Create.cshtml" />
+    <Content Include="Views\Products\Delete.cshtml" />
+    <Content Include="Views\Products\Details.cshtml" />
+    <Content Include="Views\Products\Edit.cshtml" />
+    <Content Include="Views\Products\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

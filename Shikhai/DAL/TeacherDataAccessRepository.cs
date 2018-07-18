@@ -165,7 +165,7 @@ namespace Shikhai.DAL
             {
                 Db.SubmitChanges();
             }
-            catch (Exception e)
+            catch (Exception )
             {
                 throw new Exception("Exception");
             }

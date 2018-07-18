@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Shikhai.Filters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,6 +14,9 @@ namespace Shikhai.Controllers
         {
             return View();
         }
+
+        [Authorize(Roles = "Teacher")]
+        [ExceptionHandler]
         public ActionResult Dashboard()
         {
             return View();
