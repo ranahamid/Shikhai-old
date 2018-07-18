@@ -70,13 +70,16 @@ namespace Shikhai.Controllers
             }
 
             //if user in Teacher role, then redirect to medicine page by default
-            var user = await UserManager.FindByNameAsync(userName);
+
+
+            // uncomment  , if we want to redirect
+            /*var user = await UserManager.FindByNameAsync(userName);
             var RoleNames = await UserManager.GetRolesAsync(user.Id);
             foreach (var item in RoleNames)
             {
                 if (item.ToLower() == "admin")
                 {
-                    returnUrl = "/Dashboard /Index";
+                    returnUrl = "/Dashboard/Index";
                     break;
                 }
                 else if(item.ToLower() == "teacher")
@@ -88,14 +91,10 @@ namespace Shikhai.Controllers
                 {
                     returnUrl = "/Students/Dashboard";
                     break;
-                }
-                 
-
-                
+                }                 
             }
-
-            //end
-
+            */
+           
 
             // This doen't count login failures towards lockout only two factor authentication
             // To enable password failures to trigger lockout, change to shouldLockout: true
