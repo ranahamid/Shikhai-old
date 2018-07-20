@@ -23,21 +23,20 @@ namespace Shikhai.Models
 
 
         public bool? ShowOnHomePage { get; set; }
-
         
-
         public DateTime? CreatedOnUtc { get; set; }
 
         public DateTime? UpdatedOnUtc { get; set; }
 
     }
 
-    public class Book
+    public class ProductViewModel
     {
+        public List<Product> Stationary { get; set; }
+
+        public List<Product> Books { get; set; }
 
     }
-    public class Stationary
-    {
-    }
+   
 
 }

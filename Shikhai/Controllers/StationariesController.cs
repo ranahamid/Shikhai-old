@@ -68,6 +68,7 @@ namespace Shikhai.Controllers
         }
 
         // GET: Products/Details/5
+        [AllowAnonymous]
         public ActionResult Details(int? id)
         {
             var entity = GetDetails(id);

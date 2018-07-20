@@ -33,14 +33,10 @@ namespace Shikhai.Controllers
         private string StorageRoot => Path.Combine(HostingEnvironment.MapPath(serverMapPath));
         string DeleteType = "GET";
 
-
-
-
         public BooksController()
         {
             int randN = GetRandomNumber();
             _filesHelper = new FilesHelper(DeleteURL, DeleteType, StorageRoot + randN + "/", UrlBase + randN + "/", tempPath + randN + "/", serverMapPath + randN + "/");
-
             //api url                  
             url = baseUrl + "api/ProductApi";
         }
@@ -68,13 +64,12 @@ namespace Shikhai.Controllers
         }
 
         // GET: Products/Details/5
+        [AllowAnonymous]
         public ActionResult Details(int? id)
         {
             var entity = GetDetails(id);
             return View(entity);
         }
-
-
 
 
         // GET: Products/Create
@@ -86,13 +81,11 @@ namespace Shikhai.Controllers
         }
 
 
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create(Product entity)
         {
             if (!ModelState.IsValid) return View(entity);
-
             entity.IsBook = true;
             var responseMessage = await client.PostAsJsonAsync(url, entity);
             if (responseMessage.IsSuccessStatusCode)

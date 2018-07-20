@@ -22,8 +22,7 @@ namespace Shikhai.Controllers.Api
         {
             _repository = r;
         }
-
-
+        
         [Route("api/ProductApi/")]
         public IEnumerable<Product> GetProducts()
         {

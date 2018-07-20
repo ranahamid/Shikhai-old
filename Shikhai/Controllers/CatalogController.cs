@@ -53,6 +53,23 @@ namespace Shikhai.Controllers
             return PartialView("_Portfolio", portfolio);
         }
 
+        public ActionResult Products()
+        {
+            ProductViewModel vm = new ProductViewModel();
+            url = baseUrl + "api/ProductApi/GetHomePageStationaries";
+
+            var responseMessage = new WebClient().DownloadString(url);
+            var entity = JsonConvert.DeserializeObject<List<Product>>(responseMessage);
+            vm.Stationary = entity;
+
+            url = baseUrl + "api/ProductApi/GetHomePageBooks";
+
+            var responseMessage2 = new WebClient().DownloadString(url);
+            var entity2 = JsonConvert.DeserializeObject<List<Product>>(responseMessage2);
+            vm.Books = entity2;
+
+            return PartialView("_ProductsHomePage", vm);
+        }
 
 
     }

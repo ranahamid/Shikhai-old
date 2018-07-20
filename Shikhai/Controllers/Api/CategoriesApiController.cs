@@ -30,7 +30,6 @@ namespace Shikhai.Controllers.Api
             return _repository.Get();
         }
 
-
         [Route("api/CategoriesApi/{id}")]
         // GET: api/CategoriesApi/5
         [ResponseType(typeof(Category))]
@@ -44,7 +43,6 @@ namespace Shikhai.Controllers.Api
             return Ok(item);
         }
 
-
         [Route("api/CategoriesApi/{id}")]
         // PUT: api/CategoriesApi/5
         [ResponseType(typeof(void))]
@@ -55,8 +53,6 @@ namespace Shikhai.Controllers.Api
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-
-        
         [Route("api/CategoriesApi/")]
         // POST: api/PaymentApi
         [ResponseType(typeof(Category))]
@@ -66,8 +62,6 @@ namespace Shikhai.Controllers.Api
             return Ok(entity);
         }
     
-
-
          [Route("api/CategoriesApi/{id}")]
         // DELETE: api/CategoriesApi/5
         [ResponseType(typeof(Category))]
@@ -84,9 +78,6 @@ namespace Shikhai.Controllers.Api
         {
             return _repository.GetAllCategoriesSelectList();
         }
-
-     
-
 
     }
 }

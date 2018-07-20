@@ -26,7 +26,9 @@ namespace Shikhai.DAL
                 Name = x.Name,
                 InstructionsImageUrl = HttpUtility.UrlPathEncode(baseUrl + x.InstructionsImageUrl),
                 IsBook = x.IsBook,
+                ShowOnHomePage=x.ShowOnHomePage,
                 IsStationary=x.IsStationary,
+                Published=x.Published,
             }).ToList();
 
             return entities;
@@ -41,7 +43,7 @@ namespace Shikhai.DAL
 
                 IsBook = x.IsBook,
                 IsStationary = x.IsStationary,
-
+                ShowOnHomePage = x.ShowOnHomePage,
                 InstructionsImageUrl = HttpUtility.UrlPathEncode(baseUrl + x.InstructionsImageUrl),
                 RawDbImagePath = x.InstructionsImageUrl,
                 Published = x.Published,
@@ -64,7 +66,7 @@ namespace Shikhai.DAL
 
                 IsBook = entity.IsBook,
                 IsStationary = entity.IsStationary,
-
+                ShowOnHomePage = entity.ShowOnHomePage,
                 InstructionsImageUrl = imgAddress,
                 Published = entity.Published,
 
@@ -97,7 +99,7 @@ namespace Shikhai.DAL
        
             entitySingle.InstructionsImageUrl = imgAddress;
             entitySingle.Published = entity.Published;
-
+            entitySingle.ShowOnHomePage = entity.ShowOnHomePage;
             entitySingle.IsBook = entity.IsBook;
             entitySingle.IsStationary = entity.IsStationary;
             try
@@ -142,6 +144,8 @@ namespace Shikhai.DAL
                 InstructionsImageUrl = HttpUtility.UrlPathEncode(baseUrl + x.InstructionsImageUrl),
                 IsBook = x.IsBook,
                 IsStationary = x.IsStationary,
+                ShowOnHomePage = x.ShowOnHomePage,
+                Published=x.Published
             }).ToList();
 
             return entities;
@@ -156,6 +160,8 @@ namespace Shikhai.DAL
                 InstructionsImageUrl = HttpUtility.UrlPathEncode(baseUrl + x.InstructionsImageUrl),
                 IsBook = x.IsBook,
                 IsStationary = x.IsStationary,
+                ShowOnHomePage = x.ShowOnHomePage,
+                Published = x.Published
             }).ToList();
 
             return entities;
@@ -170,6 +176,8 @@ namespace Shikhai.DAL
                 InstructionsImageUrl = HttpUtility.UrlPathEncode(baseUrl + x.InstructionsImageUrl),
                 IsBook = x.IsBook,
                 IsStationary = x.IsStationary,
+                ShowOnHomePage = x.ShowOnHomePage,
+                Published = x.Published
             }).ToList();
 
             return entities;
@@ -184,6 +192,8 @@ namespace Shikhai.DAL
                 InstructionsImageUrl = HttpUtility.UrlPathEncode(baseUrl + x.InstructionsImageUrl),
                 IsBook = x.IsBook,
                 IsStationary = x.IsStationary,
+                ShowOnHomePage = x.ShowOnHomePage,
+                Published = x.Published
             }).ToList();
 
             return entities;
