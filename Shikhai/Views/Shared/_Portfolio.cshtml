@@ -30,7 +30,7 @@
             foreach (var item in Model.portfolioChildren)
             {               
                 <div class="cbp-item  @item.Parent1Id">
-                    <a href="/Search/@item.Id" class="cbp-caption " data-title="@item.Name_English">
+                    <a href="/Categories/details/@item.Id" class="cbp-caption " data-title="@item.Name_English">
                         <div class="col-md-3" style="min-height:60px;">
                             <div style="background-color:#376285;margin:2px;min-height:60px; min-width:270px;">
                                 <h3 style="color:white !important; text-align:center; vertical-align:central;padding-top: 18px;"> @item.Name_English</h3>
@@ -45,7 +45,7 @@
             foreach (var item in Model.ParenCategories)
             {
                 <div class="cbp-item  @item.Value">
-                    <a href="/SearchAll/@item.Value" class="cbp-caption cbp-lightbox" data-title="@item.Text">
+                    <a href="/Categories/SearchAll/@item.Value" class="cbp-caption cbp-lightbox" data-title="@item.Text">
                         <div class="col-md-3" style="min-height:60px;">
                             <div style="background-color:#376285;margin:2px;min-height:60px; min-width:270px;">
                                 <h3 style="color:white !important; text-align:center; vertical-align:central;padding-top: 18px;"> View All Lessons</h3>

@@ -69,9 +69,9 @@ namespace Shikhai.Controllers
 
         // GET: Products/Details/5
         [AllowAnonymous]
-        public ActionResult Details(int? id)
+        public async Task<ActionResult> Details (int? id)
         {
-            var entity = GetDetails(id);
+            var entity = await GetDetails(id);
             return View(entity);
         }
 
