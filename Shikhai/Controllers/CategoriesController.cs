@@ -56,6 +56,21 @@ namespace Shikhai.Controllers
             throw new Exception("Exception");
         }
 
+
+        // GET: GetParentCat
+        public async Task<ActionResult> GetParentCat()
+        {
+            var responseMessage = await client.GetAsync(url+"/"+ "GetParentCat");
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                var responseData = responseMessage.Content.ReadAsStringAsync().Result;
+                var entity = JsonConvert.DeserializeObject<List<Category>>(responseData);
+                return View("Index", entity);
+            }
+            throw new Exception("Exception");
+        }
+
+
         // GET: Categories/Details/5
         public async Task<ActionResult> Details(int? id)
         {

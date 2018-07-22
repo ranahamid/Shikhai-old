@@ -30,6 +30,9 @@ namespace Shikhai.Controllers.Api
             return _repository.Get();
         }
 
+   
+
+
         [Route("api/CategoriesApi/{id}")]
         // GET: api/CategoriesApi/5
         [ResponseType(typeof(Category))]
@@ -79,5 +82,11 @@ namespace Shikhai.Controllers.Api
             return _repository.GetAllCategoriesSelectList();
         }
 
+        [Route("api/CategoriesApi/GetParentCat")]
+        // GET: api/CategoriesApi
+        public IEnumerable<Category> GetParentCat()
+        {
+            return _repository.GetParentCat();
+        }
     }
 }

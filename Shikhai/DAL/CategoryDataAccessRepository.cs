@@ -37,10 +37,37 @@ namespace Shikhai.DAL
                 UpdatedOnUtc = x.UpdatedOnUtc,
                 Published = x.Published,
 
-            }).OrderBy(x => x.Name_English).ToList();
+            }).OrderBy(x => x.DisplayOrder).ToList();
 
             return entities;
         }
+
+        public IEnumerable<Category> GetParentCat()
+        {
+            List<Category> entities = new List<Category>();
+
+            entities = Db.CategoryTbls.Where(x => x.Parent1Id == null || x.Parent1Id == 0).Select(x => new Category()
+            {
+                Id = x.Id,
+                Name_English = x.Name_English,
+                Name_Bangla = x.Name_Bangla,
+                Description = x.Description,
+                DisplayOrder = x.DisplayOrder,
+                ImagePath = HttpUtility.UrlPathEncode(baseUrl + x.ImagePath),
+                RawDBImagePath = x.ImagePath,
+                Parent1Id = x.Parent1Id,
+
+                ShowOnHomePage = x.ShowOnHomePage,
+                IncludeInTopMenu = x.IncludeInTopMenu,
+                CreatedOnUtc = x.CreatedOnUtc,
+                UpdatedOnUtc = x.UpdatedOnUtc,
+                Published = x.Published,
+
+            }).OrderBy(x => x.DisplayOrder).ToList();
+
+            return entities;
+        }
+        
 
         public Category Get(int id)
         {

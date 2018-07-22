@@ -26,7 +26,7 @@ namespace Shikhai.Models
         [Display(Name = "Description")]
         public string Description { get; set; }
 
-        [Display(Name = "বর্ণনা")]
+        [Display(Name = "Display Order")]
         public int? DisplayOrder { get; set; }
 
         [Display(Name = "Category Image")]

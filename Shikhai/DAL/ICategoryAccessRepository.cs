@@ -12,7 +12,9 @@ namespace Shikhai.DAL
         void Post(TEntity entity);
         void Put(TPrimaryKey id, TEntity entity);
         void Delete(TPrimaryKey id);
- 
-        List<System.Web.Mvc.SelectListItem> GetAllCategoriesSelectList();
+        
+        //custom
+        List<System.Web.Mvc.SelectListItem> GetAllCategoriesSelectList();        
+        IEnumerable<TEntity> GetParentCat();
     }
 }
