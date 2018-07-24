@@ -39,6 +39,30 @@ namespace Shikhai.Controllers
             return View();
         }
 
+        public ActionResult WhyUs()
+        {
+            return View();
+        }
+
+        public ActionResult Howwork()
+        {
+            return View();
+        }
+
+        public ActionResult FAQStudents()
+        {
+            return View();
+        }
+
+
+        public ActionResult FAQTutors()
+        {
+            return View();
+        }
+        public ActionResult Testimonial()
+        {
+            return View();
+        }
     }
 
 

@@ -1353,6 +1353,7 @@
     <Content Include="Content\superior\responsive.css" />
     <Content Include="Content\superior\simplyscroll.css" />
     <Content Include="Content\superior\wickedpicker.min.css" />
+    <Content Include="Scripts\main14.js" />
     <Content Include="Scripts\modernizr-2.6.2.min.js" />
     <Content Include="Content\normalize.css" />
     <Content Include="Content\users\avatar1.jpg" />
@@ -4034,6 +4035,11 @@
     <Content Include="Views\Books\Edit.cshtml" />
     <Content Include="Views\Books\Index.cshtml" />
     <Content Include="Views\Shared\_ProductsHomePage.cshtml" />
+    <Content Include="Views\Home\WhyUs.cshtml" />
+    <Content Include="Views\Home\Howwork.cshtml" />
+    <Content Include="Views\Home\FAQStudents.cshtml" />
+    <Content Include="Views\Home\FAQTutors.cshtml" />
+    <Content Include="Views\Home\Testimonial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
