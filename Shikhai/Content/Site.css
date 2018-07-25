@@ -2973,3 +2973,8 @@ a {
         height: 57px;
         top: 231px;
     }
+
+    /*footer*/
+    .black{
+        background-color:black;
+    }

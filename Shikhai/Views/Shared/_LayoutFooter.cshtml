@@ -152,7 +152,7 @@
 <script src="https://www.superiorlearning.ca/assets/front/js/customScrollbar.min.js"></script>
 <script src="https://www.superiorlearning.ca/assets/front/js/jquery.countdown.js"></script>
 <script src="https://www.superiorlearning.ca/assets/front/js/simplyscroll.min.js"></script>
-<script src="https://www.superiorlearning.ca/assets/front/js/owl.carousel.min.js"></script>
+@*<script src="https://www.superiorlearning.ca/assets/front/js/owl.carousel.min.js"></script>*@
 <script src="https://www.superiorlearning.ca/assets/front/js/chosen.jquery.js"></script>
 <script src="https://www.superiorlearning.ca/assets/front/js/jquery-ui.js"></script>
 <script src="https://www.superiorlearning.ca/assets/front/js/parallax.js"></script>
@@ -169,5 +169,34 @@
 
 <script src="~/Scripts/main14.js"></script>
 <script src="https://www.superiorlearning.ca/assets/front/js/wickedpicker.min.js"></script>
+
+
+@*testimonial*@
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+<script>
+
+    $(document).ready(function () {
+        $("#owl-demo").owlCarousel({
+
+            autoPlay: 3000, //Set AutoPlay to 3 seconds
+            dots: true,
+            singleItem: true,
+            pagination: true,
+            navigation: false,
+            autoplay: true,
+            autoplayTimeout: 5000
+        });
+
+
+    });
+    // Go to the next item
+    $('.mlabs-next-btn').click(function () {
+        owl.trigger('next.owl.carousel');
+    })
+    // Go to the previous item
+    $('.mlabs-prev-btn').click(function () {
+        owl.trigger('prev.owl.carousel');
+    })
+</script>
 
 

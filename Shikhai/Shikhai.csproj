@@ -1277,6 +1277,7 @@
     <Content Include="Content\images\categories\93412275\thumbs\Koren-images80x80.jpg" />
     <Content Include="Content\images\categories\9819947\Math-Ed-Banner.jpg" />
     <Content Include="Content\images\categories\9819947\thumbs\Math-Ed-Banner80x80.jpg" />
+    <Content Include="Content\images\grabbing.png" />
     <Content Include="Content\images\heart.gif" />
     <Content Include="Content\images\ImageAttribution.txt" />
     <Content Include="Content\images\logo.png" />
@@ -1291,6 +1292,19 @@
     <Content Include="Content\images\Products\69154903\learn-english-at-marbella-international-spanish-school-marbella.jpg" />
     <Content Include="Content\images\Products\69154903\thumbs\learn-english-at-marbella-international-spanish-school-marbella80x80.jpg" />
     <Content Include="Content\images\right_arrow.png" />
+    <Content Include="Content\images\ShikhaiImages\arrow-white.png" />
+    <Content Include="Content\images\ShikhaiImages\arrow.jpg" />
+    <Content Include="Content\images\ShikhaiImages\Fb.png" />
+    <Content Include="Content\images\ShikhaiImages\frame.png" />
+    <Content Include="Content\images\ShikhaiImages\linkedin.png" />
+    <Content Include="Content\images\ShikhaiImages\logo-white.png" />
+    <Content Include="Content\images\ShikhaiImages\Logo.png" />
+    <Content Include="Content\images\ShikhaiImages\mail-icon.png" />
+    <Content Include="Content\images\ShikhaiImages\parents.jpg" />
+    <Content Include="Content\images\ShikhaiImages\phone.jpg" />
+    <Content Include="Content\images\ShikhaiImages\pic-01.jpg" />
+    <Content Include="Content\images\ShikhaiImages\pic-02.jpg" />
+    <Content Include="Content\images\ShikhaiImages\Sample-Image.jpg" />
     <Content Include="Content\Ionicons\css\ionicons.css" />
     <Content Include="Content\Ionicons\fonts\ionicons.svg" />
     <Content Include="Content\jquery-clockpicker\bootstrap-clockpicker.css" />
@@ -3585,6 +3599,7 @@
     <Content Include="Content\assets\pages\media\blog\Thumbs.db" />
     <Content Include="Content\assets\pages\media\pages\Thumbs.db" />
     <Content Include="Content\superior\style.scss" />
+    <Content Include="Content\testimonial.scss" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <Content Include="Scripts\jquery-slimscroll\jquery.slimscroll.js" />
     <Content Include="Scripts\moment\moment-with-locales.js" />
