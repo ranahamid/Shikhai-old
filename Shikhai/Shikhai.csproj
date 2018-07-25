@@ -283,11 +283,11 @@
     <Compile Include="DAL\AccountDataAccessRepository.cs" />
     <Compile Include="DAL\BannerDataAccessRepository.cs" />
     <Compile Include="DAL\CategoryDataAccessRepository.cs" />
+    <Compile Include="DAL\ClassNameDataAccessRepository.cs" />
+    <Compile Include="DAL\IClassNameAccessRepository.cs" />
     <Compile Include="DAL\IProductAccessRepository.cs" />
+    <Compile Include="DAL\ITestimonialAccessRepository.cs" />
     <Compile Include="DAL\ProductDataAccessRepository.cs" />
-    <Compile Include="DAL\Shodypati.cs">
-      <DependentUpon>Shodypati.dbml</DependentUpon>
-    </Compile>
     <Compile Include="DAL\TeacherDataAccessRepository.cs" />
     <Compile Include="DAL\IAccountAccessRepository.cs" />
     <Compile Include="DAL\IBannerAccessRepository.cs" />
@@ -308,6 +308,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Shodypati.dbml</DependentUpon>
     </Compile>
+    <Compile Include="DAL\TestimonialDataAccessRepository.cs" />
     <Compile Include="Filters\ExceptionHandlerAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -323,6 +324,7 @@
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\CacheManager.cs" />
     <Compile Include="Models\CustomerSearch.cs" />
+    <Compile Include="Models\HomePageSearch.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Teacher.cs" />
     <Compile Include="Models\FilesViewModel.cs" />
@@ -335,6 +337,7 @@
     <Compile Include="Models\Medicine.cs" />
     <Compile Include="Models\Merchant.cs" />
     <Compile Include="Models\Payment.cs" />
+    <Compile Include="Models\Testimonial.cs" />
     <Compile Include="Models\UserRegistrationInfo.cs" />
     <Compile Include="Models\NullObjectCache.cs" />
     <Compile Include="Models\Shipment.cs" />
@@ -4038,7 +4041,7 @@
     <Content Include="Views\Payments\Success.cshtml" />
     <Content Include="Views\Teachers\Index.cshtml" />
     <Content Include="Views\Teachers\Dashboard.cshtml" />
-    <Content Include="Views\Shared\_Portfolio.cshtml" />
+    <Content Include="Views\Catalog\_LessonsPortfolio.cshtml" />
     <Content Include="Views\Stationaries\Create.cshtml" />
     <Content Include="Views\Stationaries\Delete.cshtml" />
     <Content Include="Views\Stationaries\Details.cshtml" />
@@ -4049,12 +4052,14 @@
     <Content Include="Views\Books\Details.cshtml" />
     <Content Include="Views\Books\Edit.cshtml" />
     <Content Include="Views\Books\Index.cshtml" />
-    <Content Include="Views\Shared\_ProductsHomePage.cshtml" />
+    <Content Include="Views\Catalog\_ProductsPortfolio.cshtml" />
     <Content Include="Views\Home\WhyUs.cshtml" />
     <Content Include="Views\Home\Howwork.cshtml" />
     <Content Include="Views\Home\FAQStudents.cshtml" />
     <Content Include="Views\Home\FAQTutors.cshtml" />
     <Content Include="Views\Home\Testimonial.cshtml" />
+    <Content Include="Views\Catalog\__EasyAs123.cshtml" />
+    <Content Include="Views\Catalog\_Testimonial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

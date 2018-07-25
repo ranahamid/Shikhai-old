@@ -45,15 +45,15 @@ namespace Shikhai.Controllers
             return PartialView("_HomepageBanner", entity);
         }
 
-        public ActionResult Portfolio()
+        public ActionResult LessonsPortfolio()
         {
             Portfolio portfolio = new Portfolio();
             portfolio.ParenCategories = Categories;
             portfolio.portfolioChildren= portfolioChildCategories;
-            return PartialView("_Portfolio", portfolio);
+            return PartialView("_LessonsPortfolio", portfolio);
         }
 
-        public ActionResult Products()
+        public ActionResult ProductsPortfolio()
         {
             ProductViewModel vm = new ProductViewModel();
             url = baseUrl + "api/ProductApi/GetHomePageStationaries";
@@ -68,9 +68,19 @@ namespace Shikhai.Controllers
             var entity2 = JsonConvert.DeserializeObject<List<Product>>(responseMessage2);
             vm.Books = entity2;
 
-            return PartialView("_ProductsHomePage", vm);
+            return PartialView("_ProductsPortfolio", vm);
+        }
+
+        public ActionResult EasyAs123()
+        {
+            return PartialView("_EasyAs123");
+        }
+        public ActionResult Testimonial()
+        {
+            return PartialView("_Testimonial");
         }
 
 
+        
     }
 }
