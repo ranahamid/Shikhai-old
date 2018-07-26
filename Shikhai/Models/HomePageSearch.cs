@@ -42,6 +42,18 @@ namespace Shikhai.Models
     {
         public int Id { get; set; }
 
+        public string Name
+        {
+            get
+            {
+                return this.LowerLimit + "-" + this.UpperLimit;
+            }
+            set
+            {
+
+            }
+        }
+
         public int LowerLimit { get; set; }
 
         public int UpperLimit { get; set; }

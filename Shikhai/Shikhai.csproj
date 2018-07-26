@@ -285,9 +285,13 @@
     <Compile Include="DAL\CategoryDataAccessRepository.cs" />
     <Compile Include="DAL\ClassNameDataAccessRepository.cs" />
     <Compile Include="DAL\IClassNameAccessRepository.cs" />
+    <Compile Include="DAL\ILocationAccessRepository.cs" />
     <Compile Include="DAL\IProductAccessRepository.cs" />
+    <Compile Include="DAL\IRangeAccessRepository.cs" />
     <Compile Include="DAL\ITestimonialAccessRepository.cs" />
+    <Compile Include="DAL\LocationDataAccessRepository.cs" />
     <Compile Include="DAL\ProductDataAccessRepository.cs" />
+    <Compile Include="DAL\RangeDataAccessRepository.cs" />
     <Compile Include="DAL\TeacherDataAccessRepository.cs" />
     <Compile Include="DAL\IAccountAccessRepository.cs" />
     <Compile Include="DAL\IBannerAccessRepository.cs" />

@@ -72,12 +72,12 @@ namespace Shikhai.DAL
     partial void InsertTestimonialTbl(TestimonialTbl instance);
     partial void UpdateTestimonialTbl(TestimonialTbl instance);
     partial void DeleteTestimonialTbl(TestimonialTbl instance);
-    partial void InsertRangeTbl(RangeTbl instance);
-    partial void UpdateRangeTbl(RangeTbl instance);
-    partial void DeleteRangeTbl(RangeTbl instance);
     partial void InsertLocationTbl(LocationTbl instance);
     partial void UpdateLocationTbl(LocationTbl instance);
     partial void DeleteLocationTbl(LocationTbl instance);
+    partial void InsertRangeTbl(RangeTbl instance);
+    partial void UpdateRangeTbl(RangeTbl instance);
+    partial void DeleteRangeTbl(RangeTbl instance);
     #endregion
 		
 		public ShikhaiDataContext() : 
@@ -230,19 +230,19 @@ namespace Shikhai.DAL
 			}
 		}
 		
-		public System.Data.Linq.Table<RangeTbl> RangeTbls
-		{
-			get
-			{
-				return this.GetTable<RangeTbl>();
-			}
-		}
-		
 		public System.Data.Linq.Table<LocationTbl> LocationTbls
 		{
 			get
 			{
 				return this.GetTable<LocationTbl>();
+			}
+		}
+		
+		public System.Data.Linq.Table<RangeTbl> RangeTbls
+		{
+			get
+			{
+				return this.GetTable<RangeTbl>();
 			}
 		}
 	}
@@ -4166,19 +4166,17 @@ namespace Shikhai.DAL
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.RangeTbl")]
-	public partial class RangeTbl : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.LocationTbl")]
+	public partial class LocationTbl : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _Id;
 		
-		private int _LowerLimit;
+		private string _Name;
 		
-		private int _UpperLimit;
-		
-		private System.DateTime _CreatedOnUtc;
+		private System.Nullable<System.DateTime> _CreatedOnUtc;
 		
 		private System.Nullable<System.DateTime> _UpdatedOnUtc;
 		
@@ -4190,11 +4188,9 @@ namespace Shikhai.DAL
     partial void OnCreated();
     partial void OnIdChanging(int value);
     partial void OnIdChanged();
-    partial void OnLowerLimitChanging(int value);
-    partial void OnLowerLimitChanged();
-    partial void OnUpperLimitChanging(int value);
-    partial void OnUpperLimitChanged();
-    partial void OnCreatedOnUtcChanging(System.DateTime value);
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnCreatedOnUtcChanging(System.Nullable<System.DateTime> value);
     partial void OnCreatedOnUtcChanged();
     partial void OnUpdatedOnUtcChanging(System.Nullable<System.DateTime> value);
     partial void OnUpdatedOnUtcChanged();
@@ -4202,7 +4198,7 @@ namespace Shikhai.DAL
     partial void OnPublishedChanged();
     #endregion
 		
-		public RangeTbl()
+		public LocationTbl()
 		{
 			OnCreated();
 		}
@@ -4227,48 +4223,28 @@ namespace Shikhai.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LowerLimit", DbType="Int NOT NULL")]
-		public int LowerLimit
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Name
 		{
 			get
 			{
-				return this._LowerLimit;
+				return this._Name;
 			}
 			set
 			{
-				if ((this._LowerLimit != value))
+				if ((this._Name != value))
 				{
-					this.OnLowerLimitChanging(value);
+					this.OnNameChanging(value);
 					this.SendPropertyChanging();
-					this._LowerLimit = value;
-					this.SendPropertyChanged("LowerLimit");
-					this.OnLowerLimitChanged();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UpperLimit", DbType="Int NOT NULL")]
-		public int UpperLimit
-		{
-			get
-			{
-				return this._UpperLimit;
-			}
-			set
-			{
-				if ((this._UpperLimit != value))
-				{
-					this.OnUpperLimitChanging(value);
-					this.SendPropertyChanging();
-					this._UpperLimit = value;
-					this.SendPropertyChanged("UpperLimit");
-					this.OnUpperLimitChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedOnUtc", DbType="DateTime2 NOT NULL")]
-		public System.DateTime CreatedOnUtc
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedOnUtc", DbType="DateTime2")]
+		public System.Nullable<System.DateTime> CreatedOnUtc
 		{
 			get
 			{
@@ -4348,15 +4324,17 @@ namespace Shikhai.DAL
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.LocationTbl")]
-	public partial class LocationTbl : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.RangeTbl")]
+	public partial class RangeTbl : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _Id;
 		
-		private string _Name;
+		private int _LowerLimit;
+		
+		private int _UpperLimit;
 		
 		private System.Nullable<System.DateTime> _CreatedOnUtc;
 		
@@ -4370,8 +4348,10 @@ namespace Shikhai.DAL
     partial void OnCreated();
     partial void OnIdChanging(int value);
     partial void OnIdChanged();
-    partial void OnNameChanging(string value);
-    partial void OnNameChanged();
+    partial void OnLowerLimitChanging(int value);
+    partial void OnLowerLimitChanged();
+    partial void OnUpperLimitChanging(int value);
+    partial void OnUpperLimitChanged();
     partial void OnCreatedOnUtcChanging(System.Nullable<System.DateTime> value);
     partial void OnCreatedOnUtcChanged();
     partial void OnUpdatedOnUtcChanging(System.Nullable<System.DateTime> value);
@@ -4380,7 +4360,7 @@ namespace Shikhai.DAL
     partial void OnPublishedChanged();
     #endregion
 		
-		public LocationTbl()
+		public RangeTbl()
 		{
 			OnCreated();
 		}
@@ -4405,22 +4385,42 @@ namespace Shikhai.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Name
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LowerLimit", DbType="Int NOT NULL")]
+		public int LowerLimit
 		{
 			get
 			{
-				return this._Name;
+				return this._LowerLimit;
 			}
 			set
 			{
-				if ((this._Name != value))
+				if ((this._LowerLimit != value))
 				{
-					this.OnNameChanging(value);
+					this.OnLowerLimitChanging(value);
 					this.SendPropertyChanging();
-					this._Name = value;
-					this.SendPropertyChanged("Name");
-					this.OnNameChanged();
+					this._LowerLimit = value;
+					this.SendPropertyChanged("LowerLimit");
+					this.OnLowerLimitChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UpperLimit", DbType="Int NOT NULL")]
+		public int UpperLimit
+		{
+			get
+			{
+				return this._UpperLimit;
+			}
+			set
+			{
+				if ((this._UpperLimit != value))
+				{
+					this.OnUpperLimitChanging(value);
+					this.SendPropertyChanging();
+					this._UpperLimit = value;
+					this.SendPropertyChanged("UpperLimit");
+					this.OnUpperLimitChanged();
 				}
 			}
 		}
