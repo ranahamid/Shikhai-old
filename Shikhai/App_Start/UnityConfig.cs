@@ -64,6 +64,17 @@ namespace Shikhai
 
             //product
             container.RegisterType<IProductAccessRepository<Product, int>, ProductDataAccessRepository>();
+            //testimonial
+            container.RegisterType<ITestimonialAccessRepository<Testimonial, int>, TestimonialDataAccessRepository>();
+
+            //Range
+            container.RegisterType<IRangeAccessRepository<Range, int>, RangeDataAccessRepository>();
+
+            //Location
+            container.RegisterType<ILocationAccessRepository<Location, int>, LocationDataAccessRepository>();
+
+            //ClassName
+            container.RegisterType<IClassNameAccessRepository<ClassName, int>, ClassNameDataAccessRepository>();
 
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
         }

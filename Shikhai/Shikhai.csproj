@@ -254,11 +254,15 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Api\AccountApiController.cs" />
     <Compile Include="Controllers\Api\BannersApiController.cs" />
+    <Compile Include="Controllers\Api\ClassNameApiController.cs" />
+    <Compile Include="Controllers\Api\LocationApiController.cs" />
     <Compile Include="Controllers\Api\ProductApiController.cs" />
+    <Compile Include="Controllers\Api\RangeApiController.cs" />
     <Compile Include="Controllers\Api\TeachersApiController.cs" />
     <Compile Include="Controllers\Api\OrderPaymentMethodApiController.cs" />
     <Compile Include="Controllers\Api\OrderPaymentStatusApiController.cs" />
     <Compile Include="Controllers\Api\PaymentApiController.cs" />
+    <Compile Include="Controllers\Api\TestimonialApiController.cs" />
     <Compile Include="Controllers\BannersController.cs" />
     <Compile Include="Controllers\CatalogController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />

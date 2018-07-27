@@ -27,9 +27,7 @@ namespace Shikhai.DAL
                 Name = x.Name,
                 CreatedOnUtc = x.CreatedOnUtc,
                 UpdatedOnUtc = x.UpdatedOnUtc,
-
                 Published = x.Published
-
             }).ToList();
 
             return entities;
@@ -43,9 +41,7 @@ namespace Shikhai.DAL
                 Name = x.Name,
                 CreatedOnUtc = x.CreatedOnUtc,
                 UpdatedOnUtc = x.UpdatedOnUtc,
-
                 Published = x.Published
-
             }).SingleOrDefault();
 
             if (entity == null)
@@ -63,7 +59,6 @@ namespace Shikhai.DAL
                 Name = entity.Name,
                 CreatedOnUtc = entity.CreatedOnUtc,
                 UpdatedOnUtc = entity.UpdatedOnUtc,
-
                 Published = entity.Published
             });
             try
@@ -90,12 +85,9 @@ namespace Shikhai.DAL
             if (isEntity != null)
             {
                 LocationTbl entitySingle = isEntity.Single();
-
-
                 entitySingle.Name = entity.Name;
                 entitySingle.CreatedOnUtc = entity.CreatedOnUtc;
                 entitySingle.UpdatedOnUtc = entity.UpdatedOnUtc;
-
                 entitySingle.Published = entity.Published;
             }
 
