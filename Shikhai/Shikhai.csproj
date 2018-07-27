@@ -265,12 +265,15 @@
     <Compile Include="Controllers\Api\TestimonialApiController.cs" />
     <Compile Include="Controllers\BannersController.cs" />
     <Compile Include="Controllers\CatalogController.cs" />
+    <Compile Include="Controllers\ClassNamesController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\Api\CategoriesApiController.cs" />
     <Compile Include="Controllers\Api\LogApiController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
+    <Compile Include="Controllers\LocationsController.cs" />
+    <Compile Include="Controllers\RangesController.cs" />
     <Compile Include="Controllers\StationariesController.cs" />
     <Compile Include="Controllers\BooksController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
@@ -283,6 +286,7 @@
     <Compile Include="Controllers\OrderPaymentMethodsController.cs" />
     <Compile Include="Controllers\OrderPaymentStatusController.cs" />
     <Compile Include="Controllers\PaymentsController.cs" />
+    <Compile Include="Controllers\TestimonialsController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="DAL\AccountDataAccessRepository.cs" />
     <Compile Include="DAL\BannerDataAccessRepository.cs" />
@@ -4068,6 +4072,26 @@
     <Content Include="Views\Home\Testimonial.cshtml" />
     <Content Include="Views\Catalog\__EasyAs123.cshtml" />
     <Content Include="Views\Catalog\_Testimonial.cshtml" />
+    <Content Include="Views\Locations\Create.cshtml" />
+    <Content Include="Views\Locations\Delete.cshtml" />
+    <Content Include="Views\Locations\Details.cshtml" />
+    <Content Include="Views\Locations\Edit.cshtml" />
+    <Content Include="Views\Locations\Index.cshtml" />
+    <Content Include="Views\ClassNames\Create.cshtml" />
+    <Content Include="Views\ClassNames\Delete.cshtml" />
+    <Content Include="Views\ClassNames\Details.cshtml" />
+    <Content Include="Views\ClassNames\Edit.cshtml" />
+    <Content Include="Views\ClassNames\Index.cshtml" />
+    <Content Include="Views\Ranges\Create.cshtml" />
+    <Content Include="Views\Ranges\Delete.cshtml" />
+    <Content Include="Views\Ranges\Details.cshtml" />
+    <Content Include="Views\Ranges\Edit.cshtml" />
+    <Content Include="Views\Ranges\Index.cshtml" />
+    <Content Include="Views\Testimonials\Create.cshtml" />
+    <Content Include="Views\Testimonials\Delete.cshtml" />
+    <Content Include="Views\Testimonials\Details.cshtml" />
+    <Content Include="Views\Testimonials\Edit.cshtml" />
+    <Content Include="Views\Testimonials\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -56,7 +56,13 @@ namespace Shikhai.Models
             return new ApplicationDbContext();
         }
 
-       
+        public System.Data.Entity.DbSet<Shikhai.Models.Location> Locations { get; set; }
+
+        public System.Data.Entity.DbSet<Shikhai.Models.ClassName> ClassNames { get; set; }
+
+        public System.Data.Entity.DbSet<Shikhai.Models.Range> Ranges { get; set; }
+
+        public System.Data.Entity.DbSet<Shikhai.Models.Testimonial> Testimonials { get; set; }
     }
 
 
