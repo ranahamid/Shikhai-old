@@ -27,7 +27,7 @@ namespace Shikhai.DAL
                 Name = x.Name,
                 CreatedOnUtc = x.CreatedOnUtc,
                 UpdatedOnUtc = x.UpdatedOnUtc,
-              
+                DisplayOrder=x.DisplayOrder,
                 Published = x.Published
 
             }).ToList();
@@ -43,7 +43,7 @@ namespace Shikhai.DAL
                 Name = x.Name,
                 CreatedOnUtc = x.CreatedOnUtc,
                 UpdatedOnUtc = x.UpdatedOnUtc,
-             
+                DisplayOrder = x.DisplayOrder,
                 Published = x.Published
 
             }).SingleOrDefault();
@@ -63,7 +63,7 @@ namespace Shikhai.DAL
                 Name = entity.Name,
                 CreatedOnUtc = entity.CreatedOnUtc,
                 UpdatedOnUtc = entity.UpdatedOnUtc,
-              
+                DisplayOrder = entity.DisplayOrder,
                 Published = entity.Published
             });
             try
@@ -91,11 +91,10 @@ namespace Shikhai.DAL
             {
                 ClassNameTbl entitySingle = isEntity.Single();
 
-
                 entitySingle.Name = entity.Name;
                 entitySingle.CreatedOnUtc = entity.CreatedOnUtc;
                 entitySingle.UpdatedOnUtc = entity.UpdatedOnUtc;
-              
+                entitySingle.DisplayOrder = entity.DisplayOrder;
                 entitySingle.Published = entity.Published;
             }
 

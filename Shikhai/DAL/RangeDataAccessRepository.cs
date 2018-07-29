@@ -27,7 +27,7 @@ namespace Shikhai.DAL
                 UpperLimit = x.UpperLimit,
                 CreatedOnUtc = x.CreatedOnUtc,
                 UpdatedOnUtc = x.UpdatedOnUtc,
-
+                DisplayOrder=x.DisplayOrder,
                 Published = x.Published
 
             }).ToList();
@@ -44,7 +44,7 @@ namespace Shikhai.DAL
                 UpperLimit = x.UpperLimit,
                 CreatedOnUtc = x.CreatedOnUtc,
                 UpdatedOnUtc = x.UpdatedOnUtc,
-
+                DisplayOrder = x.DisplayOrder,
                 Published = x.Published
 
             }).SingleOrDefault();
@@ -65,7 +65,7 @@ namespace Shikhai.DAL
                 UpperLimit = entity.UpperLimit,
                 CreatedOnUtc = entity.CreatedOnUtc,
                 UpdatedOnUtc = entity.UpdatedOnUtc,
-
+                DisplayOrder = entity.DisplayOrder,
                 Published = entity.Published
             });
             try
@@ -93,7 +93,7 @@ namespace Shikhai.DAL
             {
                 RangeTbl entitySingle = isEntity.Single();
 
-
+                entitySingle.DisplayOrder = entity.DisplayOrder;
                 entitySingle.LowerLimit = entity.LowerLimit;
                 entitySingle.UpperLimit = entity.UpperLimit;
                 entitySingle.CreatedOnUtc = entity.CreatedOnUtc;

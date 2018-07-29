@@ -25,6 +25,7 @@ namespace Shikhai.DAL
             {
                 Id = x.Id,
                 Name = x.Name,
+                DisplayOrder=x.DisplayOrder,
                 CreatedOnUtc = x.CreatedOnUtc,
                 UpdatedOnUtc = x.UpdatedOnUtc,
                 Published = x.Published
@@ -39,6 +40,7 @@ namespace Shikhai.DAL
             {
                 Id = x.Id,
                 Name = x.Name,
+                DisplayOrder = x.DisplayOrder,
                 CreatedOnUtc = x.CreatedOnUtc,
                 UpdatedOnUtc = x.UpdatedOnUtc,
                 Published = x.Published
@@ -57,6 +59,7 @@ namespace Shikhai.DAL
             Db.LocationTbls.InsertOnSubmit(new LocationTbl
             {
                 Name = entity.Name,
+                DisplayOrder = entity.DisplayOrder,
                 CreatedOnUtc = entity.CreatedOnUtc,
                 UpdatedOnUtc = entity.UpdatedOnUtc,
                 Published = entity.Published
@@ -85,6 +88,7 @@ namespace Shikhai.DAL
             if (isEntity != null)
             {
                 LocationTbl entitySingle = isEntity.Single();
+                entitySingle.DisplayOrder = entity.DisplayOrder;
                 entitySingle.Name = entity.Name;
                 entitySingle.CreatedOnUtc = entity.CreatedOnUtc;
                 entitySingle.UpdatedOnUtc = entity.UpdatedOnUtc;

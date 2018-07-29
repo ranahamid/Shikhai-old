@@ -24,6 +24,7 @@ namespace Shikhai.DAL
             entities = Db.TestimonialTbls.Select(x => new Testimonial()
             {
                 Id = x.Id,
+                DisplayOrder=x.DisplayOrder,
                 Description = x.Description,
                 CreatedOnUtc = x.CreatedOnUtc,
                 UpdatedOnUtc=x.UpdatedOnUtc,
@@ -42,6 +43,7 @@ namespace Shikhai.DAL
             Testimonial entity = Db.TestimonialTbls.Where(x => x.Id == id).Select(x => new Testimonial()
             {
                 Id = x.Id,
+                DisplayOrder = x.DisplayOrder,
                 Description = x.Description,
                 CreatedOnUtc = x.CreatedOnUtc,
                 UpdatedOnUtc = x.UpdatedOnUtc,
@@ -64,6 +66,7 @@ namespace Shikhai.DAL
         {
             Db.TestimonialTbls.InsertOnSubmit(new TestimonialTbl
             {
+                DisplayOrder = entity.DisplayOrder,
                 Description = entity.Description,
                 CreatedOnUtc = entity.CreatedOnUtc,
                 UpdatedOnUtc = entity.UpdatedOnUtc,
@@ -97,7 +100,7 @@ namespace Shikhai.DAL
             {
                 TestimonialTbl entitySingle = isEntity.Single();
 
-
+                entitySingle.DisplayOrder = entity.DisplayOrder;
                 entitySingle.Description = entity.Description;
                 entitySingle.CreatedOnUtc = entity.CreatedOnUtc;
                 entitySingle.UpdatedOnUtc = entity.UpdatedOnUtc;

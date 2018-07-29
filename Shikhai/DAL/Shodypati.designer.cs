@@ -42,9 +42,15 @@ namespace Shikhai.DAL
     partial void InsertCategoryTbl(CategoryTbl instance);
     partial void UpdateCategoryTbl(CategoryTbl instance);
     partial void DeleteCategoryTbl(CategoryTbl instance);
+    partial void InsertClassNameTbl(ClassNameTbl instance);
+    partial void UpdateClassNameTbl(ClassNameTbl instance);
+    partial void DeleteClassNameTbl(ClassNameTbl instance);
     partial void InsertCustomerSearchTbl(CustomerSearchTbl instance);
     partial void UpdateCustomerSearchTbl(CustomerSearchTbl instance);
     partial void DeleteCustomerSearchTbl(CustomerSearchTbl instance);
+    partial void InsertLocationTbl(LocationTbl instance);
+    partial void UpdateLocationTbl(LocationTbl instance);
+    partial void DeleteLocationTbl(LocationTbl instance);
     partial void InsertLogTbl(LogTbl instance);
     partial void UpdateLogTbl(LogTbl instance);
     partial void DeleteLogTbl(LogTbl instance);
@@ -60,24 +66,18 @@ namespace Shikhai.DAL
     partial void InsertPaymentTbl(PaymentTbl instance);
     partial void UpdatePaymentTbl(PaymentTbl instance);
     partial void DeletePaymentTbl(PaymentTbl instance);
-    partial void InsertTeacherTbl(TeacherTbl instance);
-    partial void UpdateTeacherTbl(TeacherTbl instance);
-    partial void DeleteTeacherTbl(TeacherTbl instance);
     partial void InsertProductTbl(ProductTbl instance);
     partial void UpdateProductTbl(ProductTbl instance);
     partial void DeleteProductTbl(ProductTbl instance);
-    partial void InsertClassNameTbl(ClassNameTbl instance);
-    partial void UpdateClassNameTbl(ClassNameTbl instance);
-    partial void DeleteClassNameTbl(ClassNameTbl instance);
-    partial void InsertTestimonialTbl(TestimonialTbl instance);
-    partial void UpdateTestimonialTbl(TestimonialTbl instance);
-    partial void DeleteTestimonialTbl(TestimonialTbl instance);
-    partial void InsertLocationTbl(LocationTbl instance);
-    partial void UpdateLocationTbl(LocationTbl instance);
-    partial void DeleteLocationTbl(LocationTbl instance);
     partial void InsertRangeTbl(RangeTbl instance);
     partial void UpdateRangeTbl(RangeTbl instance);
     partial void DeleteRangeTbl(RangeTbl instance);
+    partial void InsertTeacherTbl(TeacherTbl instance);
+    partial void UpdateTeacherTbl(TeacherTbl instance);
+    partial void DeleteTeacherTbl(TeacherTbl instance);
+    partial void InsertTestimonialTbl(TestimonialTbl instance);
+    partial void UpdateTestimonialTbl(TestimonialTbl instance);
+    partial void DeleteTestimonialTbl(TestimonialTbl instance);
     #endregion
 		
 		public ShikhaiDataContext() : 
@@ -142,6 +142,14 @@ namespace Shikhai.DAL
 			}
 		}
 		
+		public System.Data.Linq.Table<ClassNameTbl> ClassNameTbls
+		{
+			get
+			{
+				return this.GetTable<ClassNameTbl>();
+			}
+		}
+		
 		public System.Data.Linq.Table<CustomerSearchTbl> CustomerSearchTbls
 		{
 			get
@@ -155,6 +163,14 @@ namespace Shikhai.DAL
 			get
 			{
 				return this.GetTable<GeoZoneTbl>();
+			}
+		}
+		
+		public System.Data.Linq.Table<LocationTbl> LocationTbls
+		{
+			get
+			{
+				return this.GetTable<LocationTbl>();
 			}
 		}
 		
@@ -198,14 +214,6 @@ namespace Shikhai.DAL
 			}
 		}
 		
-		public System.Data.Linq.Table<TeacherTbl> TeacherTbls
-		{
-			get
-			{
-				return this.GetTable<TeacherTbl>();
-			}
-		}
-		
 		public System.Data.Linq.Table<ProductTbl> ProductTbls
 		{
 			get
@@ -214,11 +222,19 @@ namespace Shikhai.DAL
 			}
 		}
 		
-		public System.Data.Linq.Table<ClassNameTbl> ClassNameTbls
+		public System.Data.Linq.Table<RangeTbl> RangeTbls
 		{
 			get
 			{
-				return this.GetTable<ClassNameTbl>();
+				return this.GetTable<RangeTbl>();
+			}
+		}
+		
+		public System.Data.Linq.Table<TeacherTbl> TeacherTbls
+		{
+			get
+			{
+				return this.GetTable<TeacherTbl>();
 			}
 		}
 		
@@ -227,22 +243,6 @@ namespace Shikhai.DAL
 			get
 			{
 				return this.GetTable<TestimonialTbl>();
-			}
-		}
-		
-		public System.Data.Linq.Table<LocationTbl> LocationTbls
-		{
-			get
-			{
-				return this.GetTable<LocationTbl>();
-			}
-		}
-		
-		public System.Data.Linq.Table<RangeTbl> RangeTbls
-		{
-			get
-			{
-				return this.GetTable<RangeTbl>();
 			}
 		}
 	}
@@ -1335,6 +1335,188 @@ namespace Shikhai.DAL
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ClassNameTbl")]
+	public partial class ClassNameTbl : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _Name;
+		
+		private System.Nullable<int> _DisplayOrder;
+		
+		private System.Nullable<System.DateTime> _CreatedOnUtc;
+		
+		private System.Nullable<System.DateTime> _UpdatedOnUtc;
+		
+		private System.Nullable<bool> _Published;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnDisplayOrderChanging(System.Nullable<int> value);
+    partial void OnDisplayOrderChanged();
+    partial void OnCreatedOnUtcChanging(System.Nullable<System.DateTime> value);
+    partial void OnCreatedOnUtcChanged();
+    partial void OnUpdatedOnUtcChanging(System.Nullable<System.DateTime> value);
+    partial void OnUpdatedOnUtcChanged();
+    partial void OnPublishedChanging(System.Nullable<bool> value);
+    partial void OnPublishedChanged();
+    #endregion
+		
+		public ClassNameTbl()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DisplayOrder", DbType="Int")]
+		public System.Nullable<int> DisplayOrder
+		{
+			get
+			{
+				return this._DisplayOrder;
+			}
+			set
+			{
+				if ((this._DisplayOrder != value))
+				{
+					this.OnDisplayOrderChanging(value);
+					this.SendPropertyChanging();
+					this._DisplayOrder = value;
+					this.SendPropertyChanged("DisplayOrder");
+					this.OnDisplayOrderChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedOnUtc", DbType="DateTime2")]
+		public System.Nullable<System.DateTime> CreatedOnUtc
+		{
+			get
+			{
+				return this._CreatedOnUtc;
+			}
+			set
+			{
+				if ((this._CreatedOnUtc != value))
+				{
+					this.OnCreatedOnUtcChanging(value);
+					this.SendPropertyChanging();
+					this._CreatedOnUtc = value;
+					this.SendPropertyChanged("CreatedOnUtc");
+					this.OnCreatedOnUtcChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UpdatedOnUtc", DbType="DateTime2")]
+		public System.Nullable<System.DateTime> UpdatedOnUtc
+		{
+			get
+			{
+				return this._UpdatedOnUtc;
+			}
+			set
+			{
+				if ((this._UpdatedOnUtc != value))
+				{
+					this.OnUpdatedOnUtcChanging(value);
+					this.SendPropertyChanging();
+					this._UpdatedOnUtc = value;
+					this.SendPropertyChanged("UpdatedOnUtc");
+					this.OnUpdatedOnUtcChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Published", DbType="Bit")]
+		public System.Nullable<bool> Published
+		{
+			get
+			{
+				return this._Published;
+			}
+			set
+			{
+				if ((this._Published != value))
+				{
+					this.OnPublishedChanging(value);
+					this.SendPropertyChanging();
+					this._Published = value;
+					this.SendPropertyChanged("Published");
+					this.OnPublishedChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CustomerSearchTbl")]
 	public partial class CustomerSearchTbl : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -1588,6 +1770,188 @@ namespace Shikhai.DAL
 				{
 					this._DateModified = value;
 				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.LocationTbl")]
+	public partial class LocationTbl : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _Name;
+		
+		private System.Nullable<int> _DisplayOrder;
+		
+		private System.Nullable<System.DateTime> _CreatedOnUtc;
+		
+		private System.Nullable<System.DateTime> _UpdatedOnUtc;
+		
+		private System.Nullable<bool> _Published;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnDisplayOrderChanging(System.Nullable<int> value);
+    partial void OnDisplayOrderChanged();
+    partial void OnCreatedOnUtcChanging(System.Nullable<System.DateTime> value);
+    partial void OnCreatedOnUtcChanged();
+    partial void OnUpdatedOnUtcChanging(System.Nullable<System.DateTime> value);
+    partial void OnUpdatedOnUtcChanged();
+    partial void OnPublishedChanging(System.Nullable<bool> value);
+    partial void OnPublishedChanged();
+    #endregion
+		
+		public LocationTbl()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DisplayOrder", DbType="Int")]
+		public System.Nullable<int> DisplayOrder
+		{
+			get
+			{
+				return this._DisplayOrder;
+			}
+			set
+			{
+				if ((this._DisplayOrder != value))
+				{
+					this.OnDisplayOrderChanging(value);
+					this.SendPropertyChanging();
+					this._DisplayOrder = value;
+					this.SendPropertyChanged("DisplayOrder");
+					this.OnDisplayOrderChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedOnUtc", DbType="DateTime2")]
+		public System.Nullable<System.DateTime> CreatedOnUtc
+		{
+			get
+			{
+				return this._CreatedOnUtc;
+			}
+			set
+			{
+				if ((this._CreatedOnUtc != value))
+				{
+					this.OnCreatedOnUtcChanging(value);
+					this.SendPropertyChanging();
+					this._CreatedOnUtc = value;
+					this.SendPropertyChanged("CreatedOnUtc");
+					this.OnCreatedOnUtcChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UpdatedOnUtc", DbType="DateTime2")]
+		public System.Nullable<System.DateTime> UpdatedOnUtc
+		{
+			get
+			{
+				return this._UpdatedOnUtc;
+			}
+			set
+			{
+				if ((this._UpdatedOnUtc != value))
+				{
+					this.OnUpdatedOnUtcChanging(value);
+					this.SendPropertyChanging();
+					this._UpdatedOnUtc = value;
+					this.SendPropertyChanged("UpdatedOnUtc");
+					this.OnUpdatedOnUtcChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Published", DbType="Bit")]
+		public System.Nullable<bool> Published
+		{
+			get
+			{
+				return this._Published;
+			}
+			set
+			{
+				if ((this._Published != value))
+				{
+					this.OnPublishedChanging(value);
+					this.SendPropertyChanging();
+					this._Published = value;
+					this.SendPropertyChanged("Published");
+					this.OnPublishedChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
@@ -2958,6 +3322,466 @@ namespace Shikhai.DAL
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ProductTbl")]
+	public partial class ProductTbl : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _Name;
+		
+		private System.Nullable<bool> _IsBook;
+		
+		private System.Nullable<bool> _IsStationary;
+		
+		private string _InstructionsImageUrl;
+		
+		private System.Nullable<bool> _Published;
+		
+		private System.Nullable<bool> _ShowOnHomePage;
+		
+		private System.Nullable<System.DateTime> _CreatedOnUtc;
+		
+		private System.Nullable<System.DateTime> _UpdatedOnUtc;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnIsBookChanging(System.Nullable<bool> value);
+    partial void OnIsBookChanged();
+    partial void OnIsStationaryChanging(System.Nullable<bool> value);
+    partial void OnIsStationaryChanged();
+    partial void OnInstructionsImageUrlChanging(string value);
+    partial void OnInstructionsImageUrlChanged();
+    partial void OnPublishedChanging(System.Nullable<bool> value);
+    partial void OnPublishedChanged();
+    partial void OnShowOnHomePageChanging(System.Nullable<bool> value);
+    partial void OnShowOnHomePageChanged();
+    partial void OnCreatedOnUtcChanging(System.Nullable<System.DateTime> value);
+    partial void OnCreatedOnUtcChanged();
+    partial void OnUpdatedOnUtcChanging(System.Nullable<System.DateTime> value);
+    partial void OnUpdatedOnUtcChanged();
+    #endregion
+		
+		public ProductTbl()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsBook", DbType="Bit")]
+		public System.Nullable<bool> IsBook
+		{
+			get
+			{
+				return this._IsBook;
+			}
+			set
+			{
+				if ((this._IsBook != value))
+				{
+					this.OnIsBookChanging(value);
+					this.SendPropertyChanging();
+					this._IsBook = value;
+					this.SendPropertyChanged("IsBook");
+					this.OnIsBookChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsStationary", DbType="Bit")]
+		public System.Nullable<bool> IsStationary
+		{
+			get
+			{
+				return this._IsStationary;
+			}
+			set
+			{
+				if ((this._IsStationary != value))
+				{
+					this.OnIsStationaryChanging(value);
+					this.SendPropertyChanging();
+					this._IsStationary = value;
+					this.SendPropertyChanged("IsStationary");
+					this.OnIsStationaryChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InstructionsImageUrl", DbType="NVarChar(1000)")]
+		public string InstructionsImageUrl
+		{
+			get
+			{
+				return this._InstructionsImageUrl;
+			}
+			set
+			{
+				if ((this._InstructionsImageUrl != value))
+				{
+					this.OnInstructionsImageUrlChanging(value);
+					this.SendPropertyChanging();
+					this._InstructionsImageUrl = value;
+					this.SendPropertyChanged("InstructionsImageUrl");
+					this.OnInstructionsImageUrlChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Published", DbType="Bit")]
+		public System.Nullable<bool> Published
+		{
+			get
+			{
+				return this._Published;
+			}
+			set
+			{
+				if ((this._Published != value))
+				{
+					this.OnPublishedChanging(value);
+					this.SendPropertyChanging();
+					this._Published = value;
+					this.SendPropertyChanged("Published");
+					this.OnPublishedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShowOnHomePage", DbType="Bit")]
+		public System.Nullable<bool> ShowOnHomePage
+		{
+			get
+			{
+				return this._ShowOnHomePage;
+			}
+			set
+			{
+				if ((this._ShowOnHomePage != value))
+				{
+					this.OnShowOnHomePageChanging(value);
+					this.SendPropertyChanging();
+					this._ShowOnHomePage = value;
+					this.SendPropertyChanged("ShowOnHomePage");
+					this.OnShowOnHomePageChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedOnUtc", DbType="DateTime2")]
+		public System.Nullable<System.DateTime> CreatedOnUtc
+		{
+			get
+			{
+				return this._CreatedOnUtc;
+			}
+			set
+			{
+				if ((this._CreatedOnUtc != value))
+				{
+					this.OnCreatedOnUtcChanging(value);
+					this.SendPropertyChanging();
+					this._CreatedOnUtc = value;
+					this.SendPropertyChanged("CreatedOnUtc");
+					this.OnCreatedOnUtcChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UpdatedOnUtc", DbType="DateTime2")]
+		public System.Nullable<System.DateTime> UpdatedOnUtc
+		{
+			get
+			{
+				return this._UpdatedOnUtc;
+			}
+			set
+			{
+				if ((this._UpdatedOnUtc != value))
+				{
+					this.OnUpdatedOnUtcChanging(value);
+					this.SendPropertyChanging();
+					this._UpdatedOnUtc = value;
+					this.SendPropertyChanged("UpdatedOnUtc");
+					this.OnUpdatedOnUtcChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.RangeTbl")]
+	public partial class RangeTbl : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private int _LowerLimit;
+		
+		private int _UpperLimit;
+		
+		private System.Nullable<int> _DisplayOrder;
+		
+		private System.Nullable<System.DateTime> _CreatedOnUtc;
+		
+		private System.Nullable<System.DateTime> _UpdatedOnUtc;
+		
+		private System.Nullable<bool> _Published;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnLowerLimitChanging(int value);
+    partial void OnLowerLimitChanged();
+    partial void OnUpperLimitChanging(int value);
+    partial void OnUpperLimitChanged();
+    partial void OnDisplayOrderChanging(System.Nullable<int> value);
+    partial void OnDisplayOrderChanged();
+    partial void OnCreatedOnUtcChanging(System.Nullable<System.DateTime> value);
+    partial void OnCreatedOnUtcChanged();
+    partial void OnUpdatedOnUtcChanging(System.Nullable<System.DateTime> value);
+    partial void OnUpdatedOnUtcChanged();
+    partial void OnPublishedChanging(System.Nullable<bool> value);
+    partial void OnPublishedChanged();
+    #endregion
+		
+		public RangeTbl()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LowerLimit", DbType="Int NOT NULL")]
+		public int LowerLimit
+		{
+			get
+			{
+				return this._LowerLimit;
+			}
+			set
+			{
+				if ((this._LowerLimit != value))
+				{
+					this.OnLowerLimitChanging(value);
+					this.SendPropertyChanging();
+					this._LowerLimit = value;
+					this.SendPropertyChanged("LowerLimit");
+					this.OnLowerLimitChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UpperLimit", DbType="Int NOT NULL")]
+		public int UpperLimit
+		{
+			get
+			{
+				return this._UpperLimit;
+			}
+			set
+			{
+				if ((this._UpperLimit != value))
+				{
+					this.OnUpperLimitChanging(value);
+					this.SendPropertyChanging();
+					this._UpperLimit = value;
+					this.SendPropertyChanged("UpperLimit");
+					this.OnUpperLimitChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DisplayOrder", DbType="Int")]
+		public System.Nullable<int> DisplayOrder
+		{
+			get
+			{
+				return this._DisplayOrder;
+			}
+			set
+			{
+				if ((this._DisplayOrder != value))
+				{
+					this.OnDisplayOrderChanging(value);
+					this.SendPropertyChanging();
+					this._DisplayOrder = value;
+					this.SendPropertyChanged("DisplayOrder");
+					this.OnDisplayOrderChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedOnUtc", DbType="DateTime2")]
+		public System.Nullable<System.DateTime> CreatedOnUtc
+		{
+			get
+			{
+				return this._CreatedOnUtc;
+			}
+			set
+			{
+				if ((this._CreatedOnUtc != value))
+				{
+					this.OnCreatedOnUtcChanging(value);
+					this.SendPropertyChanging();
+					this._CreatedOnUtc = value;
+					this.SendPropertyChanged("CreatedOnUtc");
+					this.OnCreatedOnUtcChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UpdatedOnUtc", DbType="DateTime2")]
+		public System.Nullable<System.DateTime> UpdatedOnUtc
+		{
+			get
+			{
+				return this._UpdatedOnUtc;
+			}
+			set
+			{
+				if ((this._UpdatedOnUtc != value))
+				{
+					this.OnUpdatedOnUtcChanging(value);
+					this.SendPropertyChanging();
+					this._UpdatedOnUtc = value;
+					this.SendPropertyChanged("UpdatedOnUtc");
+					this.OnUpdatedOnUtcChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Published", DbType="Bit")]
+		public System.Nullable<bool> Published
+		{
+			get
+			{
+				return this._Published;
+			}
+			set
+			{
+				if ((this._Published != value))
+				{
+					this.OnPublishedChanging(value);
+					this.SendPropertyChanging();
+					this._Published = value;
+					this.SendPropertyChanged("Published");
+					this.OnPublishedChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TeacherTbl")]
 	public partial class TeacherTbl : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -3524,418 +4348,6 @@ namespace Shikhai.DAL
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ProductTbl")]
-	public partial class ProductTbl : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Id;
-		
-		private string _Name;
-		
-		private System.Nullable<bool> _IsBook;
-		
-		private System.Nullable<bool> _IsStationary;
-		
-		private string _InstructionsImageUrl;
-		
-		private System.Nullable<bool> _Published;
-		
-		private System.Nullable<bool> _ShowOnHomePage;
-		
-		private System.Nullable<System.DateTime> _CreatedOnUtc;
-		
-		private System.Nullable<System.DateTime> _UpdatedOnUtc;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
-    partial void OnNameChanging(string value);
-    partial void OnNameChanged();
-    partial void OnIsBookChanging(System.Nullable<bool> value);
-    partial void OnIsBookChanged();
-    partial void OnIsStationaryChanging(System.Nullable<bool> value);
-    partial void OnIsStationaryChanged();
-    partial void OnInstructionsImageUrlChanging(string value);
-    partial void OnInstructionsImageUrlChanged();
-    partial void OnPublishedChanging(System.Nullable<bool> value);
-    partial void OnPublishedChanged();
-    partial void OnShowOnHomePageChanging(System.Nullable<bool> value);
-    partial void OnShowOnHomePageChanged();
-    partial void OnCreatedOnUtcChanging(System.Nullable<System.DateTime> value);
-    partial void OnCreatedOnUtcChanged();
-    partial void OnUpdatedOnUtcChanging(System.Nullable<System.DateTime> value);
-    partial void OnUpdatedOnUtcChanged();
-    #endregion
-		
-		public ProductTbl()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Id
-		{
-			get
-			{
-				return this._Id;
-			}
-			set
-			{
-				if ((this._Id != value))
-				{
-					this.OnIdChanging(value);
-					this.SendPropertyChanging();
-					this._Id = value;
-					this.SendPropertyChanged("Id");
-					this.OnIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Name
-		{
-			get
-			{
-				return this._Name;
-			}
-			set
-			{
-				if ((this._Name != value))
-				{
-					this.OnNameChanging(value);
-					this.SendPropertyChanging();
-					this._Name = value;
-					this.SendPropertyChanged("Name");
-					this.OnNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsBook", DbType="Bit")]
-		public System.Nullable<bool> IsBook
-		{
-			get
-			{
-				return this._IsBook;
-			}
-			set
-			{
-				if ((this._IsBook != value))
-				{
-					this.OnIsBookChanging(value);
-					this.SendPropertyChanging();
-					this._IsBook = value;
-					this.SendPropertyChanged("IsBook");
-					this.OnIsBookChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsStationary", DbType="Bit")]
-		public System.Nullable<bool> IsStationary
-		{
-			get
-			{
-				return this._IsStationary;
-			}
-			set
-			{
-				if ((this._IsStationary != value))
-				{
-					this.OnIsStationaryChanging(value);
-					this.SendPropertyChanging();
-					this._IsStationary = value;
-					this.SendPropertyChanged("IsStationary");
-					this.OnIsStationaryChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InstructionsImageUrl", DbType="NVarChar(1000)")]
-		public string InstructionsImageUrl
-		{
-			get
-			{
-				return this._InstructionsImageUrl;
-			}
-			set
-			{
-				if ((this._InstructionsImageUrl != value))
-				{
-					this.OnInstructionsImageUrlChanging(value);
-					this.SendPropertyChanging();
-					this._InstructionsImageUrl = value;
-					this.SendPropertyChanged("InstructionsImageUrl");
-					this.OnInstructionsImageUrlChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Published", DbType="Bit")]
-		public System.Nullable<bool> Published
-		{
-			get
-			{
-				return this._Published;
-			}
-			set
-			{
-				if ((this._Published != value))
-				{
-					this.OnPublishedChanging(value);
-					this.SendPropertyChanging();
-					this._Published = value;
-					this.SendPropertyChanged("Published");
-					this.OnPublishedChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShowOnHomePage", DbType="Bit")]
-		public System.Nullable<bool> ShowOnHomePage
-		{
-			get
-			{
-				return this._ShowOnHomePage;
-			}
-			set
-			{
-				if ((this._ShowOnHomePage != value))
-				{
-					this.OnShowOnHomePageChanging(value);
-					this.SendPropertyChanging();
-					this._ShowOnHomePage = value;
-					this.SendPropertyChanged("ShowOnHomePage");
-					this.OnShowOnHomePageChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedOnUtc", DbType="DateTime2")]
-		public System.Nullable<System.DateTime> CreatedOnUtc
-		{
-			get
-			{
-				return this._CreatedOnUtc;
-			}
-			set
-			{
-				if ((this._CreatedOnUtc != value))
-				{
-					this.OnCreatedOnUtcChanging(value);
-					this.SendPropertyChanging();
-					this._CreatedOnUtc = value;
-					this.SendPropertyChanged("CreatedOnUtc");
-					this.OnCreatedOnUtcChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UpdatedOnUtc", DbType="DateTime2")]
-		public System.Nullable<System.DateTime> UpdatedOnUtc
-		{
-			get
-			{
-				return this._UpdatedOnUtc;
-			}
-			set
-			{
-				if ((this._UpdatedOnUtc != value))
-				{
-					this.OnUpdatedOnUtcChanging(value);
-					this.SendPropertyChanging();
-					this._UpdatedOnUtc = value;
-					this.SendPropertyChanged("UpdatedOnUtc");
-					this.OnUpdatedOnUtcChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ClassNameTbl")]
-	public partial class ClassNameTbl : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Id;
-		
-		private string _Name;
-		
-		private System.Nullable<System.DateTime> _CreatedOnUtc;
-		
-		private System.Nullable<System.DateTime> _UpdatedOnUtc;
-		
-		private System.Nullable<bool> _Published;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
-    partial void OnNameChanging(string value);
-    partial void OnNameChanged();
-    partial void OnCreatedOnUtcChanging(System.Nullable<System.DateTime> value);
-    partial void OnCreatedOnUtcChanged();
-    partial void OnUpdatedOnUtcChanging(System.Nullable<System.DateTime> value);
-    partial void OnUpdatedOnUtcChanged();
-    partial void OnPublishedChanging(System.Nullable<bool> value);
-    partial void OnPublishedChanged();
-    #endregion
-		
-		public ClassNameTbl()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Id
-		{
-			get
-			{
-				return this._Id;
-			}
-			set
-			{
-				if ((this._Id != value))
-				{
-					this.OnIdChanging(value);
-					this.SendPropertyChanging();
-					this._Id = value;
-					this.SendPropertyChanged("Id");
-					this.OnIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Name
-		{
-			get
-			{
-				return this._Name;
-			}
-			set
-			{
-				if ((this._Name != value))
-				{
-					this.OnNameChanging(value);
-					this.SendPropertyChanging();
-					this._Name = value;
-					this.SendPropertyChanged("Name");
-					this.OnNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedOnUtc", DbType="DateTime2")]
-		public System.Nullable<System.DateTime> CreatedOnUtc
-		{
-			get
-			{
-				return this._CreatedOnUtc;
-			}
-			set
-			{
-				if ((this._CreatedOnUtc != value))
-				{
-					this.OnCreatedOnUtcChanging(value);
-					this.SendPropertyChanging();
-					this._CreatedOnUtc = value;
-					this.SendPropertyChanged("CreatedOnUtc");
-					this.OnCreatedOnUtcChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UpdatedOnUtc", DbType="DateTime2")]
-		public System.Nullable<System.DateTime> UpdatedOnUtc
-		{
-			get
-			{
-				return this._UpdatedOnUtc;
-			}
-			set
-			{
-				if ((this._UpdatedOnUtc != value))
-				{
-					this.OnUpdatedOnUtcChanging(value);
-					this.SendPropertyChanging();
-					this._UpdatedOnUtc = value;
-					this.SendPropertyChanged("UpdatedOnUtc");
-					this.OnUpdatedOnUtcChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Published", DbType="Bit")]
-		public System.Nullable<bool> Published
-		{
-			get
-			{
-				return this._Published;
-			}
-			set
-			{
-				if ((this._Published != value))
-				{
-					this.OnPublishedChanging(value);
-					this.SendPropertyChanging();
-					this._Published = value;
-					this.SendPropertyChanged("Published");
-					this.OnPublishedChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TestimonialTbl")]
 	public partial class TestimonialTbl : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -3951,6 +4363,8 @@ namespace Shikhai.DAL
 		private string _PersonName;
 		
 		private string _PersonTitle;
+		
+		private System.Nullable<int> _DisplayOrder;
 		
 		private System.Nullable<System.DateTime> _CreatedOnUtc;
 		
@@ -3972,6 +4386,8 @@ namespace Shikhai.DAL
     partial void OnPersonNameChanged();
     partial void OnPersonTitleChanging(string value);
     partial void OnPersonTitleChanged();
+    partial void OnDisplayOrderChanging(System.Nullable<int> value);
+    partial void OnDisplayOrderChanged();
     partial void OnCreatedOnUtcChanging(System.Nullable<System.DateTime> value);
     partial void OnCreatedOnUtcChanged();
     partial void OnUpdatedOnUtcChanging(System.Nullable<System.DateTime> value);
@@ -4085,342 +4501,22 @@ namespace Shikhai.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedOnUtc", DbType="DateTime2")]
-		public System.Nullable<System.DateTime> CreatedOnUtc
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DisplayOrder", DbType="Int")]
+		public System.Nullable<int> DisplayOrder
 		{
 			get
 			{
-				return this._CreatedOnUtc;
+				return this._DisplayOrder;
 			}
 			set
 			{
-				if ((this._CreatedOnUtc != value))
+				if ((this._DisplayOrder != value))
 				{
-					this.OnCreatedOnUtcChanging(value);
+					this.OnDisplayOrderChanging(value);
 					this.SendPropertyChanging();
-					this._CreatedOnUtc = value;
-					this.SendPropertyChanged("CreatedOnUtc");
-					this.OnCreatedOnUtcChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UpdatedOnUtc", DbType="DateTime2")]
-		public System.Nullable<System.DateTime> UpdatedOnUtc
-		{
-			get
-			{
-				return this._UpdatedOnUtc;
-			}
-			set
-			{
-				if ((this._UpdatedOnUtc != value))
-				{
-					this.OnUpdatedOnUtcChanging(value);
-					this.SendPropertyChanging();
-					this._UpdatedOnUtc = value;
-					this.SendPropertyChanged("UpdatedOnUtc");
-					this.OnUpdatedOnUtcChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Published", DbType="Bit")]
-		public System.Nullable<bool> Published
-		{
-			get
-			{
-				return this._Published;
-			}
-			set
-			{
-				if ((this._Published != value))
-				{
-					this.OnPublishedChanging(value);
-					this.SendPropertyChanging();
-					this._Published = value;
-					this.SendPropertyChanged("Published");
-					this.OnPublishedChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.LocationTbl")]
-	public partial class LocationTbl : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Id;
-		
-		private string _Name;
-		
-		private System.Nullable<System.DateTime> _CreatedOnUtc;
-		
-		private System.Nullable<System.DateTime> _UpdatedOnUtc;
-		
-		private System.Nullable<bool> _Published;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
-    partial void OnNameChanging(string value);
-    partial void OnNameChanged();
-    partial void OnCreatedOnUtcChanging(System.Nullable<System.DateTime> value);
-    partial void OnCreatedOnUtcChanged();
-    partial void OnUpdatedOnUtcChanging(System.Nullable<System.DateTime> value);
-    partial void OnUpdatedOnUtcChanged();
-    partial void OnPublishedChanging(System.Nullable<bool> value);
-    partial void OnPublishedChanged();
-    #endregion
-		
-		public LocationTbl()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Id
-		{
-			get
-			{
-				return this._Id;
-			}
-			set
-			{
-				if ((this._Id != value))
-				{
-					this.OnIdChanging(value);
-					this.SendPropertyChanging();
-					this._Id = value;
-					this.SendPropertyChanged("Id");
-					this.OnIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Name
-		{
-			get
-			{
-				return this._Name;
-			}
-			set
-			{
-				if ((this._Name != value))
-				{
-					this.OnNameChanging(value);
-					this.SendPropertyChanging();
-					this._Name = value;
-					this.SendPropertyChanged("Name");
-					this.OnNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedOnUtc", DbType="DateTime2")]
-		public System.Nullable<System.DateTime> CreatedOnUtc
-		{
-			get
-			{
-				return this._CreatedOnUtc;
-			}
-			set
-			{
-				if ((this._CreatedOnUtc != value))
-				{
-					this.OnCreatedOnUtcChanging(value);
-					this.SendPropertyChanging();
-					this._CreatedOnUtc = value;
-					this.SendPropertyChanged("CreatedOnUtc");
-					this.OnCreatedOnUtcChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UpdatedOnUtc", DbType="DateTime2")]
-		public System.Nullable<System.DateTime> UpdatedOnUtc
-		{
-			get
-			{
-				return this._UpdatedOnUtc;
-			}
-			set
-			{
-				if ((this._UpdatedOnUtc != value))
-				{
-					this.OnUpdatedOnUtcChanging(value);
-					this.SendPropertyChanging();
-					this._UpdatedOnUtc = value;
-					this.SendPropertyChanged("UpdatedOnUtc");
-					this.OnUpdatedOnUtcChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Published", DbType="Bit")]
-		public System.Nullable<bool> Published
-		{
-			get
-			{
-				return this._Published;
-			}
-			set
-			{
-				if ((this._Published != value))
-				{
-					this.OnPublishedChanging(value);
-					this.SendPropertyChanging();
-					this._Published = value;
-					this.SendPropertyChanged("Published");
-					this.OnPublishedChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.RangeTbl")]
-	public partial class RangeTbl : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Id;
-		
-		private int _LowerLimit;
-		
-		private int _UpperLimit;
-		
-		private System.Nullable<System.DateTime> _CreatedOnUtc;
-		
-		private System.Nullable<System.DateTime> _UpdatedOnUtc;
-		
-		private System.Nullable<bool> _Published;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
-    partial void OnLowerLimitChanging(int value);
-    partial void OnLowerLimitChanged();
-    partial void OnUpperLimitChanging(int value);
-    partial void OnUpperLimitChanged();
-    partial void OnCreatedOnUtcChanging(System.Nullable<System.DateTime> value);
-    partial void OnCreatedOnUtcChanged();
-    partial void OnUpdatedOnUtcChanging(System.Nullable<System.DateTime> value);
-    partial void OnUpdatedOnUtcChanged();
-    partial void OnPublishedChanging(System.Nullable<bool> value);
-    partial void OnPublishedChanged();
-    #endregion
-		
-		public RangeTbl()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Id
-		{
-			get
-			{
-				return this._Id;
-			}
-			set
-			{
-				if ((this._Id != value))
-				{
-					this.OnIdChanging(value);
-					this.SendPropertyChanging();
-					this._Id = value;
-					this.SendPropertyChanged("Id");
-					this.OnIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LowerLimit", DbType="Int NOT NULL")]
-		public int LowerLimit
-		{
-			get
-			{
-				return this._LowerLimit;
-			}
-			set
-			{
-				if ((this._LowerLimit != value))
-				{
-					this.OnLowerLimitChanging(value);
-					this.SendPropertyChanging();
-					this._LowerLimit = value;
-					this.SendPropertyChanged("LowerLimit");
-					this.OnLowerLimitChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UpperLimit", DbType="Int NOT NULL")]
-		public int UpperLimit
-		{
-			get
-			{
-				return this._UpperLimit;
-			}
-			set
-			{
-				if ((this._UpperLimit != value))
-				{
-					this.OnUpperLimitChanging(value);
-					this.SendPropertyChanging();
-					this._UpperLimit = value;
-					this.SendPropertyChanged("UpperLimit");
-					this.OnUpperLimitChanged();
+					this._DisplayOrder = value;
+					this.SendPropertyChanged("DisplayOrder");
+					this.OnDisplayOrderChanged();
 				}
 			}
 		}
