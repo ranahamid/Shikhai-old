@@ -26,6 +26,7 @@
         <th>
             @Html.DisplayNameFor(model => model.UpdatedOnUtc)
         </th>
+        <th> @Html.DisplayNameFor(model => model.DisplayOrder)</th>
         <th>
             @Html.DisplayNameFor(model => model.Published)
         </th>
@@ -49,13 +50,14 @@
         <td>
             @Html.DisplayFor(modelItem => item.UpdatedOnUtc)
         </td>
+        <td>@Html.DisplayFor(modelItem => item.DisplayOrder)</td>
         <td>
             @Html.DisplayFor(modelItem => item.Published)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
         </td>
     </tr>
 }

@@ -3,106 +3,109 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Shikhai.Models;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using Newtonsoft.Json;
+using System.Threading.Tasks;
+using Shikhai.DAL;
+using System.Configuration;
+using Shikhai.Filters;
+
 
 namespace Shikhai.Controllers
 {
-    public class ClassNamesController : Controller
+    [Authorize(Roles = "Admin")]
+    [ExceptionHandler]
+    public class ClassNamesController : BaseController
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        public ClassNamesController()
+        {
+            //api url                  
+            url = baseUrl + "api/ClassNameApi";
+        }
 
         // GET: ClassNames
         public async Task<ActionResult> Index()
         {
-            return View(await db.ClassNames.ToListAsync());
+            var responseMessage = await client.GetAsync(url);
+            if (!responseMessage.IsSuccessStatusCode) throw new Exception("Exception");
+            var responseData = responseMessage.Content.ReadAsStringAsync().Result;
+            var entity = JsonConvert.DeserializeObject<List<ClassName>>(responseData);
+            return View(entity);
         }
 
         // GET: ClassNames/Details/5
         public async Task<ActionResult> Details(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            ClassName className = await db.ClassNames.FindAsync(id);
-            if (className == null)
-            {
-                return HttpNotFound();
-            }
-            return View(className);
+            var responseMessage = await client.GetAsync(url + "/" + id);
+            if (!responseMessage.IsSuccessStatusCode) throw new Exception("Exception");
+            var responseData = responseMessage.Content.ReadAsStringAsync().Result;
+            var entity = JsonConvert.DeserializeObject<ClassName>(responseData);
+            return View(entity);
         }
 
         // GET: ClassNames/Create
         public ActionResult Create()
         {
-            return View();
+            var entity = new ClassName();
+            return View(entity);
         }
 
-        // POST: ClassNames/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "Id,Name,CreatedOnUtc,UpdatedOnUtc,Published")] ClassName className)
+        public async Task<ActionResult> Create(ClassName entity)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid) return View(entity);
+            var responseMessage = await client.PostAsJsonAsync(url, entity);
+            if (responseMessage.IsSuccessStatusCode)
             {
-                db.ClassNames.Add(className);
-                await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
 
-            return View(className);
+            return View(entity);
         }
 
         // GET: ClassNames/Edit/5
         public async Task<ActionResult> Edit(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            ClassName className = await db.ClassNames.FindAsync(id);
-            if (className == null)
-            {
-                return HttpNotFound();
-            }
-            return View(className);
+            var responseMessage = await client.GetAsync(url + "/" + id);
+            if (!responseMessage.IsSuccessStatusCode) throw new Exception("Exception");
+            var responseData = responseMessage.Content.ReadAsStringAsync().Result;
+            var entity = JsonConvert.DeserializeObject<ClassName>(responseData);
+            return View(entity);
         }
 
-        // POST: ClassNames/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "Id,Name,CreatedOnUtc,UpdatedOnUtc,Published")] ClassName className)
+        public async Task<ActionResult> Edit(int id, ClassName entity)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid) return View(entity);
+            var responseMessage = await client.PutAsJsonAsync(url + "/" + id, entity);
+            if (responseMessage.IsSuccessStatusCode)
             {
-                db.Entry(className).State = EntityState.Modified;
-                await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            return View(className);
+            return View(entity);
         }
+
+
 
         // GET: ClassNames/Delete/5
         public async Task<ActionResult> Delete(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            ClassName className = await db.ClassNames.FindAsync(id);
-            if (className == null)
-            {
-                return HttpNotFound();
-            }
-            return View(className);
+            var responseMessage = await client.GetAsync(url + "/" + id);
+            if (!responseMessage.IsSuccessStatusCode) throw new Exception("Exception");
+            var responseData = responseMessage.Content.ReadAsStringAsync().Result;
+            var entity = JsonConvert.DeserializeObject<ClassName>(responseData);
+            return View(entity);
         }
 
         // POST: ClassNames/Delete/5
@@ -110,19 +113,23 @@ namespace Shikhai.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            ClassName className = await db.ClassNames.FindAsync(id);
-            db.ClassNames.Remove(className);
-            await db.SaveChangesAsync();
-            return RedirectToAction("Index");
+            var responseMessage = await client.DeleteAsync(url + "/" + id);
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                return RedirectToAction("Index");
+            }
+            throw new Exception("Exception");
         }
 
         protected override void Dispose(bool disposing)
         {
             if (disposing)
             {
-                db.Dispose();
+                Db.Dispose();
             }
             base.Dispose(disposing);
         }
     }
 }
+
+

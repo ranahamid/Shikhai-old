@@ -28,5 +28,8 @@ namespace Shikhai.Models
 
         [Display(Name = "Published")]
         public bool? Published { get; set; }
+
+        [Display(Name = "Display Order")]
+        public int? DisplayOrder { get; set; }
     }
 }

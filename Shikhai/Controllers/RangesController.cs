@@ -3,106 +3,109 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Shikhai.Models;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using Newtonsoft.Json;
+using System.Threading.Tasks;
+using Shikhai.DAL;
+using System.Configuration;
+using Shikhai.Filters;
+
 
 namespace Shikhai.Controllers
 {
-    public class RangesController : Controller
+    [Authorize(Roles = "Admin")]
+    [ExceptionHandler]
+    public class RangesController : BaseController
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        public RangesController()
+        {
+            //api url                  
+            url = baseUrl + "api/RangeApi";
+        }
 
         // GET: Ranges
         public async Task<ActionResult> Index()
         {
-            return View(await db.Ranges.ToListAsync());
+            var responseMessage = await client.GetAsync(url);
+            if (!responseMessage.IsSuccessStatusCode) throw new Exception("Exception");
+            var responseData = responseMessage.Content.ReadAsStringAsync().Result;
+            var entity = JsonConvert.DeserializeObject<List<Range>>(responseData);
+            return View(entity);
         }
 
         // GET: Ranges/Details/5
         public async Task<ActionResult> Details(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Range range = await db.Ranges.FindAsync(id);
-            if (range == null)
-            {
-                return HttpNotFound();
-            }
-            return View(range);
+            var responseMessage = await client.GetAsync(url + "/" + id);
+            if (!responseMessage.IsSuccessStatusCode) throw new Exception("Exception");
+            var responseData = responseMessage.Content.ReadAsStringAsync().Result;
+            var entity = JsonConvert.DeserializeObject<Range>(responseData);
+            return View(entity);
         }
 
         // GET: Ranges/Create
         public ActionResult Create()
         {
-            return View();
+            var entity = new Range();
+            return View(entity);
         }
 
-        // POST: Ranges/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "Id,Name,LowerLimit,UpperLimit,CreatedOnUtc,UpdatedOnUtc,Published")] Range range)
+        public async Task<ActionResult> Create(Range entity)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid) return View(entity);
+            var responseMessage = await client.PostAsJsonAsync(url, entity);
+            if (responseMessage.IsSuccessStatusCode)
             {
-                db.Ranges.Add(range);
-                await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
 
-            return View(range);
+            return View(entity);
         }
 
         // GET: Ranges/Edit/5
         public async Task<ActionResult> Edit(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Range range = await db.Ranges.FindAsync(id);
-            if (range == null)
-            {
-                return HttpNotFound();
-            }
-            return View(range);
+            var responseMessage = await client.GetAsync(url + "/" + id);
+            if (!responseMessage.IsSuccessStatusCode) throw new Exception("Exception");
+            var responseData = responseMessage.Content.ReadAsStringAsync().Result;
+            var entity = JsonConvert.DeserializeObject<Range>(responseData);
+            return View(entity);
         }
 
-        // POST: Ranges/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "Id,Name,LowerLimit,UpperLimit,CreatedOnUtc,UpdatedOnUtc,Published")] Range range)
+        public async Task<ActionResult> Edit(int id, Range entity)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid) return View(entity);
+            var responseMessage = await client.PutAsJsonAsync(url + "/" + id, entity);
+            if (responseMessage.IsSuccessStatusCode)
             {
-                db.Entry(range).State = EntityState.Modified;
-                await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            return View(range);
+            return View(entity);
         }
+
+
 
         // GET: Ranges/Delete/5
         public async Task<ActionResult> Delete(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Range range = await db.Ranges.FindAsync(id);
-            if (range == null)
-            {
-                return HttpNotFound();
-            }
-            return View(range);
+            var responseMessage = await client.GetAsync(url + "/" + id);
+            if (!responseMessage.IsSuccessStatusCode) throw new Exception("Exception");
+            var responseData = responseMessage.Content.ReadAsStringAsync().Result;
+            var entity = JsonConvert.DeserializeObject<Range>(responseData);
+            return View(entity);
         }
 
         // POST: Ranges/Delete/5
@@ -110,19 +113,22 @@ namespace Shikhai.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            Range range = await db.Ranges.FindAsync(id);
-            db.Ranges.Remove(range);
-            await db.SaveChangesAsync();
-            return RedirectToAction("Index");
+            var responseMessage = await client.DeleteAsync(url + "/" + id);
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                return RedirectToAction("Index");
+            }
+            throw new Exception("Exception");
         }
 
         protected override void Dispose(bool disposing)
         {
             if (disposing)
             {
-                db.Dispose();
+                Db.Dispose();
             }
             base.Dispose(disposing);
         }
     }
 }
+
