@@ -3,11 +3,31 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace Shikhai.Models
 {
     public class HomePageSearch
     {
+        //Category
+        public int? SelectedCategoryId { get; set; }
+        public List<SelectListItem> Category { get; set; }
+        //ClassName
+        public int? SelectedClassNameId { get; set; }
+        public List<SelectListItem> ClassName { get; set; }
+        //Location
+        public int? SelectedLocationId { get; set; }
+        public List<SelectListItem> Location { get; set; }
+        //Range
+        public int? SelectedRangeId { get; set; }
+        public List<SelectListItem> Range { get; set; }
+
+        //Subject
+        public int? SelectedSubjectId { get; set; }
+        public List<SelectListItem> Subject { get; set; }
+
+
+
     }
 
     public class ClassName
@@ -74,4 +94,6 @@ namespace Shikhai.Models
         [Display(Name = "Display Order")]
         public int? DisplayOrder { get; set; }
     }
+
+
 }

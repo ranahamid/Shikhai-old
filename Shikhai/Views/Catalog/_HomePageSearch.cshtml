@@ -1,0 +1,45 @@
+﻿@model Shikhai.Models.HomePageSearch
+
+
+<div class="row" style="color:white;">
+    <div class="col-md-2">
+        <div class="form-group">
+            @*@Html.LabelFor(m => m.SelectedCategoryId, new { @class = "col-md-2 control-label" })*@
+            <div class="col-md-12">
+                @Html.DropDownListFor(model => model.SelectedCategoryId, Model.Category, "Category", new { @class = "form-control" })
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="form-group">
+            @*@Html.LabelFor(m => m.SelectedClassNameId, new { @class = "col-md-2 control-label" })*@
+            <div class="col-md-12">
+                @Html.DropDownListFor(model => model.SelectedClassNameId, Model.Category, "Class", new { @class = "form-control" })
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="form-group">
+            @*@Html.LabelFor(m => m.SelectedSubjectId, new { @class = "col-md-2 control-label" })*@
+            <div class="col-md-12">
+                @*@Html.DropDownListFor(model => model.SelectedSubjectId, Model.Subject, "---Select Parent Category---", new { @class = "form-control" })*@
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="form-group">
+            @*@Html.LabelFor(m => m.SelectedLocationId, new { @class = "col-md-2 control-label" })*@
+            <div class="col-md-12">
+                @Html.DropDownListFor(model => model.SelectedLocationId, Model.Location, "Location", new { @class = "form-control" })
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="form-group">
+            @*@Html.LabelFor(m => m.SelectedRangeId, new { @class = "col-md-2 control-label" })*@
+            <div class="col-md-12">
+                @Html.DropDownListFor(model => model.SelectedRangeId, Model.Range, "Range", new { @class = "form-control" })
+            </div>
+        </div>
+    </div>
+</div>

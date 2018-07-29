@@ -95,7 +95,6 @@
                 <div class="form-group">
                     @Html.LabelFor(m => m.Parent1IdList, new { @class = "col-md-2 control-label" })
                     <div class="col-md-10">
-
                         @Html.DropDownListFor(model => model.SelectedParent1Id, Model.AllCategories.OrderBy(x => x.Text), "---Select Parent Category---", new { @class = "form-control" })
                     </div>
                 </div>

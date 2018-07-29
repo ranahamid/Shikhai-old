@@ -33,6 +33,35 @@ namespace Shikhai.Controllers
             return PartialView("_MenuBanner");
         }
 
+        public ActionResult HomePageSearch()
+        {
+            var vm = new HomePageSearch();
+
+            //Category
+            url = baseUrl + "api/CategoriesApi/GetAllCategoriesSelectList/";
+            var responseMessage0 = new WebClient().DownloadString(url);
+            var entity0 = JsonConvert.DeserializeObject<List<SelectListItem>>(responseMessage0);
+            vm.Category = entity0;
+
+            //ClassName
+            url = baseUrl + "api/CategoriesApi/GetAllCategoriesSelectList/";
+            var responseMessage1 = new WebClient().DownloadString(url);        
+            var entity1= JsonConvert.DeserializeObject<List<SelectListItem>>(responseMessage1);
+            vm.ClassName = entity1;
+            //Range
+            url = baseUrl + "api/CategoriesApi/GetAllCategoriesSelectList/";
+            var responseMessage2 = new WebClient().DownloadString(url);
+            var entity2 = JsonConvert.DeserializeObject<List<SelectListItem>>(responseMessage2);
+            vm.Range = entity2;
+            //Location
+            url = baseUrl + "api/CategoriesApi/GetAllCategoriesSelectList/";
+            var responseMessage3 = new WebClient().DownloadString(url);
+            var entity3 = JsonConvert.DeserializeObject<List<SelectListItem>>(responseMessage3);
+            vm.Location = entity3;
+
+            return PartialView("_HomePageSearch", vm);
+        }
+
 
         public ActionResult HomepageBanner()
         {
@@ -77,7 +106,10 @@ namespace Shikhai.Controllers
         }
         public ActionResult Testimonial()
         {
-            return PartialView("_Testimonial");
+            url = baseUrl + "api/TestimonialApi/";
+            var responseMessage = new WebClient().DownloadString(url);
+            var entity = JsonConvert.DeserializeObject<List<Testimonial>>(responseMessage);            
+            return PartialView("_Testimonial", entity);
         }
 
 

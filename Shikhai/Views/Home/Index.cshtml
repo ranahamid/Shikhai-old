@@ -51,29 +51,26 @@
                     <h3>Find Private &amp; Affordable Tutoring in the Greater Toronto Area!</h3>
                 </div>
                 <div class="homeage_selectors text-center">
-                    <div class="tri_button active">
-                        <img src="https://www.superiorlearning.ca/assets/front/images/tutor-inperson.png">
-                        <span class="head">In-person Tutoring</span>
-                        <span class="mobilehide">Register As Student</span>
-                        <span class="arrow"></span>
-                    </div>
-                    <div class="tri_button">
-                        <a href="/Teachers/Index">
-                            <img src="https://www.superiorlearning.ca/assets/front/images/tutor-become.png">
-                            <span class="head">Become a Tutor</span>
-                            <span class="mobilehide">Register As Teacher</span>
+                    <div class="tri_button " style="background-color:cornflowerblue;"> @*<div class="tri_button active">*@
+                            <img src="https://www.superiorlearning.ca/assets/front/images/tutor-inperson.png">
+                            <span class="head">In-person Tutoring</span>
+                            <span class="mobilehide">Register As Student</span>
                             <span class="arrow"></span>
-                        </a>
+                        </div>
+                        <div class="tri_button">
+                            <a href="/Teachers/Index">
+                                <img src="https://www.superiorlearning.ca/assets/front/images/tutor-become.png">
+                                <span class="head">Become a Tutor</span>
+                                <span class="mobilehide">Register As Teacher</span>
+                                <span class="arrow"></span>
+                            </a>
+                        </div>
                     </div>
-                </div>
             </div>
         </div>
         <div class="row homepage_search_form_section">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="homepage_search_form_wrapper">
-
-
-                </div>
+            <div class="col-md-11 col-md-offset-1">
+                    @{ Html.RenderAction("HomePageSearch", "Catalog"); }
             </div>
         </div>
     </div>
