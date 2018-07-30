@@ -17,5 +17,7 @@ namespace Shikhai.DAL
 
         void Put(TPrimaryKey id, TEntity entity);
         void Delete(TPrimaryKey id);
+        //custom
+        List<System.Web.Mvc.SelectListItem> GetAllClassNamesSelectList();
     }
 }

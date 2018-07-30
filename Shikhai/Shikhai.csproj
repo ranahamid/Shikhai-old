@@ -1374,6 +1374,9 @@
     <Content Include="Content\superior\css_support1.css" />
     <Content Include="Content\superior\customScrollbar.css" />
     <Content Include="Content\superior\form.css" />
+    <Content Include="Content\superior\images\icon1.png" />
+    <Content Include="Content\superior\images\icon2.png" />
+    <Content Include="Content\superior\images\icon3.png" />
     <Content Include="Content\superior\jquery.countdown.css" />
     <Content Include="Content\superior\main2.css" />
     <Content Include="Content\superior\menu.min.css" />
@@ -1381,6 +1384,7 @@
     <Content Include="Content\superior\owl.theme.css" />
     <Content Include="Content\superior\responsive.css" />
     <Content Include="Content\superior\simplyscroll.css" />
+    <Content Include="Content\superior\superior-style.css" />
     <Content Include="Content\superior\wickedpicker.min.css" />
     <Content Include="Scripts\main14.js" />
     <Content Include="Scripts\modernizr-2.6.2.min.js" />
@@ -3613,7 +3617,6 @@
     <Content Include="Content\metronic\uxsolutions-bootstrap-datepicker-v1.7.1-12\css\bootstrap-datepicker3.standalone.css.map" />
     <Content Include="Content\assets\pages\media\blog\Thumbs.db" />
     <Content Include="Content\assets\pages\media\pages\Thumbs.db" />
-    <Content Include="Content\superior\style.scss" />
     <Content Include="Content\testimonial.scss" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <Content Include="Scripts\jquery-slimscroll\jquery.slimscroll.js" />
@@ -4069,8 +4072,6 @@
     <Content Include="Views\Home\Howwork.cshtml" />
     <Content Include="Views\Home\FAQStudents.cshtml" />
     <Content Include="Views\Home\FAQTutors.cshtml" />
-    <Content Include="Views\Home\Testimonial.cshtml" />
-    <Content Include="Views\Catalog\__EasyAs123.cshtml" />
     <Content Include="Views\Catalog\_Testimonial.cshtml" />
     <Content Include="Views\Locations\Create.cshtml" />
     <Content Include="Views\Locations\Delete.cshtml" />
@@ -4093,6 +4094,8 @@
     <Content Include="Views\Testimonials\Edit.cshtml" />
     <Content Include="Views\Testimonials\Index.cshtml" />
     <Content Include="Views\Catalog\_HomePageSearch.cshtml" />
+    <Content Include="Views\Catalog\_EasyAs123.cshtml" />
+    <Content Include="Views\Home\_FAQMenu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

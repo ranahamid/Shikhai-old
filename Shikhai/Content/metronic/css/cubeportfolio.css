@@ -608,7 +608,7 @@
   color: #2D2C2C; }
 
 .cbp-l-filters-alignCenter .cbp-filter-item.cbp-filter-item-active {
-  color: #2D2C2C;
+  color: red;
   cursor: default; }
 
 .cbp-l-filters-alignCenter .cbp-filter-counter {

@@ -15,6 +15,10 @@ namespace Shikhai.DAL
         void Post(TEntity entity);
 
         void Put(TPrimaryKey id, TEntity entity);
-        void Delete(TPrimaryKey id);
+        void Delete(TPrimaryKey id); 
+        
+        //custom
+     
+
     }
 }

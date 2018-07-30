@@ -36,25 +36,21 @@ namespace Shikhai.Controllers
         public ActionResult HomePageSearch()
         {
             var vm = new HomePageSearch();
-
             //Category
-            url = baseUrl + "api/CategoriesApi/GetAllCategoriesSelectList/";
-            var responseMessage0 = new WebClient().DownloadString(url);
-            var entity0 = JsonConvert.DeserializeObject<List<SelectListItem>>(responseMessage0);
-            vm.Category = entity0;
+            vm.Category = Categories; //parent categories
 
             //ClassName
-            url = baseUrl + "api/CategoriesApi/GetAllCategoriesSelectList/";
+            url = baseUrl + "api/ClassNameApi/GetAllClassNamesSelectList/";
             var responseMessage1 = new WebClient().DownloadString(url);        
             var entity1= JsonConvert.DeserializeObject<List<SelectListItem>>(responseMessage1);
             vm.ClassName = entity1;
             //Range
-            url = baseUrl + "api/CategoriesApi/GetAllCategoriesSelectList/";
+            url = baseUrl + "api/RangeApi/GetAllRangeSelectList/";
             var responseMessage2 = new WebClient().DownloadString(url);
             var entity2 = JsonConvert.DeserializeObject<List<SelectListItem>>(responseMessage2);
             vm.Range = entity2;
             //Location
-            url = baseUrl + "api/CategoriesApi/GetAllCategoriesSelectList/";
+            url = baseUrl + "api/LocationApi/GetAllLocationsSelectList/";
             var responseMessage3 = new WebClient().DownloadString(url);
             var entity3 = JsonConvert.DeserializeObject<List<SelectListItem>>(responseMessage3);
             vm.Location = entity3;

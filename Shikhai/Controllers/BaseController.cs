@@ -515,33 +515,14 @@ namespace Shikhai.Controllers
         public List<SelectListItem> Categories
         {
             get
-            {
-                var entities = Db.CategoryTbls.Where(x => x.Published == true).Where(x => x.Parent1Id == null || x.Parent1Id == 0).Select(x => new Category()
+            {               
+                var listItems = Db.CategoryTbls.Where(x => x.Parent1Id == null || x.Parent1Id == 0).Where(x => x.Published == true).OrderBy(x => x.DisplayOrder).Select(x => new SelectListItem
                 {
-                    Id = x.Id,
-                    Name_English = x.Name_English,
-                    DisplayOrder = x.DisplayOrder,
-                }).OrderBy(x => x.DisplayOrder).ToList();
+                    Text = x.Name_English,
+                    Value = x.Id.ToString()
+                }).ToList();
 
-
-                List<SelectListItem> listSelect = new List<SelectListItem>();
-
-
-                foreach (var item in entities)
-                {
-                    listSelect.Add(new SelectListItem()
-                    {
-                        Text = item.Name_English,
-                        Value = item.Id.ToString()
-                    });
-                }
-                //var listItems = Db.CategoryTbls.Where(x => x.Parent1Id == null || x.Parent1Id == 0 ).Where(x=>x.Published==true).Select(x => new SelectListItem
-                //{
-                //    Text = x.Name_English,
-                //    Value = x.Id.ToString()
-                //}).OrderBy(x=>x.).ToList();
-
-                return listSelect;
+                return listItems;
             }
             set { }
         }

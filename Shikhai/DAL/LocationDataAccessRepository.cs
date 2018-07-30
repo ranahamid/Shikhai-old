@@ -128,6 +128,20 @@ namespace Shikhai.DAL
         }
 
 
+        //custom
+        public List<SelectListItem> GetAllLocationsSelectList()
+        {
+            var entities = Db.LocationTbls.OrderBy(x => x.DisplayOrder).Select(x => new SelectListItem()
+            {
+                Value = x.Id.ToString(),
+                Text = x.Name,
+                //    Selected = (x.IsHomePageBanner != null && x.IsHomePageBanner == true)
+            }).ToList();
+
+            return entities;
+        }
+
+
 
 
     }

@@ -136,6 +136,20 @@ namespace Shikhai.DAL
 
 
 
+        //custom
+        public List<SelectListItem> GetAllRangeSelectList()
+        {
+            var entities = Db.RangeTbls.OrderBy(x=>x.DisplayOrder).Select(x => new SelectListItem()
+            {
+                Value = x.Id.ToString(),
+                Text = x.LowerLimit+"-"+x.UpperLimit,
+                //    Selected = (x.IsHomePageBanner != null && x.IsHomePageBanner == true)
+            }).ToList();
+
+            return entities;
+        }
+
+
 
     }
 }

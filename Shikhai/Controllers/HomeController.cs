@@ -59,10 +59,7 @@ namespace Shikhai.Controllers
         {
             return View();
         }
-        public ActionResult Testimonial()
-        {
-            return View();
-        }
+    
     }
 
 

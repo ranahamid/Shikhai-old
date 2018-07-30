@@ -65,5 +65,11 @@ namespace Shikhai.Controllers.Api
             return StatusCode(HttpStatusCode.NoContent);
         }
 
+        //custom api 
+        [Route("api/LocationApi/GetAllLocationsSelectList/")]
+        public List<System.Web.Mvc.SelectListItem> GetAllLocationsSelectList()
+        {
+            return _repository.GetAllLocationsSelectList();
+        }
     }
 }

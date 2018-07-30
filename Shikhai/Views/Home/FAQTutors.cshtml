@@ -1,19 +1,168 @@
-﻿<div id="tg-innerbanner" class="tg-innerbanner tg-dashboardinnerbanner tg-haslayout tg-parallaximg" data-appear-top-offset="600" data-parallax="scroll" data-image-src="https://www.superiorlearning.ca/assets/front/images/parallax/bgparallax-12.jpg">
+﻿<main id="tg-main" class="tg-main tg-haslayout"  style="background-color:white;">
     <div class="container">
         <div class="row">
-            <div class="col-sm-12 col-xs-12">
-                <div class="tg-innerbannercontent">
-                    <div class="tg-pagehead">
-                        <div class="text-center header_breadcrumb_wrap">
-                            <h2>Tutor FAQs</h2>
-                            <ul class="breadcrumb">
-                                <li><a href="https://www.superiorlearning.ca">Home</a></li>
-                                <li><span>Tutor FAQs</span></li>
-                            </ul>
-                        </div>
+            <div class="col-md-3">
+                @Html.Partial("_FAQMenu")
+            </div>
+            <div class="col-md-9">
+                <h4>FAQ for Tutors</h4>
+                <div class="ui styled accordion">
+                    <div class="title active">
+                        <i class="dropdown icon"></i>
+                        1.	How do I apply to become a tutor on Superior Learning?
+                    </div>
+                    <div class="content active">
+                        <p class="transition ">
+                            Easy as a 1-2-3.
+                            <br>
+                            Visit <a href="/become-a-tutor" title="Become a tutor">Become A Tutor</a> page for details
+                        </p>
+                    </div>
+                    <div class="title">
+                        <i class="dropdown icon"></i>
+                        2.	How does Superior Learning work for the tutors?
+                    </div>
+                    <div class="content">
+                        <p class="transition ">
+                            5 easy steps.<br>
+                            <br>
+                            I. Make a free profile <br>
+                            	Create a rich profile that showcases your skills and experiences to potential clients<br>
+                            	You select your hourly and package (optional) rates <br>
+                            <br>
+                            II. Get access to students <br>
+                            	Once approved by us, your profile will be public on Superior Learning. As users search for tutors, your profile will show up in the results. <br>
+                            	If a user is interested in your service, they will leave you a message, which will then be forwarded to your personal email. <br>
+                            <br>
+                            III. Communicate with student<br>
+                            	You will communicate with the student via our Messaging system. <br>
+                            	Once both sides are ready, the student will submit you a booking request that needs to be accepted by you. <br>
+                            <br>
+                            IV. Start Tutoring <br>
+                            	Schedule your sessions and begin teaching<br>
+                            <br>
+                            V. Get paid <br>
+                            	Receive quick, easy payment via email transfer, cheque, or direct deposit<br>
+                            	See Tutor Payment Policies
+                        </p>
+                    </div>
+                    <div class="title">
+                        <i class="dropdown icon"></i>
+                        3.	How does the tutor payment work? (Link this to 5. Get Paid)
+                    </div> <div class="content">
+                        <p class="transition ">
+                            Payments to tutors can happen in multiple ways, depending on tutors' preference. We work with email transfer, cheque, or direct deposit. The payment are made 5-7 business days after tutors have submitted their record of attendance sheet to our Team. See <a href="/terms/tutor-payment-policy">Tutor Payment Policies</a> for details.
+                        </p>
+                    </div>
+                    <div class="title">
+                        <i class="dropdown icon"></i>
+                        4.	How do I get my students?
+                    </div> <div class="content">
+                        <p class="transition ">
+                            There are multiple ways you can get your students. First, anytime a potential client searches for a tutor based on their subject, grade, and location, if their search matches with your inputs, you will be shown in the results. Second, we suggest that you fill your tutor application with great detail and care. Users tend to generally select tutors that have a complete profile with a valid photo and a clearly written language. Third, be sure to use our Marketing tab in your dashboard for ways to better market your services and increase your chances of obtaining students.
+                        </p>
+                    </div>
+                    <div class="title">
+                        <i class="dropdown icon"></i>
+                        5.	Can I share my personal contact details with a client?
+                    </div> <div class="content">
+                        <p class="transition ">
+                            Before the start of the first session, no personal contact details must be exchanged with the client. After the session, only phone number can be exchanged and only to be used for emergency circumstances. All communication between the tutor and the client must always take place via our Messaging system.
+                        </p>
+                    </div>
+                    <div class="title">
+                        <i class="dropdown icon"></i>
+                        6.	How long does it take to get contacted by a student?
+
+                    </div> <div class="content">
+                        <p class="transition ">
+                            It varies. Although we constantly do our best to ensure that majority of our tutors receive students, there are no guarantees. Some tutors can be contacted during the first few weeks upon registration while other tutors not at all. However, we recommend several ways where you can greatly improve your chances of being contacted:<br>
+                            <br>
+                            I. Create a complete application with a valid profile photo<br>
+                            	Be clear on your education, skills, and experiences<br>
+                            	Answer the application questions concisely <br>
+                            	Submit a background check to become verified on our website <br>
+                            <br>
+                            II. Market yourself using our 'Marketing' tab as seen in your account dashboard<br>
+                            <br>
+                            III. Set a reasonable price<br>
+                            	Ensure that your price matches with your skills and qualifications<br>
+                            	Based on our experience, we recommend a price range of $20-$50 per hour. <br>
+                            <br>
+                            IV. Receive high ratings and feedback from existing clients
+                        </p>
+                    </div>
+                    <div class="title">
+                        <i class="dropdown icon"></i>
+                        7.	Is having a photo and a completed profile mandatory?
+                    </div> <div class="content">
+                        <p class="transition ">
+                            Yes. You must include a valid photo and a completed profile to be a member of our team. Doing so also allows you to attract more clients and create a more successful tutoring business.
+                        </p>
+                    </div>
+                    <div class="title">
+                        <i class="dropdown icon"></i>
+                        8.	Does Superior Learning have a fixed commission structure?
+                    </div> <div class="content">
+                        <p class="transition ">
+                            No. We believe that your share of the earnings should increase as you tutor more hours for Superior Learning. Below is our commission structure.
+                        </p><table width="400" border="0">
+                            <tbody>
+                                <tr>
+                                    <td><strong>Hours Worked</strong></td>
+                                    <td>
+                                        <strong>
+                                            Superior Learning %
+                                        </strong>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        0-40
+                                        <br>
+                                    </td>
+                                    <td>30%</td>
+                                </tr>
+                                <tr>
+                                    <td>41-80</td>
+                                    <td>25%</td>
+                                </tr>
+                                <tr>
+                                    <td>81-120</td>
+                                    <td>20%</td>
+                                </tr>
+                                <tr>
+                                    <td>121+</td>
+                                    <td> 15%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p></p>
+                    </div>
+                    <div class="title">
+                        <i class="dropdown icon"></i>
+                        9.	Can I change my hourly rate? If yes, how often?
+                    </div> <div class="content">
+                        <p class="transition ">
+                            Yes. You may change your hourly rate in the Profile Settings of your dashboard. However, please be advised that we do not recommend that you change your rates too often as that would send a bad signal to your existing and potential students.
+                        </p>
+                    </div>
+                    <div class="title">
+                        <i class="dropdown icon"></i>
+                        10.	How do I promote myself on Superior Learning?
+                    </div> <div class="content">
+                        <p class="transition ">
+                            There are several things that tutors can do to promote themselves on the site:<br>
+                            <br>
+                            1. <strong>Have a complete and clear profile</strong> - To ensure you are attracting clients to your page, it is essential that you create a good first impression. Be clear, concise, and thorough with your skills and experiences. Your profile page is your brand - make it stand out. <br>
+                            <br>
+                            2.<strong> Be responsive</strong> - It is very important that you constantly check on your messages and respond to potential students at the earliest opportunity. Your response time has a great influence on your brand and ranking in the search results. <br>
+                            <br>
+                            3. <strong>Receive students' feedback</strong> - Ensure you are encouraging your students to give their feedback on your service. Remember, the higher your star rating, the better your brand and the higher your ranking in the search results.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</main>

@@ -1,5 +1,4 @@
-﻿<section class="tg-main-section tg-haslayout homepage_how_we_work_section">
-    <div class="container">
+﻿    <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="text-center">
@@ -13,7 +12,8 @@
                 <div class="tg-features">
                     <div class="col-sm-4">
                         <div class="tg-feature">
-                            <img src="https://www.superiorlearning.ca/assets/front/images/icon1.png">
+                     
+                            <img src="~/Content/superior/images/icon1.png" />
                             <h3><span class="red">A. </span>Choose</h3>
                             <p style="font-size:16px;">Your category, Class, Subject, Location and Range</p>
                             <span class="arrow"></span>
@@ -21,7 +21,8 @@
                     </div>
                     <div class="col-sm-4">
                         <div class="tg-feature">
-                            <img src="https://www.superiorlearning.ca/assets/front/images/icon2.png">
+                         
+                            <img src="~/Content/superior/images/icon2.png" />
                             <h3><span class="red">B. </span>Select</h3>
                             <p style="font-size:16px;">Your ideal tutor as per your needs (budget, educational requirements)</p>
                             <span class="arrow"></span>
@@ -29,19 +30,20 @@
                     </div>
                     <div class="col-sm-4">
                         <div class="tg-feature">
-                            <img src="https://www.superiorlearning.ca/assets/front/images/icon3.png">
+                    
+                            <img src="~/Content/superior/images/icon3.png" />
                             <h3><span class="red">C. </span>Contact</h3>
                             <p style="font-size:16px;">your ideal instructor. Send them a message &amp; book for lessons</p>
                             <span class="arrow"></span>
                         </div>
                     </div>
                     <div class="col-sm-12 text-center">
-                        <a href="https://www.superiorlearning.ca/tutors" class="red_button">FIND A TUTOR NOW!</a>
+                    
+                        @Html.ActionLink("FIND A TUTOR NOW!", "Index", "Tutors", new object { }, new { @class = "red_button" })
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
-</section>
+
 
