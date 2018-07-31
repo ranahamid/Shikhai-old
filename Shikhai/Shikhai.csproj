@@ -1328,6 +1328,10 @@
     <Content Include="Content\images\ShikhaiImages\Sample-Image.jpg" />
     <Content Include="Content\images\ShikhaiImages\tutor-become.png" />
     <Content Include="Content\images\ShikhaiImages\tutor-inperson.png" />
+    <Content Include="Content\images\testimonials\1354240\2018-07-29_11-10-17.png" />
+    <Content Include="Content\images\testimonials\1354240\thumbs\2018-07-29_11-10-1780x80.jpg" />
+    <Content Include="Content\images\testimonials\9951244\parents.jpg" />
+    <Content Include="Content\images\testimonials\9951244\thumbs\parents80x80.jpg" />
     <Content Include="Content\Ionicons\css\ionicons.css" />
     <Content Include="Content\Ionicons\fonts\ionicons.svg" />
     <Content Include="Content\jquery-clockpicker\bootstrap-clockpicker.css" />
