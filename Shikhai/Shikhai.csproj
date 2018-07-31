@@ -339,6 +339,7 @@
     <Compile Include="Models\CustomerSearch.cs" />
     <Compile Include="Models\HomePageSearch.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\SubjectViewModel.cs" />
     <Compile Include="Models\Teacher.cs" />
     <Compile Include="Models\FilesViewModel.cs" />
     <Compile Include="Models\GeoZone.cs" />
@@ -1310,8 +1311,12 @@
     <Content Include="Content\images\right_arrow.png" />
     <Content Include="Content\images\ShikhaiImages\arrow-white.png" />
     <Content Include="Content\images\ShikhaiImages\arrow.jpg" />
+    <Content Include="Content\images\ShikhaiImages\children.jpg" />
     <Content Include="Content\images\ShikhaiImages\Fb.png" />
     <Content Include="Content\images\ShikhaiImages\frame.png" />
+    <Content Include="Content\images\ShikhaiImages\image1.jpg" />
+    <Content Include="Content\images\ShikhaiImages\image2.jpg" />
+    <Content Include="Content\images\ShikhaiImages\image3.jpg" />
     <Content Include="Content\images\ShikhaiImages\linkedin.png" />
     <Content Include="Content\images\ShikhaiImages\logo-white.png" />
     <Content Include="Content\images\ShikhaiImages\Logo.png" />
@@ -1321,6 +1326,8 @@
     <Content Include="Content\images\ShikhaiImages\pic-01.jpg" />
     <Content Include="Content\images\ShikhaiImages\pic-02.jpg" />
     <Content Include="Content\images\ShikhaiImages\Sample-Image.jpg" />
+    <Content Include="Content\images\ShikhaiImages\tutor-become.png" />
+    <Content Include="Content\images\ShikhaiImages\tutor-inperson.png" />
     <Content Include="Content\Ionicons\css\ionicons.css" />
     <Content Include="Content\Ionicons\fonts\ionicons.svg" />
     <Content Include="Content\jquery-clockpicker\bootstrap-clockpicker.css" />
@@ -1375,9 +1382,14 @@
     <Content Include="Content\superior\css_support1.css" />
     <Content Include="Content\superior\customScrollbar.css" />
     <Content Include="Content\superior\form.css" />
+    <Content Include="Content\superior\images\build.png" />
+    <Content Include="Content\superior\images\children.jpg" />
     <Content Include="Content\superior\images\icon1.png" />
     <Content Include="Content\superior\images\icon2.png" />
     <Content Include="Content\superior\images\icon3.png" />
+    <Content Include="Content\superior\images\rate.png" />
+    <Content Include="Content\superior\images\student.png" />
+    <Content Include="Content\superior\images\time.png" />
     <Content Include="Content\superior\jquery.countdown.css" />
     <Content Include="Content\superior\main2.css" />
     <Content Include="Content\superior\menu.min.css" />
@@ -4097,11 +4109,12 @@
     <Content Include="Views\Catalog\_HomePageSearch.cshtml" />
     <Content Include="Views\Catalog\_EasyAs123.cshtml" />
     <Content Include="Views\Home\_FAQMenu.cshtml" />
+    <Content Include="Views\Shared\_DoctorsDrop.cshtml" />
+    <Content Include="Views\Tutors\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Students\" />
-    <Folder Include="Views\Tutors\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

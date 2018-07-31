@@ -1,17 +1,15 @@
 ﻿@model Shikhai.Models.RegisterViewModel
 @{
-    ViewBag.Title = "Register";
+    ViewBag.Title = "Register as Student";
 }
+<style>
+    .red_button {
+        margin-top: 0px;
+    }
+</style>
 
 <h2>@ViewBag.Title.</h2>
-<div class="col-md-12">
-    <div class="col-md-4">
-        <h4>Create a new account.</h4>
-    </div>
-    @*<div class="col-md-4">
-            <a href=" @Url.Action("RegisterPatient", "Account", new { })" >Register as Patient</a>
-        </div>*@
-</div>
+
 
 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
@@ -69,9 +67,12 @@
         </div>
     </div>
 
-    <span>Looking to teach with us ?  <a href=" @Url.Action("Index", "Teachers", new { })"> Learn More </a></span>
+   
+    <div class="col-sm-12 text-center padding-tb-10" style="background-color:white;" >
+        <h1>Looking to teach with us ?</h1>
+        @Html.ActionLink("Learn More", "Index", "Teachers", new object { }, new { @class = "red_button" })
+    </div>
 }
-
 
 
 @section Scripts {

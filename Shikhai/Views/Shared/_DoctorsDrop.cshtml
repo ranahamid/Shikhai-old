@@ -1,0 +1,4 @@
+﻿@model Shikhai.Models.SubjectViewModel
+
+
+    @Html.DropDownListFor(model => model.SelectedSubjectId, new SelectList(Model.DoctorslList, "Value", "Text"), "Subject", new { @class = "form-control", @id = "SelectedDoctor", })

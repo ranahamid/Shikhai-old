@@ -238,7 +238,7 @@ input:focus,
 
 .tg-haslayout{
 	width:100%;
-	float:left;
+	/*float:left;*/
 }
 .tg-main-section{padding: 80px 0;}
 .tg-location-map{
@@ -673,7 +673,10 @@ input:focus,
 ==============================================*/
 .tg-wrapper{overflow: hidden;}
 body.tg-home .tg-main{padding: 40px 0px 0px 0px;margin-bottom:-40px;}
-.tg-main{padding: 100px 0;}
+.tg-main{
+    /*padding: 100px 0;*/
+
+}
 #tg-twocolumns{
 	width: 100%;
 	float: left;

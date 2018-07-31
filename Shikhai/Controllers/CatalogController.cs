@@ -33,6 +33,18 @@ namespace Shikhai.Controllers
             return PartialView("_MenuBanner");
         }
 
+
+        [AllowAnonymous]
+        public ActionResult FillChildCategory(int? id)
+        {
+            var vm = new Shikhai.Models.SubjectViewModel()
+            {
+                SelectedCatId = id
+            };
+
+            return PartialView("_DoctorsDrop", vm);
+        }
+
         public ActionResult HomePageSearch()
         {
             var vm = new HomePageSearch();

@@ -67,7 +67,7 @@ namespace Shikhai.Models
     {
         public string GuidId { get; set; }
 
-        [Display(Name = "Hospital Name")]
+        [Display(Name = "Institution Name")]
         public string HospitalName { get; set; }
 
         [Display(Name = "Description")]
