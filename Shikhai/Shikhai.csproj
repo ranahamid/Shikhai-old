@@ -1391,6 +1391,7 @@
     <Content Include="Content\superior\images\icon1.png" />
     <Content Include="Content\superior\images\icon2.png" />
     <Content Include="Content\superior\images\icon3.png" />
+    <Content Include="Content\superior\images\Logo.png" />
     <Content Include="Content\superior\images\rate.png" />
     <Content Include="Content\superior\images\student.png" />
     <Content Include="Content\superior\images\time.png" />
