@@ -1345,6 +1345,8 @@ namespace Shikhai.DAL
 		
 		private string _Name;
 		
+		private string _Description;
+		
 		private System.Nullable<int> _DisplayOrder;
 		
 		private System.Nullable<System.DateTime> _CreatedOnUtc;
@@ -1361,6 +1363,8 @@ namespace Shikhai.DAL
     partial void OnIdChanged();
     partial void OnNameChanging(string value);
     partial void OnNameChanged();
+    partial void OnDescriptionChanging(string value);
+    partial void OnDescriptionChanged();
     partial void OnDisplayOrderChanging(System.Nullable<int> value);
     partial void OnDisplayOrderChanged();
     partial void OnCreatedOnUtcChanging(System.Nullable<System.DateTime> value);
@@ -1412,6 +1416,26 @@ namespace Shikhai.DAL
 					this._Name = value;
 					this.SendPropertyChanged("Name");
 					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(MAX)")]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this.OnDescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._Description = value;
+					this.SendPropertyChanged("Description");
+					this.OnDescriptionChanged();
 				}
 			}
 		}
@@ -1784,6 +1808,8 @@ namespace Shikhai.DAL
 		
 		private string _Name;
 		
+		private string _Description;
+		
 		private System.Nullable<int> _DisplayOrder;
 		
 		private System.Nullable<System.DateTime> _CreatedOnUtc;
@@ -1800,6 +1826,8 @@ namespace Shikhai.DAL
     partial void OnIdChanged();
     partial void OnNameChanging(string value);
     partial void OnNameChanged();
+    partial void OnDescriptionChanging(string value);
+    partial void OnDescriptionChanged();
     partial void OnDisplayOrderChanging(System.Nullable<int> value);
     partial void OnDisplayOrderChanged();
     partial void OnCreatedOnUtcChanging(System.Nullable<System.DateTime> value);
@@ -1851,6 +1879,26 @@ namespace Shikhai.DAL
 					this._Name = value;
 					this.SendPropertyChanged("Name");
 					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(MAX)")]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this.OnDescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._Description = value;
+					this.SendPropertyChanged("Description");
+					this.OnDescriptionChanged();
 				}
 			}
 		}
@@ -3588,6 +3636,8 @@ namespace Shikhai.DAL
 		
 		private int _UpperLimit;
 		
+		private string _Description;
+		
 		private System.Nullable<int> _DisplayOrder;
 		
 		private System.Nullable<System.DateTime> _CreatedOnUtc;
@@ -3606,6 +3656,8 @@ namespace Shikhai.DAL
     partial void OnLowerLimitChanged();
     partial void OnUpperLimitChanging(int value);
     partial void OnUpperLimitChanged();
+    partial void OnDescriptionChanging(string value);
+    partial void OnDescriptionChanged();
     partial void OnDisplayOrderChanging(System.Nullable<int> value);
     partial void OnDisplayOrderChanged();
     partial void OnCreatedOnUtcChanging(System.Nullable<System.DateTime> value);
@@ -3677,6 +3729,26 @@ namespace Shikhai.DAL
 					this._UpperLimit = value;
 					this.SendPropertyChanged("UpperLimit");
 					this.OnUpperLimitChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(MAX)")]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this.OnDescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._Description = value;
+					this.SendPropertyChanged("Description");
+					this.OnDescriptionChanged();
 				}
 			}
 		}

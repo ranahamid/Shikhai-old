@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 
 namespace Shikhai.Models
 {
@@ -72,6 +73,42 @@ namespace Shikhai.Models
 
         [Display(Name = "Description")]
         public string Description { get; set; }
+        //new added
+
+        //class names - 6,7,8
+        [Display(Name = "Can Teach Days")]
+        public List<SelectListItem> CanTeachClass { get; set; }
+
+        [Required]
+        [Display(Name = "Teach Days")]
+        public List<string> SelectedTeachClass { get; set; }
+
+        public string SelectedTeachClassStr { get; set; }
+
+        //location: uttara, banani
+        public List<SelectListItem> AllLocationSelectListItems { get; set; }
+
+        [Display(Name = "Working Area")]
+        public string SelectedLocationId { get; set; }
+
+        //Category: bangla, eng, 
+        public List<SelectListItem> AllCategorySelectListItems { get; set; }
+
+        [Display(Name = "Working Area")]
+        public string SelectedCategoryId { get; set; }
+
+        //subject
+        [Display(Name = "Can Teach Days")]
+        public List<SelectListItem> CanTeachSubject { get; set; }
+
+        [Required]
+        [Display(Name = "Teach Days")]
+        public List<string> SelectedSubject { get; set; }
+
+        public string SelectedSubjectStr { get; set; }
+
+        // range
+       public int TutionPrice { get; set; }
     }
 
     public class RegisterViewModel

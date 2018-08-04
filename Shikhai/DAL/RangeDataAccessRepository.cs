@@ -25,6 +25,7 @@ namespace Shikhai.DAL
                 Id = x.Id,
                 LowerLimit = x.LowerLimit,
                 UpperLimit = x.UpperLimit,
+                Description = x.Description,
                 CreatedOnUtc = x.CreatedOnUtc,
                 UpdatedOnUtc = x.UpdatedOnUtc,
                 DisplayOrder=x.DisplayOrder,
@@ -42,6 +43,7 @@ namespace Shikhai.DAL
                 Id = x.Id,
                 LowerLimit = x.LowerLimit,
                 UpperLimit = x.UpperLimit,
+                Description = x.Description,
                 CreatedOnUtc = x.CreatedOnUtc,
                 UpdatedOnUtc = x.UpdatedOnUtc,
                 DisplayOrder = x.DisplayOrder,
@@ -63,6 +65,7 @@ namespace Shikhai.DAL
             {
                 LowerLimit = entity.LowerLimit,
                 UpperLimit = entity.UpperLimit,
+                Description = entity.Description,
                 CreatedOnUtc = entity.CreatedOnUtc,
                 UpdatedOnUtc = entity.UpdatedOnUtc,
                 DisplayOrder = entity.DisplayOrder,
@@ -96,6 +99,7 @@ namespace Shikhai.DAL
                 entitySingle.DisplayOrder = entity.DisplayOrder;
                 entitySingle.LowerLimit = entity.LowerLimit;
                 entitySingle.UpperLimit = entity.UpperLimit;
+                entitySingle.Description = entity.Description;
                 entitySingle.CreatedOnUtc = entity.CreatedOnUtc;
                 entitySingle.UpdatedOnUtc = entity.UpdatedOnUtc;
 

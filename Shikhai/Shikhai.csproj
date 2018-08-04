@@ -4037,12 +4037,6 @@
     <Content Include="Views\Catalog\_MenuBanner.cshtml" />
     <Content Include="Views\Shared\_TopMenu.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
-    <Content Include="Views\BazarLists\Create.cshtml" />
-    <Content Include="Views\BazarLists\Delete.cshtml" />
-    <Content Include="Views\BazarLists\Details.cshtml" />
-    <Content Include="Views\BazarLists\Edit.cshtml" />
-    <Content Include="Views\BazarLists\Index.cshtml" />
-    <Content Include="Views\BazarLists\Success.cshtml" />
     <Content Include="Views\Account\GetUserInfoById.cshtml" />
     <Content Include="Views\Shared\_LayoutHead.cshtml" />
     <Content Include="Views\Shared\_LayoutFooter.cshtml" />

@@ -25,9 +25,11 @@ namespace Shikhai.DAL
             {
                 Id = x.Id,
                 Name = x.Name,
+                DisplayOrder = x.DisplayOrder,
                 CreatedOnUtc = x.CreatedOnUtc,
                 UpdatedOnUtc = x.UpdatedOnUtc,
-                DisplayOrder=x.DisplayOrder,
+           
+                Description = x.Description,
                 Published = x.Published
 
             }).ToList();
@@ -41,6 +43,7 @@ namespace Shikhai.DAL
             {
                 Id = x.Id,
                 Name = x.Name,
+                Description = x.Description,
                 CreatedOnUtc = x.CreatedOnUtc,
                 UpdatedOnUtc = x.UpdatedOnUtc,
                 DisplayOrder = x.DisplayOrder,
@@ -61,6 +64,7 @@ namespace Shikhai.DAL
             Db.ClassNameTbls.InsertOnSubmit(new ClassNameTbl
             {
                 Name = entity.Name,
+                Description = entity.Description,
                 CreatedOnUtc = entity.CreatedOnUtc,
                 UpdatedOnUtc = entity.UpdatedOnUtc,
                 DisplayOrder = entity.DisplayOrder,
@@ -92,6 +96,7 @@ namespace Shikhai.DAL
                 ClassNameTbl entitySingle = isEntity.Single();
 
                 entitySingle.Name = entity.Name;
+                entitySingle.Description = entity.Description;
                 entitySingle.CreatedOnUtc = entity.CreatedOnUtc;
                 entitySingle.UpdatedOnUtc = entity.UpdatedOnUtc;
                 entitySingle.DisplayOrder = entity.DisplayOrder;

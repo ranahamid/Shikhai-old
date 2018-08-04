@@ -36,6 +36,10 @@ namespace Shikhai.Models
 
         public string Name { get; set; }
 
+        [AllowHtml]
+        [Display(Name = "Description")]
+        public string Description { get; set; }
+
         public DateTime? CreatedOnUtc { get; set; }
 
         public DateTime? UpdatedOnUtc { get; set; }
@@ -52,6 +56,10 @@ namespace Shikhai.Models
         public int Id { get; set; }
 
         public string Name { get; set; }
+
+        [AllowHtml]
+        [Display(Name = "Description")]
+        public string Description { get; set; }
 
         public DateTime? CreatedOnUtc { get; set; }
 
@@ -79,6 +87,10 @@ namespace Shikhai.Models
 
             }
         }
+
+        [AllowHtml]
+        [Display(Name = "Description")]
+        public string Description { get; set; }
 
         public int LowerLimit { get; set; }
 

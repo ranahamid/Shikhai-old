@@ -1,6 +1,9 @@
 ﻿@{
+    ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+
 
 <style>
     .row {
@@ -60,20 +63,20 @@
                             <span class="arrow"></span>
                         </a>
                     </div>
-                        <div class="tri_button">
-                            <a href="/Account/Register">
-                                <img src="~/Content/images/ShikhaiImages/tutor-become.png">
-                                <span class="head">Become a Tutor</span>
-                                <span class="mobilehide">Register As Teacher</span>
-                                <span class="arrow"></span>
-                            </a>
-                        </div>
+                    <div class="tri_button">
+                        <a href="/Account/Register">
+                            <img src="~/Content/images/ShikhaiImages/tutor-become.png">
+                            <span class="head">Become a Tutor</span>
+                            <span class="mobilehide">Register As Teacher</span>
+                            <span class="arrow"></span>
+                        </a>
                     </div>
+                </div>
             </div>
         </div>
         <div class="row homepage_search_form_section">
             <div class="col-md-11 col-md-offset-1">
-                    @{ Html.RenderAction("HomePageSearch", "Catalog"); }
+                @{ Html.RenderAction("HomePageSearch", "Catalog"); }
             </div>
         </div>
     </div>

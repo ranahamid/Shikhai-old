@@ -47,6 +47,7 @@ namespace Shikhai.Models
         public DateTime? DateOfBirth { get; set; }
 
 
+        // teach days
         [Display(Name = "Can Teach Days")]
         public List<SelectListItem> CanVisitDays { get; set; }
 
@@ -57,6 +58,7 @@ namespace Shikhai.Models
         public string SelectedVisitDaysStr { get; set; }
 
         public string HiddenDays { get; set; }
+
 
         [Required]
         [Display(Name = "Teach Time Start")]

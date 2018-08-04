@@ -40,7 +40,16 @@
         </div>
     </div>
 
+    <div class="form-group">
+        @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
 
+            @Html.TextAreaFor(m => m.Description, new { @class = "form-control summernote" })
+
+            @*@Html.EditorFor(model => model.Description, new { htmlAttributes = new { style = "height:80px;", @class = "form-control summernote" } })*@
+            @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+        </div>
+    </div>
     <div class="form-group">
         @Html.LabelFor(model => model.DisplayOrder, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
