@@ -12,6 +12,7 @@ using System.Web.Mvc;
 using Shikhai.Filters;
 using System.Text.RegularExpressions;
 using System.Net.Http;
+using Newtonsoft.Json;
 
 namespace Shikhai.Controllers
 {
@@ -158,14 +159,62 @@ namespace Shikhai.Controllers
             }
         }
 
-        //
+        public async Task<ActionResult> UpdateTeacherProfile()
+        {
+            var GuidUsrId = User.Identity.GetUserId();
+            var userId = Db.TeacherTbls.Where(x => x.GuidId == GuidUsrId).Select(x => x.Id).SingleOrDefault();
+            url = baseUrl + "api/TeachersApi";
+
+            HttpResponseMessage responseMessage = await client.GetAsync(url + "/" + userId);
+            if (!responseMessage.IsSuccessStatusCode) throw new Exception("Exception");
+            var responseData = responseMessage.Content.ReadAsStringAsync().Result;
+            var entity = JsonConvert.DeserializeObject<RegisterTeacher>(responseData);
+
+            var entityReg = await RegisterPropertyTeacher(entity);
+
+            return View(entityReg);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> UpdateTeacherProfile(RegisterTeacher entity)
+        {
+            var entityReg = await RegisterPropertyTeacher(entity);
+            url = baseUrl + "api/TeachersApi";
+            var responseMessage = await client.PutAsJsonAsync(url + "/" + entity.Id, entityReg);
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                return RedirectToAction("Dashboard", "Teachers", new { });
+            }
+         
+            return View(entity);
+        }
+
         // GET: /Account/Register
         [AllowAnonymous]
-        public ActionResult RegisterTeacher()
+        public async Task<ActionResult> RegisterTeacher()
         {
             RegisterTeacher entity = new RegisterTeacher();
+            var entityReg = await RegisterPropertyTeacher(entity);
+
+            //entity.CanVisitDays = GetAllWeekDaysName();
+            //entity.CanTeachClass =await GetAllClassNames();
+            //entity.AllLocationSelectListItems= await GetAllLocationSelectListItems();
+            //entity.AllCategorySelectListItems = Categories;
+            //entity.CanTeachSubject = ChildCategories;
+
+            return View(entityReg);
+        }
+
+        public async Task<RegisterTeacher> RegisterPropertyTeacher(RegisterTeacher entity)
+        {
             entity.CanVisitDays = GetAllWeekDaysName();
-            return View(entity);
+            entity.CanTeachClass = await GetAllClassNames();
+            entity.AllLocationSelectListItems = await GetAllLocationSelectListItems();
+            entity.AllCategorySelectListItems = Categories;
+            entity.CanTeachSubject = ChildCategories;
+
+            return entity;
         }
 
         [HttpPost]
@@ -223,9 +272,11 @@ namespace Shikhai.Controllers
                 AddErrors(result);
             }
 
-            model.CanVisitDays = GetAllWeekDaysName();
+
+            //fill reg entity 
+            var entityReg = await RegisterPropertyTeacher(model);
             // If we got this far, something failed, redisplay form
-            return View(model);
+            return View(entityReg);
         }
 
         //

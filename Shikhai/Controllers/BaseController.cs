@@ -52,6 +52,36 @@ namespace Shikhai.Controllers
             //api url
       
         }
+        #region teacher reg
+        public async Task<List<SelectListItem>> GetAllClassNames()
+        {
+            url = baseUrl + "api/ClassNameApi/GetAllClassNamesSelectList/";
+            var responseMessage = await client.GetAsync(url);
+
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                var responseData = responseMessage.Content.ReadAsStringAsync().Result;
+                var entity = JsonConvert.DeserializeObject<List<SelectListItem>>(responseData);
+                return entity;
+            }
+            return null;
+        }
+        public async Task<List<SelectListItem>> GetAllLocationSelectListItems()
+        {
+            url = baseUrl + "api/LocationApi/GetAllLocationsSelectList/";
+            var responseMessage = await client.GetAsync(url);
+
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                var responseData = responseMessage.Content.ReadAsStringAsync().Result;
+                var entity = JsonConvert.DeserializeObject<List<SelectListItem>>(responseData);
+                return entity;
+            }
+            return null;
+        }
+    
+        
+        #endregion
 
         #region  dcoctorappointment        
         public async Task<List<SelectListItem>> GetAllTeacherWorkingTypes()
@@ -67,6 +97,7 @@ namespace Shikhai.Controllers
             }
             return null;
         }
+  
 
         public List<SelectListItem> GetAllWeekDaysName()
         {
@@ -140,6 +171,93 @@ namespace Shikhai.Controllers
         }
 
 
+     
+
+        #region SelectedCategoryIdStr
+
+        public string GetCategoryNameFromNumbers(string dayLists)
+        {
+            StringBuilder daysName = new StringBuilder();
+            try
+            {
+                if (dayLists != string.Empty)
+                {
+
+                    var daysIds = dayLists.Split(',').Select(int.Parse).ToList();
+
+                    foreach (var item in daysIds)
+                    {
+                        string dayInStr = GetCategoryByInt(item);
+
+                        if (daysName.ToString() != string.Empty)
+                        {
+                            daysName.Append("," + dayInStr);
+                        }
+                        else
+                        {
+                            daysName.Append(dayInStr);
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                return daysName.ToString();
+            }
+            return daysName.ToString();
+        }
+
+        public string GetCategoryByInt(int categoryId)
+        {
+            var catName = Db.CategoryTbls.Where(x => x.Id == categoryId).Select(x => x.Name_English).SingleOrDefault();
+            return catName;
+
+        }
+        #endregion
+
+        #region GetTeachClassFromNumbers
+
+        public string GetTeachClassFromNumbers(string dayLists)
+        {
+            StringBuilder daysName = new StringBuilder();
+            try
+            {
+                if (dayLists != string.Empty)
+                {
+
+                    var daysIds = dayLists.Split(',').Select(int.Parse).ToList();
+
+                    foreach (var item in daysIds)
+                    {
+                        string dayInStr = GetTeachClassByInt(item);
+
+                        if (daysName.ToString() != string.Empty)
+                        {
+                            daysName.Append("," + dayInStr);
+                        }
+                        else
+                        {
+                            daysName.Append(dayInStr);
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                return daysName.ToString();
+            }
+            return daysName.ToString();
+        }
+
+        public string GetTeachClassByInt(int classId)
+        {
+            var  className = Db.ClassNameTbls.Where(x => x.Id == classId).Select(x=>x.Name).SingleOrDefault();
+            return className;
+
+        }
+        #endregion
+
+        #region GetDaysNameFromNumbers
 
         public string GetDaysNameFromNumbers(string dayLists)
         {
@@ -205,6 +323,7 @@ namespace Shikhai.Controllers
 
             }
         }
+        #endregion
 
         /// <summary>
         /// Dates  represented as Unix timestamp 
@@ -566,12 +685,12 @@ namespace Shikhai.Controllers
             return listItems;
 
         }
-
+        
         public List<SelectListItem> ChildCategories
         {
             get
             {
-                var listItems = Db.CategoryTbls.Where(x => x.Parent1Id == null && x.Parent1Id != 0).Select(x => new SelectListItem
+                var listItems = Db.CategoryTbls.Where(x => x.Parent1Id != null && x.Parent1Id != 0).Select(x => new SelectListItem
                 {
                     Text = Db.CategoryTbls.FirstOrDefault(a => a.Id == x.Parent1Id).Name_English + " > " + x.Name_English,
                     Value = x.Id.ToString()

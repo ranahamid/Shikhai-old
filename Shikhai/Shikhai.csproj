@@ -1297,6 +1297,7 @@
     <Content Include="Content\images\grabbing.png" />
     <Content Include="Content\images\heart.gif" />
     <Content Include="Content\images\ImageAttribution.txt" />
+    <Content Include="Content\images\logo-white.png" />
     <Content Include="Content\images\logo.png" />
     <Content Include="Content\images\pattern\circles-light.png" />
     <Content Include="Content\images\pattern\dots.png" />
@@ -4110,6 +4111,7 @@
     <Content Include="Views\Home\_FAQMenu.cshtml" />
     <Content Include="Views\Shared\_DoctorsDrop.cshtml" />
     <Content Include="Views\Tutors\Index.cshtml" />
+    <Content Include="Views\Account\UpdateTeacherProfile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

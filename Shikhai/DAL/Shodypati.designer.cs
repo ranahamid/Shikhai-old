@@ -3888,13 +3888,21 @@ namespace Shikhai.DAL
 		
 		private string _CanVisitDays;
 		
+		private string _CanTeachClass;
+		
+		private string _SelectedLocationId;
+		
+		private string _SelectedCategory;
+		
+		private string _CanTeachSubject;
+		
+		private System.Nullable<int> _TutionPrice;
+		
 		private System.TimeSpan _VisitTimeStart;
 		
 		private System.TimeSpan _VisitTimeEnd;
 		
 		private int _SlotDuration;
-		
-		private System.Nullable<int> _VisitFee;
 		
 		private string _VisitingCard;
 		
@@ -3936,14 +3944,22 @@ namespace Shikhai.DAL
     partial void OnEmailChanged();
     partial void OnCanVisitDaysChanging(string value);
     partial void OnCanVisitDaysChanged();
+    partial void OnCanTeachClassChanging(string value);
+    partial void OnCanTeachClassChanged();
+    partial void OnSelectedLocationIdChanging(string value);
+    partial void OnSelectedLocationIdChanged();
+    partial void OnSelectedCategoryChanging(string value);
+    partial void OnSelectedCategoryChanged();
+    partial void OnCanTeachSubjectChanging(string value);
+    partial void OnCanTeachSubjectChanged();
+    partial void OnTutionPriceChanging(System.Nullable<int> value);
+    partial void OnTutionPriceChanged();
     partial void OnVisitTimeStartChanging(System.TimeSpan value);
     partial void OnVisitTimeStartChanged();
     partial void OnVisitTimeEndChanging(System.TimeSpan value);
     partial void OnVisitTimeEndChanged();
     partial void OnSlotDurationChanging(int value);
     partial void OnSlotDurationChanged();
-    partial void OnVisitFeeChanging(System.Nullable<int> value);
-    partial void OnVisitFeeChanged();
     partial void OnVisitingCardChanging(string value);
     partial void OnVisitingCardChanged();
     partial void OnCreatedOnUtcChanging(System.Nullable<System.DateTime> value);
@@ -4239,6 +4255,106 @@ namespace Shikhai.DAL
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CanTeachClass", DbType="NVarChar(1000)")]
+		public string CanTeachClass
+		{
+			get
+			{
+				return this._CanTeachClass;
+			}
+			set
+			{
+				if ((this._CanTeachClass != value))
+				{
+					this.OnCanTeachClassChanging(value);
+					this.SendPropertyChanging();
+					this._CanTeachClass = value;
+					this.SendPropertyChanged("CanTeachClass");
+					this.OnCanTeachClassChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SelectedLocationId", DbType="NVarChar(150)")]
+		public string SelectedLocationId
+		{
+			get
+			{
+				return this._SelectedLocationId;
+			}
+			set
+			{
+				if ((this._SelectedLocationId != value))
+				{
+					this.OnSelectedLocationIdChanging(value);
+					this.SendPropertyChanging();
+					this._SelectedLocationId = value;
+					this.SendPropertyChanged("SelectedLocationId");
+					this.OnSelectedLocationIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SelectedCategory", DbType="NVarChar(100)")]
+		public string SelectedCategory
+		{
+			get
+			{
+				return this._SelectedCategory;
+			}
+			set
+			{
+				if ((this._SelectedCategory != value))
+				{
+					this.OnSelectedCategoryChanging(value);
+					this.SendPropertyChanging();
+					this._SelectedCategory = value;
+					this.SendPropertyChanged("SelectedCategory");
+					this.OnSelectedCategoryChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CanTeachSubject", DbType="NVarChar(1000)")]
+		public string CanTeachSubject
+		{
+			get
+			{
+				return this._CanTeachSubject;
+			}
+			set
+			{
+				if ((this._CanTeachSubject != value))
+				{
+					this.OnCanTeachSubjectChanging(value);
+					this.SendPropertyChanging();
+					this._CanTeachSubject = value;
+					this.SendPropertyChanged("CanTeachSubject");
+					this.OnCanTeachSubjectChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TutionPrice", DbType="Int")]
+		public System.Nullable<int> TutionPrice
+		{
+			get
+			{
+				return this._TutionPrice;
+			}
+			set
+			{
+				if ((this._TutionPrice != value))
+				{
+					this.OnTutionPriceChanging(value);
+					this.SendPropertyChanging();
+					this._TutionPrice = value;
+					this.SendPropertyChanged("TutionPrice");
+					this.OnTutionPriceChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VisitTimeStart", DbType="Time NOT NULL")]
 		public System.TimeSpan VisitTimeStart
 		{
@@ -4295,26 +4411,6 @@ namespace Shikhai.DAL
 					this._SlotDuration = value;
 					this.SendPropertyChanged("SlotDuration");
 					this.OnSlotDurationChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VisitFee", DbType="Int")]
-		public System.Nullable<int> VisitFee
-		{
-			get
-			{
-				return this._VisitFee;
-			}
-			set
-			{
-				if ((this._VisitFee != value))
-				{
-					this.OnVisitFeeChanging(value);
-					this.SendPropertyChanging();
-					this._VisitFee = value;
-					this.SendPropertyChanged("VisitFee");
-					this.OnVisitFeeChanged();
 				}
 			}
 		}

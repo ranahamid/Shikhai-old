@@ -205,10 +205,14 @@
       <Column Name="PhoneNumber" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
       <Column Name="Email" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="CanVisitDays" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="CanTeachClass" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="SelectedLocationId" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="SelectedCategory" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CanTeachSubject" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="TutionPrice" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="VisitTimeStart" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
       <Column Name="VisitTimeEnd" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
       <Column Name="SlotDuration" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="VisitFee" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="VisitingCard" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
       <Column Name="CreatedOnUtc" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
       <Column Name="UpdatedOnUtc" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />

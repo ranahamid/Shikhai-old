@@ -80,7 +80,7 @@ namespace Shikhai.Models
         public List<SelectListItem> CanTeachClass { get; set; }
 
         [Required]
-        [Display(Name = "Teach Days")]
+        [Display(Name = "Select Class")]
         public List<string> SelectedTeachClass { get; set; }
 
         public string SelectedTeachClassStr { get; set; }
@@ -88,27 +88,29 @@ namespace Shikhai.Models
         //location: uttara, banani
         public List<SelectListItem> AllLocationSelectListItems { get; set; }
 
-        [Display(Name = "Working Area")]
+        [Display(Name = "Select Location")]
         public string SelectedLocationId { get; set; }
 
         //Category: bangla, eng, 
         public List<SelectListItem> AllCategorySelectListItems { get; set; }
 
-        [Display(Name = "Working Area")]
-        public string SelectedCategoryId { get; set; }
+        [Display(Name = "Select Category ")]
+        public List<string> SelectedCategoryId { get; set; }
+
+        public string SelectedCategoryIdStr { get; set; }
 
         //subject
-        [Display(Name = "Can Teach Days")]
+        [Display(Name = "Can Teach Subject")]
         public List<SelectListItem> CanTeachSubject { get; set; }
 
         [Required]
-        [Display(Name = "Teach Days")]
+        [Display(Name = "Select Subject")]
         public List<string> SelectedSubject { get; set; }
 
         public string SelectedSubjectStr { get; set; }
 
         // range
-       public int TutionPrice { get; set; }
+       public int? TutionPrice { get; set; }
     }
 
     public class RegisterViewModel

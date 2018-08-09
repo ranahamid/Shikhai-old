@@ -10,6 +10,11 @@ namespace Shikhai
             //bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
             //            "~/Content/jquery/dist/jquery.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(           
+            //"~/Scripts/jquery.validate*"
+
+            ) );
+
             bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
              "~/Content/jquery/jquery-ui-{version}.js"));
 

@@ -35,7 +35,20 @@ namespace Shikhai.DAL
                 Designation = x.Designation,
                 YearOfExperience = x.YearOfExperience,
 
-         
+                //GradeXL
+                TutionPrice = x.TutionPrice,
+                SelectedLocationId = x.SelectedLocationId,
+                //1
+                SelectedTeachClassStr = GetTeachClassFromNumbers(x.CanTeachClass),
+                SelectedTeachClass = GetListFromCommaSeparatedIntList(x.CanTeachClass),
+                //2
+                SelectedCategoryIdStr = GetCategoryNameFromNumbers(x.SelectedCategory),
+                SelectedCategoryId = GetListFromCommaSeparatedIntList(x.SelectedCategory),
+                //3
+                SelectedSubjectStr = GetCategoryNameFromNumbers(x.CanTeachSubject),
+                SelectedSubject = GetListFromCommaSeparatedIntList(x.CanTeachSubject),
+
+
                 Addresss = x.Addresss,
                 DateOfBirth = x.DateOfBirth,
                 PhoneNumber = x.PhoneNumber,
@@ -44,8 +57,7 @@ namespace Shikhai.DAL
                 VisitTimeStart = x.VisitTimeStart,
                 VisitTimeEnd = x.VisitTimeEnd,
                 VisitTime = GetTimeFromTimeSpan(x.VisitTimeStart, x.VisitTimeEnd),
-                SlotDuration = x.SlotDuration,
-                VisitFee = x.VisitFee,
+             
                 VisitingCard = HttpUtility.UrlPathEncode(baseUrl + x.VisitingCard),
                 RawDBImagePath = x.VisitingCard,
                 CreatedOnUtc = x.CreatedOnUtc,
@@ -77,8 +89,7 @@ namespace Shikhai.DAL
                 ClinicHospitalName = x.ClinicHospitalName,
                 Designation = x.Designation,
                 YearOfExperience = x.YearOfExperience,
-
-                //WorkingTypeName = Db.TeacherWorkingAreaTbls.SingleOrDefault(y => y.Id.ToString() == x.WorkingArea).WorkingArea,
+             
                 Addresss = x.Addresss,
                 DateOfBirth = x.DateOfBirth,
                 PhoneNumber = x.PhoneNumber,
@@ -86,11 +97,24 @@ namespace Shikhai.DAL
                 SelectedVisitDaysStr = GetDaysNameFromNumbers(x.CanVisitDays),
                 SelectedVisitDays = GetListFromCommaSeparatedIntList(x.CanVisitDays),
                 HiddenDays =GetHiddenDaysFromActiveDays(x.CanVisitDays),
+
+                //GradeXL
+                TutionPrice = x.TutionPrice,
+                SelectedLocationId = x.SelectedLocationId,
+                //1
+                SelectedTeachClassStr = GetTeachClassFromNumbers(x.CanTeachClass),
+                SelectedTeachClass = GetListFromCommaSeparatedIntList(x.CanTeachClass),
+                //2
+                SelectedCategoryIdStr = GetCategoryNameFromNumbers(x.SelectedCategory),
+                SelectedCategoryId = GetListFromCommaSeparatedIntList(x.SelectedCategory),
+                //3
+                SelectedSubjectStr = GetCategoryNameFromNumbers(x.CanTeachSubject),
+                SelectedSubject = GetListFromCommaSeparatedIntList(x.CanTeachSubject),
+
                 VisitTimeStart = x.VisitTimeStart,
                 VisitTimeEnd = x.VisitTimeEnd,
                 VisitTime = GetTimeFromTimeSpan(x.VisitTimeStart, x.VisitTimeEnd) ,
-                SlotDuration = x.SlotDuration,
-                VisitFee = x.VisitFee,
+                    
                 VisitingCard = HttpUtility.UrlPathEncode(baseUrl + x.VisitingCard),
                 RawDBImagePath = x.VisitingCard,
                 CreatedOnUtc = x.CreatedOnUtc,
@@ -127,8 +151,49 @@ namespace Shikhai.DAL
                 }
             }
 
-            if (entity.SlotDuration == 0)
-                entity.SlotDuration = 10;
+            // class
+            var classNames = new StringBuilder();
+            foreach (var item in entity.SelectedTeachClass)
+            {
+
+                if (classNames.ToString() != string.Empty)
+                {
+                    classNames.Append("," + item);
+                }
+                else
+                {
+                    classNames.Append(item);
+                }
+            }
+            // categoryName
+            var categoryName = new StringBuilder();
+            foreach (var item in entity.SelectedCategoryId)
+            {
+
+                if (categoryName.ToString() != string.Empty)
+                {
+                    categoryName.Append("," + item);
+                }
+                else
+                {
+                    categoryName.Append(item);
+                }
+            }
+            //subject 
+            var subjectName = new StringBuilder();
+            foreach (var item in entity.SelectedSubject)
+            {
+
+                if (subjectName.ToString() != string.Empty)
+                {
+                    subjectName.Append("," + item);
+                }
+                else
+                {
+                    subjectName.Append(item);
+                }
+            }
+
 
             if (entity.VisitTimeEnd.ToString() == "00:00:00")
             {
@@ -136,7 +201,7 @@ namespace Shikhai.DAL
             }
 
             Db.TeacherTbls.InsertOnSubmit(new TeacherTbl
-            {      
+            {
                 GuidId = entity.GuidId,
                 FullName = entity.FullName,
 
@@ -149,11 +214,16 @@ namespace Shikhai.DAL
                 PhoneNumber = entity.PhoneNumber,
                 Email = entity.Email,
                 CanVisitDays = visitDays.ToString(),
+                
+                //GradeXL
+                TutionPrice = entity.TutionPrice,
+                SelectedLocationId= entity.SelectedLocationId,
+                CanTeachClass = classNames.ToString(),
+                SelectedCategory = categoryName.ToString(),
+                CanTeachSubject = subjectName.ToString(),
 
                 VisitTimeStart = entity.VisitTimeStart,
-                VisitTimeEnd = entity.VisitTimeEnd,
-                SlotDuration = entity.SlotDuration,
-                VisitFee = entity.VisitFee,
+                VisitTimeEnd = entity.VisitTimeEnd,                
 
                 VisitingCard = imgAddress,
                 CreatedOnUtc = DateTime.Now,
@@ -197,8 +267,48 @@ namespace Shikhai.DAL
                 }
             }
 
-            if (entity.SlotDuration == 0)
-                entity.SlotDuration = 10;
+            // class
+            var classNames = new StringBuilder();
+            foreach (var item in entity.SelectedTeachClass)
+            {
+
+                if (classNames.ToString() != string.Empty)
+                {
+                    classNames.Append("," + item);
+                }
+                else
+                {
+                    classNames.Append(item);
+                }
+            }
+            // categoryName
+            var categoryName = new StringBuilder();
+            foreach (var item in entity.SelectedCategoryId)
+            {
+
+                if (categoryName.ToString() != string.Empty)
+                {
+                    categoryName.Append("," + item);
+                }
+                else
+                {
+                    categoryName.Append(item);
+                }
+            }
+            //subject 
+            var subjectName = new StringBuilder();
+            foreach (var item in entity.SelectedSubject)
+            {
+
+                if (subjectName.ToString() != string.Empty)
+                {
+                    subjectName.Append("," + item);
+                }
+                else
+                {
+                    subjectName.Append(item);
+                }
+            }
 
 
             var entitySingle = isEntity.Single();
@@ -213,10 +323,18 @@ namespace Shikhai.DAL
             entitySingle.PhoneNumber = entity.PhoneNumber;
             entitySingle.Email = entity.Email;
             entitySingle.CanVisitDays = visitDays.ToString();
+
+            //GradeXL
+            entitySingle.TutionPrice = entity.TutionPrice;
+            entitySingle.SelectedLocationId = entity.SelectedLocationId;
+            entitySingle.CanTeachClass = classNames.ToString();
+            entitySingle.SelectedCategory = categoryName.ToString();
+            entitySingle.CanTeachSubject = subjectName.ToString();
             entitySingle.VisitTimeStart = entity.VisitTimeStart;
+
             entitySingle.VisitTimeEnd = entity.VisitTimeEnd;
-            entitySingle.SlotDuration = entity.SlotDuration;
-            entitySingle.VisitFee = entity.VisitFee;
+       
+         
             entitySingle.VisitingCard = imgAddress;
             entitySingle.UpdatedOnUtc = DateTime.Now;
             entitySingle.Active = entity.Active;
@@ -225,7 +343,7 @@ namespace Shikhai.DAL
             {
                 Db.SubmitChanges();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 throw new Exception("Exception");
             }

@@ -74,8 +74,7 @@ namespace Shikhai.Models
         [Display(Name = "Slot Duration (in minutes)")]
         public int SlotDuration { get; set; }
 
-        [Display(Name = "Teach Fee")]
-        public int? VisitFee { get; set; }
+
 
         [Display(Name = "Profile Image")]
         public string VisitingCard { get; set; }
