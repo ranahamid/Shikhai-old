@@ -29,18 +29,21 @@ namespace Shikhai.DAL
                 Id = x.Id,
                 GuidId = x.GuidId,
                 FullName = x.FullName,
-                RegistrationNo = x.RegistrationNo,
-                RegistrationType = x.RegistrationType,
+
+         
                 ClinicHospitalName = x.ClinicHospitalName,
                 Designation = x.Designation,
+                Degree=x.Degree,
                 YearOfExperience = x.YearOfExperience,
 
                 //GradeXL
                 TutionPrice = x.TutionPrice,
                 SelectedLocationId = x.SelectedLocationId,
+                LocationDisplay = GetDisplayforLocation(x.SelectedLocationId),
                 //1
                 SelectedTeachClassStr = GetTeachClassFromNumbers(x.CanTeachClass),
                 SelectedTeachClass = GetListFromCommaSeparatedIntList(x.CanTeachClass),
+                SelectedTeachClassDisplay= GetDisplayforTeachClass(x.CanTeachClass),
                 //2
                 SelectedCategoryIdStr = GetCategoryNameFromNumbers(x.SelectedCategory),
                 SelectedCategoryId = GetListFromCommaSeparatedIntList(x.SelectedCategory),
@@ -57,8 +60,13 @@ namespace Shikhai.DAL
                 VisitTimeStart = x.VisitTimeStart,
                 VisitTimeEnd = x.VisitTimeEnd,
                 VisitTime = GetTimeFromTimeSpan(x.VisitTimeStart, x.VisitTimeEnd),
-             
-                VisitingCard = HttpUtility.UrlPathEncode(baseUrl + x.VisitingCard),
+
+                Question1DescribeYourself=x.Question1DescribeYourself,
+                Question2History=x.Question2History,
+                Question3Enjoy=x.Question3Enjoy,
+
+
+                VisitingCard = GetImageUrlFromBaseAddress(x.VisitingCard), 
                 RawDBImagePath = x.VisitingCard,
                 CreatedOnUtc = x.CreatedOnUtc,
                 UpdatedOnUtc = x.UpdatedOnUtc,
@@ -88,6 +96,7 @@ namespace Shikhai.DAL
                 RegistrationType = x.RegistrationType,
                 ClinicHospitalName = x.ClinicHospitalName,
                 Designation = x.Designation,
+                Degree = x.Degree,
                 YearOfExperience = x.YearOfExperience,
              
                 Addresss = x.Addresss,
@@ -113,8 +122,12 @@ namespace Shikhai.DAL
 
                 VisitTimeStart = x.VisitTimeStart,
                 VisitTimeEnd = x.VisitTimeEnd,
+
                 VisitTime = GetTimeFromTimeSpan(x.VisitTimeStart, x.VisitTimeEnd) ,
-                    
+                Question1DescribeYourself = x.Question1DescribeYourself,
+                Question2History = x.Question2History,
+                Question3Enjoy = x.Question3Enjoy,
+
                 VisitingCard = HttpUtility.UrlPathEncode(baseUrl + x.VisitingCard),
                 RawDBImagePath = x.VisitingCard,
                 CreatedOnUtc = x.CreatedOnUtc,
@@ -207,6 +220,7 @@ namespace Shikhai.DAL
 
                 ClinicHospitalName = entity.ClinicHospitalName,
                 Designation = entity.Designation,
+                Degree = entity.Degree,
                 YearOfExperience = entity.YearOfExperience,
 
                 Addresss = entity.Addresss,
@@ -223,7 +237,11 @@ namespace Shikhai.DAL
                 CanTeachSubject = subjectName.ToString(),
 
                 VisitTimeStart = entity.VisitTimeStart,
-                VisitTimeEnd = entity.VisitTimeEnd,                
+                VisitTimeEnd = entity.VisitTimeEnd,
+
+                Question1DescribeYourself = entity.Question1DescribeYourself,
+                Question2History = entity.Question2History,
+                Question3Enjoy = entity.Question3Enjoy,
 
                 VisitingCard = imgAddress,
                 CreatedOnUtc = DateTime.Now,
@@ -317,6 +335,7 @@ namespace Shikhai.DAL
             entitySingle.RegistrationType = entity.RegistrationType;
             entitySingle.ClinicHospitalName = entity.ClinicHospitalName;
             entitySingle.Designation = entity.Designation;
+            entitySingle.Degree = entity.Degree;
             entitySingle.YearOfExperience = entity.YearOfExperience;
             entitySingle.Addresss = entity.Addresss;
             entitySingle.DateOfBirth = entity.DateOfBirth;
@@ -333,7 +352,10 @@ namespace Shikhai.DAL
             entitySingle.VisitTimeStart = entity.VisitTimeStart;
 
             entitySingle.VisitTimeEnd = entity.VisitTimeEnd;
-       
+
+            entitySingle.Question1DescribeYourself = entity.Question1DescribeYourself;
+            entitySingle.Question2History = entity.Question2History;
+            entitySingle.Question3Enjoy = entity.Question3Enjoy;
          
             entitySingle.VisitingCard = imgAddress;
             entitySingle.UpdatedOnUtc = DateTime.Now;

@@ -66,6 +66,13 @@ namespace Shikhai.Controllers
             }
             return null;
         }
+
+        public string GetDisplayforLocation(string locCode)
+        {
+            int code = Int32.Parse(locCode);
+
+            return  Db.LocationTbls.Where(x => x.Id == code).Select(x => x.Name).FirstOrDefault();
+        }
         public async Task<List<SelectListItem>> GetAllLocationSelectListItems()
         {
             url = baseUrl + "api/LocationApi/GetAllLocationsSelectList/";
@@ -98,7 +105,20 @@ namespace Shikhai.Controllers
             return null;
         }
   
-
+        public string GetImageUrlFromBaseAddress(string address)
+        {
+            
+            if (string.IsNullOrEmpty(address))
+            {
+                return HttpUtility.UrlPathEncode(baseUrl + "Content/images/Portrait_placeholder.png");
+              
+            }
+            else
+            {
+                return HttpUtility.UrlPathEncode(baseUrl + address);
+            }
+           
+        }
         public List<SelectListItem> GetAllWeekDaysName()
         {
             List<SelectListItem> days = new List<SelectListItem>
@@ -115,7 +135,22 @@ namespace Shikhai.Controllers
             return days;
         }
 
-      
+
+        
+        public List<string> GetDisplayforTeachClass(string list)
+        {
+            List<string> displayReturnClass = new List<string>();
+            var code = GetListFromCommaSeparatedIntList(list);
+            foreach(var item in code)
+            {
+                var intCode = Int32.Parse(item);
+                var className = Db.ClassNameTbls.Where(x => x.Id == intCode).Select(x => x.Name).SingleOrDefault();
+                displayReturnClass.Add(className);
+            }
+            return displayReturnClass;
+        }
+
+
         public List<string> GetListFromCommaSeparatedIntList(string list)
         {
             List<string> daysName = new List<string>();

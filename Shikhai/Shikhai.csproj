@@ -1304,6 +1304,7 @@
     <Content Include="Content\images\pattern\dots.png" />
     <Content Include="Content\images\payment\bKash_payment_Process.png" />
     <Content Include="Content\images\payment\rocket-payment.png" />
+    <Content Include="Content\images\Portrait_placeholder.png" />
     <Content Include="Content\images\Products\38035602\Math-Ed-Banner.jpg" />
     <Content Include="Content\images\Products\38035602\thumbs\Math-Ed-Banner80x80.jpg" />
     <Content Include="Content\images\Products\62203730\c05523710.png" />

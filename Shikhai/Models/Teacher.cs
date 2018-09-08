@@ -28,6 +28,9 @@ namespace Shikhai.Models
        
         public string Designation { get; set; }
 
+        public string Degree { get; set; }
+
+
         [Display(Name = "Year Of Experience")]
         public decimal? YearOfExperience { get; set; }
         

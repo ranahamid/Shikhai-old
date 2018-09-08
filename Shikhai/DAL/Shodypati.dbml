@@ -189,6 +189,19 @@
       <Column Name="Published" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.TestimonialTbl" Member="TestimonialTbls">
+    <Type Name="TestimonialTbl">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ImagePath" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="PersonName" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="PersonTitle" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="DisplayOrder" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedOnUtc" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="UpdatedOnUtc" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="Published" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.TeacherTbl" Member="TeacherTbls">
     <Type Name="TeacherTbl">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -198,6 +211,7 @@
       <Column Name="RegistrationType" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
       <Column Name="ClinicHospitalName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
       <Column Name="Designation" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Degree" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="YearOfExperience" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
       <Column Name="WorkingArea" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
       <Column Name="Addresss" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
@@ -214,22 +228,12 @@
       <Column Name="VisitTimeEnd" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
       <Column Name="SlotDuration" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="VisitingCard" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Question1DescribeYourself" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="Question2History" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="Question3Enjoy" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
       <Column Name="CreatedOnUtc" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
       <Column Name="UpdatedOnUtc" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
       <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.TestimonialTbl" Member="TestimonialTbls">
-    <Type Name="TestimonialTbl">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="ImagePath" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="Description" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
-      <Column Name="PersonName" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="PersonTitle" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="DisplayOrder" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="CreatedOnUtc" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
-      <Column Name="UpdatedOnUtc" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
-      <Column Name="Published" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

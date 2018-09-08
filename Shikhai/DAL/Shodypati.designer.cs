@@ -72,12 +72,12 @@ namespace Shikhai.DAL
     partial void InsertRangeTbl(RangeTbl instance);
     partial void UpdateRangeTbl(RangeTbl instance);
     partial void DeleteRangeTbl(RangeTbl instance);
-    partial void InsertTeacherTbl(TeacherTbl instance);
-    partial void UpdateTeacherTbl(TeacherTbl instance);
-    partial void DeleteTeacherTbl(TeacherTbl instance);
     partial void InsertTestimonialTbl(TestimonialTbl instance);
     partial void UpdateTestimonialTbl(TestimonialTbl instance);
     partial void DeleteTestimonialTbl(TestimonialTbl instance);
+    partial void InsertTeacherTbl(TeacherTbl instance);
+    partial void UpdateTeacherTbl(TeacherTbl instance);
+    partial void DeleteTeacherTbl(TeacherTbl instance);
     #endregion
 		
 		public ShikhaiDataContext() : 
@@ -230,19 +230,19 @@ namespace Shikhai.DAL
 			}
 		}
 		
-		public System.Data.Linq.Table<TeacherTbl> TeacherTbls
-		{
-			get
-			{
-				return this.GetTable<TeacherTbl>();
-			}
-		}
-		
 		public System.Data.Linq.Table<TestimonialTbl> TestimonialTbls
 		{
 			get
 			{
 				return this.GetTable<TestimonialTbl>();
+			}
+		}
+		
+		public System.Data.Linq.Table<TeacherTbl> TeacherTbls
+		{
+			get
+			{
+				return this.GetTable<TeacherTbl>();
 			}
 		}
 	}
@@ -3854,6 +3854,260 @@ namespace Shikhai.DAL
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TestimonialTbl")]
+	public partial class TestimonialTbl : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _ImagePath;
+		
+		private string _Description;
+		
+		private string _PersonName;
+		
+		private string _PersonTitle;
+		
+		private System.Nullable<int> _DisplayOrder;
+		
+		private System.Nullable<System.DateTime> _CreatedOnUtc;
+		
+		private System.Nullable<System.DateTime> _UpdatedOnUtc;
+		
+		private System.Nullable<bool> _Published;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnImagePathChanging(string value);
+    partial void OnImagePathChanged();
+    partial void OnDescriptionChanging(string value);
+    partial void OnDescriptionChanged();
+    partial void OnPersonNameChanging(string value);
+    partial void OnPersonNameChanged();
+    partial void OnPersonTitleChanging(string value);
+    partial void OnPersonTitleChanged();
+    partial void OnDisplayOrderChanging(System.Nullable<int> value);
+    partial void OnDisplayOrderChanged();
+    partial void OnCreatedOnUtcChanging(System.Nullable<System.DateTime> value);
+    partial void OnCreatedOnUtcChanged();
+    partial void OnUpdatedOnUtcChanging(System.Nullable<System.DateTime> value);
+    partial void OnUpdatedOnUtcChanged();
+    partial void OnPublishedChanging(System.Nullable<bool> value);
+    partial void OnPublishedChanged();
+    #endregion
+		
+		public TestimonialTbl()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImagePath", DbType="NVarChar(255)")]
+		public string ImagePath
+		{
+			get
+			{
+				return this._ImagePath;
+			}
+			set
+			{
+				if ((this._ImagePath != value))
+				{
+					this.OnImagePathChanging(value);
+					this.SendPropertyChanging();
+					this._ImagePath = value;
+					this.SendPropertyChanged("ImagePath");
+					this.OnImagePathChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(1000)")]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this.OnDescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._Description = value;
+					this.SendPropertyChanged("Description");
+					this.OnDescriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PersonName", DbType="NVarChar(255) NOT NULL", CanBeNull=false)]
+		public string PersonName
+		{
+			get
+			{
+				return this._PersonName;
+			}
+			set
+			{
+				if ((this._PersonName != value))
+				{
+					this.OnPersonNameChanging(value);
+					this.SendPropertyChanging();
+					this._PersonName = value;
+					this.SendPropertyChanged("PersonName");
+					this.OnPersonNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PersonTitle", DbType="NVarChar(255)")]
+		public string PersonTitle
+		{
+			get
+			{
+				return this._PersonTitle;
+			}
+			set
+			{
+				if ((this._PersonTitle != value))
+				{
+					this.OnPersonTitleChanging(value);
+					this.SendPropertyChanging();
+					this._PersonTitle = value;
+					this.SendPropertyChanged("PersonTitle");
+					this.OnPersonTitleChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DisplayOrder", DbType="Int")]
+		public System.Nullable<int> DisplayOrder
+		{
+			get
+			{
+				return this._DisplayOrder;
+			}
+			set
+			{
+				if ((this._DisplayOrder != value))
+				{
+					this.OnDisplayOrderChanging(value);
+					this.SendPropertyChanging();
+					this._DisplayOrder = value;
+					this.SendPropertyChanged("DisplayOrder");
+					this.OnDisplayOrderChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedOnUtc", DbType="DateTime2")]
+		public System.Nullable<System.DateTime> CreatedOnUtc
+		{
+			get
+			{
+				return this._CreatedOnUtc;
+			}
+			set
+			{
+				if ((this._CreatedOnUtc != value))
+				{
+					this.OnCreatedOnUtcChanging(value);
+					this.SendPropertyChanging();
+					this._CreatedOnUtc = value;
+					this.SendPropertyChanged("CreatedOnUtc");
+					this.OnCreatedOnUtcChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UpdatedOnUtc", DbType="DateTime2")]
+		public System.Nullable<System.DateTime> UpdatedOnUtc
+		{
+			get
+			{
+				return this._UpdatedOnUtc;
+			}
+			set
+			{
+				if ((this._UpdatedOnUtc != value))
+				{
+					this.OnUpdatedOnUtcChanging(value);
+					this.SendPropertyChanging();
+					this._UpdatedOnUtc = value;
+					this.SendPropertyChanged("UpdatedOnUtc");
+					this.OnUpdatedOnUtcChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Published", DbType="Bit")]
+		public System.Nullable<bool> Published
+		{
+			get
+			{
+				return this._Published;
+			}
+			set
+			{
+				if ((this._Published != value))
+				{
+					this.OnPublishedChanging(value);
+					this.SendPropertyChanging();
+					this._Published = value;
+					this.SendPropertyChanged("Published");
+					this.OnPublishedChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TeacherTbl")]
 	public partial class TeacherTbl : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -3873,6 +4127,8 @@ namespace Shikhai.DAL
 		private string _ClinicHospitalName;
 		
 		private string _Designation;
+		
+		private string _Degree;
 		
 		private System.Nullable<decimal> _YearOfExperience;
 		
@@ -3906,6 +4162,12 @@ namespace Shikhai.DAL
 		
 		private string _VisitingCard;
 		
+		private string _Question1DescribeYourself;
+		
+		private string _Question2History;
+		
+		private string _Question3Enjoy;
+		
 		private System.Nullable<System.DateTime> _CreatedOnUtc;
 		
 		private System.Nullable<System.DateTime> _UpdatedOnUtc;
@@ -3930,6 +4192,8 @@ namespace Shikhai.DAL
     partial void OnClinicHospitalNameChanged();
     partial void OnDesignationChanging(string value);
     partial void OnDesignationChanged();
+    partial void OnDegreeChanging(string value);
+    partial void OnDegreeChanged();
     partial void OnYearOfExperienceChanging(System.Nullable<decimal> value);
     partial void OnYearOfExperienceChanged();
     partial void OnWorkingAreaChanging(string value);
@@ -3962,6 +4226,12 @@ namespace Shikhai.DAL
     partial void OnSlotDurationChanged();
     partial void OnVisitingCardChanging(string value);
     partial void OnVisitingCardChanged();
+    partial void OnQuestion1DescribeYourselfChanging(string value);
+    partial void OnQuestion1DescribeYourselfChanged();
+    partial void OnQuestion2HistoryChanging(string value);
+    partial void OnQuestion2HistoryChanged();
+    partial void OnQuestion3EnjoyChanging(string value);
+    partial void OnQuestion3EnjoyChanged();
     partial void OnCreatedOnUtcChanging(System.Nullable<System.DateTime> value);
     partial void OnCreatedOnUtcChanged();
     partial void OnUpdatedOnUtcChanging(System.Nullable<System.DateTime> value);
@@ -4111,6 +4381,26 @@ namespace Shikhai.DAL
 					this._Designation = value;
 					this.SendPropertyChanged("Designation");
 					this.OnDesignationChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Degree", DbType="NVarChar(50)")]
+		public string Degree
+		{
+			get
+			{
+				return this._Degree;
+			}
+			set
+			{
+				if ((this._Degree != value))
+				{
+					this.OnDegreeChanging(value);
+					this.SendPropertyChanging();
+					this._Degree = value;
+					this.SendPropertyChanged("Degree");
+					this.OnDegreeChanged();
 				}
 			}
 		}
@@ -4435,6 +4725,66 @@ namespace Shikhai.DAL
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Question1DescribeYourself", DbType="NVarChar(2000)")]
+		public string Question1DescribeYourself
+		{
+			get
+			{
+				return this._Question1DescribeYourself;
+			}
+			set
+			{
+				if ((this._Question1DescribeYourself != value))
+				{
+					this.OnQuestion1DescribeYourselfChanging(value);
+					this.SendPropertyChanging();
+					this._Question1DescribeYourself = value;
+					this.SendPropertyChanged("Question1DescribeYourself");
+					this.OnQuestion1DescribeYourselfChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Question2History", DbType="NVarChar(2000)")]
+		public string Question2History
+		{
+			get
+			{
+				return this._Question2History;
+			}
+			set
+			{
+				if ((this._Question2History != value))
+				{
+					this.OnQuestion2HistoryChanging(value);
+					this.SendPropertyChanging();
+					this._Question2History = value;
+					this.SendPropertyChanged("Question2History");
+					this.OnQuestion2HistoryChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Question3Enjoy", DbType="NVarChar(2000)")]
+		public string Question3Enjoy
+		{
+			get
+			{
+				return this._Question3Enjoy;
+			}
+			set
+			{
+				if ((this._Question3Enjoy != value))
+				{
+					this.OnQuestion3EnjoyChanging(value);
+					this.SendPropertyChanging();
+					this._Question3Enjoy = value;
+					this.SendPropertyChanged("Question3Enjoy");
+					this.OnQuestion3EnjoyChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedOnUtc", DbType="DateTime2")]
 		public System.Nullable<System.DateTime> CreatedOnUtc
 		{
@@ -4491,260 +4841,6 @@ namespace Shikhai.DAL
 					this._Active = value;
 					this.SendPropertyChanged("Active");
 					this.OnActiveChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TestimonialTbl")]
-	public partial class TestimonialTbl : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Id;
-		
-		private string _ImagePath;
-		
-		private string _Description;
-		
-		private string _PersonName;
-		
-		private string _PersonTitle;
-		
-		private System.Nullable<int> _DisplayOrder;
-		
-		private System.Nullable<System.DateTime> _CreatedOnUtc;
-		
-		private System.Nullable<System.DateTime> _UpdatedOnUtc;
-		
-		private System.Nullable<bool> _Published;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
-    partial void OnImagePathChanging(string value);
-    partial void OnImagePathChanged();
-    partial void OnDescriptionChanging(string value);
-    partial void OnDescriptionChanged();
-    partial void OnPersonNameChanging(string value);
-    partial void OnPersonNameChanged();
-    partial void OnPersonTitleChanging(string value);
-    partial void OnPersonTitleChanged();
-    partial void OnDisplayOrderChanging(System.Nullable<int> value);
-    partial void OnDisplayOrderChanged();
-    partial void OnCreatedOnUtcChanging(System.Nullable<System.DateTime> value);
-    partial void OnCreatedOnUtcChanged();
-    partial void OnUpdatedOnUtcChanging(System.Nullable<System.DateTime> value);
-    partial void OnUpdatedOnUtcChanged();
-    partial void OnPublishedChanging(System.Nullable<bool> value);
-    partial void OnPublishedChanged();
-    #endregion
-		
-		public TestimonialTbl()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Id
-		{
-			get
-			{
-				return this._Id;
-			}
-			set
-			{
-				if ((this._Id != value))
-				{
-					this.OnIdChanging(value);
-					this.SendPropertyChanging();
-					this._Id = value;
-					this.SendPropertyChanged("Id");
-					this.OnIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImagePath", DbType="NVarChar(255)")]
-		public string ImagePath
-		{
-			get
-			{
-				return this._ImagePath;
-			}
-			set
-			{
-				if ((this._ImagePath != value))
-				{
-					this.OnImagePathChanging(value);
-					this.SendPropertyChanging();
-					this._ImagePath = value;
-					this.SendPropertyChanged("ImagePath");
-					this.OnImagePathChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(1000)")]
-		public string Description
-		{
-			get
-			{
-				return this._Description;
-			}
-			set
-			{
-				if ((this._Description != value))
-				{
-					this.OnDescriptionChanging(value);
-					this.SendPropertyChanging();
-					this._Description = value;
-					this.SendPropertyChanged("Description");
-					this.OnDescriptionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PersonName", DbType="NVarChar(255) NOT NULL", CanBeNull=false)]
-		public string PersonName
-		{
-			get
-			{
-				return this._PersonName;
-			}
-			set
-			{
-				if ((this._PersonName != value))
-				{
-					this.OnPersonNameChanging(value);
-					this.SendPropertyChanging();
-					this._PersonName = value;
-					this.SendPropertyChanged("PersonName");
-					this.OnPersonNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PersonTitle", DbType="NVarChar(255)")]
-		public string PersonTitle
-		{
-			get
-			{
-				return this._PersonTitle;
-			}
-			set
-			{
-				if ((this._PersonTitle != value))
-				{
-					this.OnPersonTitleChanging(value);
-					this.SendPropertyChanging();
-					this._PersonTitle = value;
-					this.SendPropertyChanged("PersonTitle");
-					this.OnPersonTitleChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DisplayOrder", DbType="Int")]
-		public System.Nullable<int> DisplayOrder
-		{
-			get
-			{
-				return this._DisplayOrder;
-			}
-			set
-			{
-				if ((this._DisplayOrder != value))
-				{
-					this.OnDisplayOrderChanging(value);
-					this.SendPropertyChanging();
-					this._DisplayOrder = value;
-					this.SendPropertyChanged("DisplayOrder");
-					this.OnDisplayOrderChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedOnUtc", DbType="DateTime2")]
-		public System.Nullable<System.DateTime> CreatedOnUtc
-		{
-			get
-			{
-				return this._CreatedOnUtc;
-			}
-			set
-			{
-				if ((this._CreatedOnUtc != value))
-				{
-					this.OnCreatedOnUtcChanging(value);
-					this.SendPropertyChanging();
-					this._CreatedOnUtc = value;
-					this.SendPropertyChanged("CreatedOnUtc");
-					this.OnCreatedOnUtcChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UpdatedOnUtc", DbType="DateTime2")]
-		public System.Nullable<System.DateTime> UpdatedOnUtc
-		{
-			get
-			{
-				return this._UpdatedOnUtc;
-			}
-			set
-			{
-				if ((this._UpdatedOnUtc != value))
-				{
-					this.OnUpdatedOnUtcChanging(value);
-					this.SendPropertyChanging();
-					this._UpdatedOnUtc = value;
-					this.SendPropertyChanged("UpdatedOnUtc");
-					this.OnUpdatedOnUtcChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Published", DbType="Bit")]
-		public System.Nullable<bool> Published
-		{
-			get
-			{
-				return this._Published;
-			}
-			set
-			{
-				if ((this._Published != value))
-				{
-					this.OnPublishedChanging(value);
-					this.SendPropertyChanging();
-					this._Published = value;
-					this.SendPropertyChanged("Published");
-					this.OnPublishedChanged();
 				}
 			}
 		}

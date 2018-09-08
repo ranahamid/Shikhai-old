@@ -83,6 +83,8 @@ namespace Shikhai.Models
         [Display(Name = "Select Class")]
         public List<string> SelectedTeachClass { get; set; }
 
+        public List<string> SelectedTeachClassDisplay { get; set; }
+
         public string SelectedTeachClassStr { get; set; }
 
         //location: uttara, banani
@@ -90,6 +92,8 @@ namespace Shikhai.Models
 
         [Display(Name = "Select Location")]
         public string SelectedLocationId { get; set; }
+
+        public string LocationDisplay { get; set; }
 
         //Category: bangla, eng, 
         public List<SelectListItem> AllCategorySelectListItems { get; set; }
@@ -110,7 +114,15 @@ namespace Shikhai.Models
         public string SelectedSubjectStr { get; set; }
 
         // range
-       public int? TutionPrice { get; set; }
+        public int? TutionPrice { get; set; }
+
+        //Question
+        public string Question1DescribeYourself { get; set; }
+
+        public string Question2History { get; set; }
+
+        public string Question3Enjoy { get; set; }
+
     }
 
     public class RegisterViewModel
