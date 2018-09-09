@@ -92,4 +92,11 @@ namespace Shikhai.Models
 
     }
 
+
+    public class TeacherViewModel
+    {
+        List<RegisterTeacher> teachers { get; set; }
+
+        List<Location> locations { get; set; }
+    }
 }
